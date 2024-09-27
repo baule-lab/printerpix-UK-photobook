@@ -4,60 +4,46 @@
 import { component$ } from "@builder.io/qwik";
 
 export const DesignSection = component$(() => {
+  const designCategories = [
+    { name: "Travel", active: true },
+    { name: "Wedd﻿ing", active: false },
+    { name: "F﻿amily", active: false },
+    { name: "Si﻿mple", active: false },
+    { name: "Year In Review", active: false },
+    { name: "A﻿ll", active: false },
+  ];
+
   return (
-    <section class="flex flex-col items-center px-11 mt-20 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
-      <div class="flex flex-col items-center w-full max-w-[1256px] max-md:max-w-full">
-        <div class="flex flex-col max-w-full w-[713px]">
-          <h2 class="text-3xl font-bold text-zinc-800 max-md:max-w-full">
-            Designs for your stories. Endless Possibilities
-          </h2>
-          <div class="flex flex-wrap gap-10 items-center self-center mt-3 text-base font-semibold text-neutral-400 max-md:max-w-full">
-            <a href="#travel" class="self-stretch my-auto text-pink-600">
-              Travel
-            </a>
-            <a href="#wedding" class="self-stretch my-auto">
-              Wedding
-            </a>
-            <a href="#family" class="self-stretch my-auto">
-              Family
-            </a>
-            <a href="#simple" class="self-stretch my-auto">
-              Simple
-            </a>
-            <a href="#year-in-review" class="self-stretch my-auto">
-              Year In Review
-            </a>
-            <a href="#all" class="self-stretch my-auto">
-              All
-            </a>
-          </div>
+    <section class="flex flex-col items-center px-24 mt-20 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
+      <div class="flex flex-col max-w-full w-[713px]">
+        <h2 class="text-3xl font-bold text-zinc-800 max-md:max-w-full">
+          Designs for your stories. E﻿ndless Possibilities
+        </h2>
+        <div class="flex flex-wrap gap-10 items-center self-center mt-3 text-base font-semibold text-neutral-400 max-md:max-w-full">
+          {designCategories.map((category) => (
+            <button
+              key={category.name}
+              class={`self-stretch my-auto ${
+                category.active ? "text-pink-600" : ""
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
         </div>
-        <div class="flex flex-wrap gap-7 items-start self-stretch mt-6 w-full max-md:max-w-full">
-          <div class="flex flex-col grow shrink w-[136px]">
-            <div class="flex bg-zinc-300 h-[170px] min-h-[170px] w-[170px]"></div>
-            <div class="flex mt-7 bg-zinc-300 h-[170px] min-h-[170px] w-[170px]"></div>
-          </div>
-          <div class="flex flex-col grow shrink w-[136px]">
-            <div class="flex bg-zinc-300 h-[170px] min-h-[170px] w-[170px]"></div>
-            <div class="flex mt-7 bg-zinc-300 h-[170px] min-h-[170px] w-[170px]"></div>
-          </div>
-          <div class="flex grow shrink bg-zinc-300 h-[371px] min-w-[240px] w-[430px]"></div>
-          <div class="flex flex-col grow shrink w-[136px]">
-            <div class="flex bg-zinc-300 h-[170px] min-h-[170px] w-[170px]"></div>
-            <div class="flex mt-7 bg-zinc-300 h-[170px] min-h-[170px] w-[170px]"></div>
-          </div>
-          <div class="flex flex-col grow shrink w-[136px]">
-            <div class="flex bg-zinc-300 h-[170px] min-h-[170px] w-[170px]"></div>
-            <div class="flex mt-7 bg-zinc-300 h-[170px] min-h-[170px] w-[170px]"></div>
-          </div>
-        </div>
-        <a
-          href="#explore-travel-themes"
-          class="gap-2.5 self-stretch px-4 py-3 mt-6 max-w-full text-sm text-white bg-pink-500 rounded shadow-sm w-[196px] text-center"
-        >
-          Explore Travel Themes
-        </a>
       </div>
+      <div class="flex flex-wrap gap-7 items-start mt-6 max-md:max-w-full">
+        {[...Array(4)].map((_, index) => (
+          <div key={index} class="flex flex-col w-[170px]">
+            <div class="flex bg-zinc-300 h-[170px] min-h-[170px] w-[170px]"></div>
+            <div class="flex mt-7 bg-zinc-300 h-[170px] min-h-[170px] w-[170px]"></div>
+          </div>
+        ))}
+        <div class="flex shrink-0 bg-zinc-300 h-[371px] min-w-[240px] w-[464px]"></div>
+      </div>
+      <button class="gap-2.5 self-stretch px-4 py-3 mt-6 max-w-full text-sm text-white bg-pink-500 rounded shadow-sm w-[196px]">
+        Explore Travel Themes
+      </button>
     </section>
   );
 });

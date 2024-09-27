@@ -6,15 +6,15 @@ import { component$ } from "@builder.io/qwik";
 export const Header = component$(() => {
   return (
     <header class="flex flex-col w-full max-md:max-w-full">
-      <div class="gap-2.5 self-stretch p-2.5 text-xs text-center text-white bg-zinc-800">
+      <div class="gap-2.5 self-stretch p-2.5 w-full text-xs text-center text-white bg-zinc-800 max-md:max-w-full">
         ✅ Applied: FALLSALE | Up to 50% off + an extra 10% | Ends: 9/24
       </div>
-      <div class="flex flex-col mt-8 w-full max-md:max-w-full">
-        <div class="flex flex-col self-center max-w-full text-center text-black w-[1253px]">
+      <nav class="flex flex-col mt-20 w-full max-md:mt-10 max-md:max-w-full">
+        <div class="flex flex-col px-24 w-full text-center text-black max-md:px-5 max-md:max-w-full">
           <div class="flex flex-wrap gap-10 justify-between items-center w-full text-base font-bold whitespace-nowrap max-md:max-w-full">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5facfb34be0d1713cc7424de39927792f51200c415d9ac46313dfb80481ccea6?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3a545d44a28e872394ab7df7a3edce5ad58416f88bc01119d7056c991f298767?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
               alt="Company logo"
               class="object-contain shrink-0 self-stretch my-auto aspect-[4.76] w-[162px]"
             />
@@ -22,9 +22,9 @@ export const Header = component$(() => {
               <div class="flex gap-2.5 items-center self-stretch my-auto w-[74px]">
                 <img
                   loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/9b2805c60947b0c9a90ca984eb0e53fea60ab44547826f69089e4524d93cb045?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
-                  alt="User avatar"
-                  class="object-contain shrink-0 self-stretch my-auto aspect-[1.07] w-[30px]"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/7d3037e697c4dd943886389190b01e174ac4f83a7a34b8732a06afcd0783574f?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
+                  alt="User icon"
+                  class="object-contain shrink-0 self-stretch my-auto aspect-[1.11] w-[31px]"
                 />
                 <div class="flex-1 shrink self-stretch my-auto basis-0">
                   John
@@ -32,48 +32,48 @@ export const Header = component$(() => {
               </div>
               <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/fc9abd4d05a3b18b1751311eb608d293c10667c6e14fa97eb749f59eee935d69?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/bffeb6af2722fc25ee7f8da0878681392f1ba5f3ba264039b68046e88ab0827e?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
                 alt="Menu icon"
-                class="object-contain shrink-0 self-stretch my-auto w-11 aspect-[1.29]"
+                class="object-contain shrink-0 self-stretch my-auto aspect-[1.26] w-[43px]"
               />
             </div>
           </div>
-          <nav class="flex flex-col mt-7 w-full text-sm max-md:max-w-full">
-            <ul class="flex flex-wrap gap-10 justify-between items-center w-full min-h-[22px] max-md:max-w-full">
-              <li class="self-stretch my-auto">
-                <a href="#gift-shop">Gift Shop</a>
-              </li>
-              <li class="self-stretch my-auto">
-                <a href="#blankets-bedding">Blankets & Bedding</a>
-              </li>
-              <li class="self-stretch my-auto">
-                <a href="#wall-art">Wall Art</a>
-              </li>
-              <li class="self-stretch my-auto">
-                <a href="#photo-books">Photo Books</a>
-              </li>
-              <li class="self-stretch my-auto">
-                <a href="#photo-prints">Photo Prints</a>
-              </li>
-              <li class="self-stretch my-auto">
-                <a href="#kitchen-drinkware">Kitchen & Drinkware</a>
-              </li>
-              <li class="self-stretch my-auto">
-                <a href="#travel-accessories">Travel & Accessories</a>
-              </li>
-              <li class="self-stretch my-auto">
-                <a href="#pets">Pets</a>
-              </li>
-              <li class="self-stretch my-auto">
-                <a href="#cards">Cards</a>
-              </li>
-              <li class="self-stretch my-auto">
-                <a href="#blog">Blog</a>
-              </li>
-            </ul>
-          </nav>
+          <div class="flex flex-col mt-7 w-full text-sm max-md:max-w-full">
+            <div class="flex flex-wrap gap-10 justify-between items-center w-full min-h-[22px] max-md:max-w-full">
+              <a href="#" class="self-stretch my-auto">
+                Gift Shop
+              </a>
+              <a href="#" class="self-stretch my-auto">
+                Blankets & Bedding
+              </a>
+              <a href="#" class="self-stretch my-auto">
+                Wall Art
+              </a>
+              <a href="#" class="self-stretch my-auto">
+                Photo Books
+              </a>
+              <a href="#" class="self-stretch my-auto">
+                Photo Prints
+              </a>
+              <a href="#" class="self-stretch my-auto">
+                Kitchen & Drinkware
+              </a>
+              <a href="#" class="self-stretch my-auto">
+                Travel & Accessories
+              </a>
+              <a href="#" class="self-stretch my-auto">
+                Pets
+              </a>
+              <a href="#" class="self-stretch my-auto">
+                Cards
+              </a>
+              <a href="#" class="self-stretch my-auto">
+                Blog
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 });

@@ -9,16 +9,26 @@ export const FAQSection = component$(() => {
       question: "How do I order photo prints online from my phone?",
       answer:
         "You can upload pictures from your camera roll, Google Drive or connect to your social media accounts like Instagram or Facebook.",
+      isOpen: true,
     },
-    { question: "What is photo printing?" },
-    { question: "What is the best site to print my photos?" },
-    { question: "How long does it take to receive my online photo prints?" },
+    {
+      question: "What is photo pri﻿nting?",
+      isOpen: false,
+    },
+    {
+      question: "What is the best site to print my photos?",
+      isOpen: false,
+    },
+    {
+      question: "How l﻿ong does it take to receive my online photo prints?",
+      isOpen: false,
+    },
   ];
 
   return (
-    <section class="flex flex-col items-center mt-32 w-full max-w-[1256px] max-md:mt-10 max-md:max-w-full">
+    <section class="flex flex-col items-center px-24 mt-20 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
       <h2 class="self-stretch text-3xl font-bold text-center text-zinc-800 max-md:max-w-full">
-        FAQ About Photo Prints
+        FAQ About Pho﻿to Prints
       </h2>
       <div class="flex flex-col mt-6 max-w-full w-[642px]">
         {faqs.map((faq, index) => (
@@ -32,12 +42,16 @@ export const FAQSection = component$(() => {
               </h3>
               <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/82f207ebba529f25e351a700830db376db844db238d3b8d825e6ec7ef933fe37?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
-                alt="Expand/Collapse icon"
+                src={
+                  faq.isOpen
+                    ? "https://cdn.builder.io/api/v1/image/assets/TEMP/7e462601e7cf3da72ed1a9485f391fbe6974a3ebc8fff130f41b85758b4bcd04?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
+                    : "https://cdn.builder.io/api/v1/image/assets/TEMP/153d05d406bf64ca2a0ae179600bf06ab29f43cd9461b0f55ed10ae8adfc8eff?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
+                }
+                alt={faq.isOpen ? "Collapse" : "Expand"}
                 class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
               />
             </div>
-            {faq.answer && (
+            {faq.isOpen && (
               <p class="mt-6 text-sm text-black rotate-[0.00002835407575880291rad] max-md:max-w-full">
                 {faq.answer}
               </p>
@@ -45,12 +59,9 @@ export const FAQSection = component$(() => {
           </div>
         ))}
       </div>
-      <a
-        href="#order-prints"
-        class="gap-2.5 self-stretch px-4 py-3 mt-6 max-w-full text-sm text-white bg-pink-500 rounded shadow-sm w-[136px] text-center"
-      >
+      <button class="gap-2.5 self-stretch px-4 py-3 mt-6 max-w-full text-sm text-white bg-pink-500 rounded shadow-sm w-[136px]">
         Order Prints
-      </a>
+      </button>
     </section>
   );
 });

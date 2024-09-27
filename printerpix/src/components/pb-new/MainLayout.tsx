@@ -3,29 +3,31 @@
  */
 import { component$ } from "@builder.io/qwik";
 import { Header } from "./Header";
-import { Hero } from "./Hero";
+import { HeroSection } from "./HeroSection";
 import { DesignSection } from "./DesignSection";
 import { StepsSection } from "./StepsSection";
-import { TestimonialSection } from "./TestimonialSection";
-import { ProductSection } from "./ProductSection";
-import { PrintSection } from "./PrintSection";
+import { TestimonialsSection } from "./TestimonialsSection";
+import { PrintOptionsSection } from "./PrintOptionsSection";
 import { BookTypesSection } from "./BookTypesSection";
+import { ExploreSection } from "./ExploreSection";
 import { FAQSection } from "./FAQSection";
+import { InfoSection } from "./InfoSection";
 import { Footer } from "./Footer";
 
 export const MainLayout = component$(() => {
   return (
-    <div class="flex overflow-hidden flex-col bg-white pb-[1810px] max-md:pb-24">
+    <div class="flex overflow-hidden flex-col bg-white">
       <Header />
       <main>
-        <Hero />
+        <HeroSection />
         <DesignSection />
         <StepsSection />
-        <TestimonialSection />
-        <ProductSection />
-        <PrintSection />
+        <TestimonialsSection />
+        <PrintOptionsSection />
         <BookTypesSection />
+        <ExploreSection />
         <FAQSection />
+        <InfoSection />
       </main>
       <Footer />
     </div>

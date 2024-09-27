@@ -3,31 +3,31 @@
  */
 import { component$ } from "@builder.io/qwik";
 
-export const TestimonialSection = component$(() => {
+export const TestimonialsSection = component$(() => {
   const testimonials = [
     {
-      title: "Digital backups",
+      title: "Digital bac﻿kups",
       description:
-        "Quickly add images from your phone, computer, social media, & Google photos.",
+        "Qucikly add images from your phon﻿e, computer, social media, & Google photos.",
     },
     {
-      title: "Quality Paper",
+      title: "Quality P﻿aper",
       description:
-        "Quickly add images from your phone, computer, social media, & Google photos.",
+        "Qucikly add images from your phone, computer, social medi﻿a, & Google photos.",
     },
     {
       title: "Quick Delivery",
       description:
-        "Quickly add images from your phone, computer, social media, & Google photos.",
+        "Qucikly add images from your phon﻿e, computer, social media, & Google photos.",
     },
   ];
 
   return (
-    <section class="flex flex-col mt-32 w-full text-black max-w-[1253px] max-md:mt-10 max-md:max-w-full">
+    <section class="flex flex-col px-24 mt-20 w-full text-black max-md:px-5 max-md:mt-10 max-md:max-w-full">
       <h2 class="text-3xl font-bold text-center text-zinc-800 max-md:max-w-full">
         Books Made with Love
       </h2>
-      {[0, 1].map((rowIndex) => (
+      {[...Array(2)].map((_, rowIndex) => (
         <div
           key={rowIndex}
           class="flex gap-6 items-center mt-12 w-full text-center max-md:mt-10 max-md:max-w-full"
@@ -48,12 +48,9 @@ export const TestimonialSection = component$(() => {
           </div>
         </div>
       ))}
-      <a
-        href="#start-creating"
-        class="gap-2.5 self-center px-4 py-3 mt-12 max-w-full text-sm text-white bg-pink-500 rounded shadow-sm w-[136px] text-center max-md:mt-10"
-      >
+      <button class="gap-2.5 self-center px-4 py-3 mt-12 max-w-full text-sm text-white bg-pink-500 rounded shadow-sm w-[136px] max-md:mt-10">
         Start creating
-      </a>
+      </button>
     </section>
   );
 });
