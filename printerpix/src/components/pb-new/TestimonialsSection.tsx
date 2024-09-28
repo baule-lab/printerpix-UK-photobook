@@ -6,24 +6,24 @@ import { component$ } from "@builder.io/qwik";
 export const TestimonialsSection = component$(() => {
   const testimonials = [
     {
-      title: "Digital bac﻿kups",
+      title: "Digital backups",
       description:
-        "Qucikly add images from your phon﻿e, computer, social media, & Google photos.",
+        "Qucikly add images from your phone, computer, social media, & Google photos.",
     },
     {
-      title: "Quality P﻿aper",
+      title: "Quality Paper",
       description:
-        "Qucikly add images from your phone, computer, social medi﻿a, & Google photos.",
+        "Qucikly add images from your phone, computer, social media, & Google photos.",
     },
     {
       title: "Quick Delivery",
       description:
-        "Qucikly add images from your phon﻿e, computer, social media, & Google photos.",
+        "Qucikly add images from your phone, computer, social media, & Google photos.",
     },
   ];
 
   return (
-    <section class="flex flex-col px-24 mt-20 w-full text-black max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <section class="flex flex-col mt-20 text-black  container mx-auto md:px-0 px-4">
       <h2 class="text-3xl font-bold text-center text-zinc-800 max-md:max-w-full">
         Books Made with Love
       </h2>

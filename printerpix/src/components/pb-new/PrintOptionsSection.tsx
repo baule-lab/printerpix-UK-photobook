@@ -6,26 +6,26 @@ import { component$ } from "@builder.io/qwik";
 export const PrintOptionsSection = component$(() => {
   const printOptions = [
     {
-      title: "Semi-Glos﻿s",
+      title: "Semi-Gloss",
       description:
         "Make any photo book shine with vivid colors, bright details, smooth texture, and a subtle glos﻿s finish.",
     },
     {
-      title: "Ma﻿tte",
+      title: "Matte",
       description:
         "A more modern look with no glare and a fingerprint- and scratch-proof finish. Smudge-resistant and great for writing on.",
     },
     {
-      title: "Lust﻿re",
+      title: "Lustre",
       description:
         "A low-glare finish with superior clarity. Ultra-thick, archival-qu﻿ality pages resist water, dirt, bending, and aging for 200+ years.",
     },
   ];
 
   return (
-    <section class="flex flex-col px-24 mt-20 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <section class="flex flex-col mt-20 w-full max-md:px-5 max-md:mt-10  container mx-auto md:px-0 px-4">
       <h2 class="text-3xl font-bold text-center text-zinc-800 max-md:max-w-full">
-        The right pr﻿int for you
+        The right print for you
       </h2>
       <div class="flex flex-wrap gap-6 items-start mt-8 w-full text-center text-black max-md:max-w-full">
         {printOptions.map((option, index) => (

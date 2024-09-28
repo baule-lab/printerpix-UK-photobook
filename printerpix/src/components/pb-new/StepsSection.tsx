@@ -6,24 +6,24 @@ import { component$ } from "@builder.io/qwik";
 export const StepsSection = component$(() => {
   const steps = [
     {
-      title: "Digital bac﻿kups",
+      title: "Digital backups",
       description:
         "Qucikly add images from your phon﻿e, computer, social media, & Google photos.",
     },
     {
-      title: "Auto﻿-Create",
+      title: "Auto-Create",
       description:
         "We'll instantly organize your photos into a cohesiv﻿e, well-designed story.",
     },
     {
-      title: "Customiz﻿e",
+      title: "Customize",
       description:
-        "Easily c﻿hange fonts, backgrounds,colors, shapes, stickers, and more.",
+        "Easily change fonts, backgrounds,colors, shapes, stickers, and more.",
     },
   ];
 
   return (
-    <section class="flex flex-col px-24 mt-20 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <section class="flex flex-col justify-evenlymt-20  container mx-auto md:px-0 px-4 mt-12">
       <h2 class="text-3xl font-bold text-center text-zinc-800 max-md:max-w-full">
         Your Books in 3 Easy Steps
       </h2>
