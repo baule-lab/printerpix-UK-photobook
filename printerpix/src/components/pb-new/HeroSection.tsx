@@ -34,7 +34,7 @@ export const HeroSection = component$(() => {
             <p class="my-auto self-stretch text-center text-2xl font-bold">
               Up to 50% off + an extra 10%
             </p>
-            <p class="my-auto self-stretch md:text-right text-center text-sm w-full">
+            <p class="my-auto self-stretch md:text-right text-center text-sm w-full md:w-[200px]">
               No Code Needed. <br /> Discount applied on checkout.
             </p>
           </div>
