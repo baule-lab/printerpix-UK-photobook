@@ -18,7 +18,7 @@ export const MainLayout = component$(() => {
   return (
     <div class="flex overflow-hidden flex-col bg-white">
       <Header />
-      <main>
+      <main class="flex flex-col gap-20">
         <HeroSection />
         <DesignSection />
         <StepsSection />

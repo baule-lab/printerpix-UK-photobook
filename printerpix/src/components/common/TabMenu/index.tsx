@@ -22,11 +22,11 @@ export const TabMenu = component$(({ tabs, onTabClick }: TabMenuProps) => {
   });
 
   return (
-    <div class="flex flex-wrap gap-10 items-center self-center mt-3 text-base font-semibold text-neutral-400 max-md:max-w-full">
+    <div class="flex flex-wrap items-center gap-10 self-center text-base font-semibold text-neutral-400 max-md:max-w-full overflow-x-auto">
       {tabs.map((tab) => (
         <button
           key={tab.name}
-          class={`self-stretch my-auto ${
+          class={`my-auto self-stretch ${
             activeTab.value === tab.name ? "text-pink-600" : ""
           }`}
           onClick$={() => handleTabClick(tab.name)} // Use handleTabClick properly wrapped

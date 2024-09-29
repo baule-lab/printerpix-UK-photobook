@@ -6,49 +6,74 @@ import { component$ } from "@builder.io/qwik";
 export const TestimonialsSection = component$(() => {
   const testimonials = [
     {
-      title: "Digital backups",
-      description:
-        "Qucikly add images from your phone, computer, social media, & Google photos.",
+      title: "Premium Covers",
+      description: "Detailed craftsmanship for a high-end look & feel.",
+      img: "/svg/book-cover.svg",
     },
     {
       title: "Quality Paper",
-      description:
-        "Qucikly add images from your phone, computer, social media, & Google photos.",
+      description: "Expect vivid, precise colors on the paper of your choice.",
+      img: "/svg/quality-paper.svg",
     },
     {
-      title: "Quick Delivery",
-      description:
-        "Qucikly add images from your phone, computer, social media, & Google photos.",
+      title: "Add Extra Pages",
+      description: "Go up to 40, 100 or 200 pages to tell your story.",
+      img: "/svg/add-pages.svg",
+    },
+    {
+      title: "Discounted Copies",
+      description: "Surprise loved ones with extra copies of your book.",
+      img: "/svg/discounted-copies.svg",
+    },
+    {
+      title: "Free Templates",
+      description: "Start fast with free templates you can edit in seconds.",
+      img: "/svg/free-templates.svg",
+    },
+    {
+      title: "Save Project",
+      description: "Need more time? We'll save your project for 60 days.",
+      img: "/svg/save-project.svg",
+    },
+    {
+      title: "American Made",
+      description: "Printed & hand-inspected in Orlando, Florida.",
+      img: "/svg/american-flag.svg",
+    },
+    {
+      title: "Speedy Shipping",
+      description: "Order with Rush Shipping for 1 day delivery.",
+      img: "/svg/delivery-black.svg",
     },
   ];
 
   return (
-    <section class="flex flex-col mt-20 text-black  container mx-auto md:px-0 px-4">
-      <h2 class="text-3xl font-bold text-center text-zinc-800 max-md:max-w-full">
+    <section class="container mx-auto flex  flex-col gap-8 px-4 text-black md:px-0">
+      <h2 class="text-center text-3xl font-bold text-zinc-800 max-md:max-w-full">
         Books Made with Love
       </h2>
-      {[...Array(2)].map((_, rowIndex) => (
-        <div
-          key={rowIndex}
-          class="flex gap-6 items-center mt-12 w-full text-center max-md:mt-10 max-md:max-w-full"
-        >
-          <div class="flex flex-wrap flex-1 shrink gap-6 justify-center items-center self-stretch my-auto w-full basis-0 min-w-[240px] max-md:max-w-full">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                class="flex flex-col flex-1 shrink justify-center self-stretch my-auto basis-0 min-w-[240px]"
-              >
-                <div class="flex self-center rounded-full aspect-square bg-zinc-300 min-h-[200px] w-[200px]"></div>
-                <div class="flex flex-col mt-6 w-full">
-                  <h3 class="text-2xl font-bold">{testimonial.title}</h3>
-                  <p class="mt-3 text-sm">{testimonial.description}</p>
-                </div>
-              </div>
-            ))}
+      <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-x-4 gap-y-[46px]">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            class="my-auto flex flex-col items-center min-w-[240px] flex-1 shrink basis-0 justify-center self-stretch gap-4"
+          >
+            <div
+              class="min-h-[200px] w-[200px]"
+              style={{
+                backgroundImage: `url(${testimonial.img})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+            <div class="flex w-full flex-col items-center gap-3">
+              <h3 class="text-2xl font-bold">{testimonial.title}</h3>
+              <p class="text-sm">{testimonial.description}</p>
+            </div>
           </div>
-        </div>
-      ))}
-      <button class="gap-2.5 self-center px-4 py-3 mt-12 max-w-full text-sm text-white bg-pink-500 rounded shadow-sm w-[136px] max-md:mt-10">
+        ))}
+      </div>
+      <button class="mt-12 w-[136px] max-w-full gap-2.5 self-center rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm max-md:mt-10">
         Start creating
       </button>
     </section>

@@ -112,7 +112,7 @@ export const Footer = component$(() => {
   ];
 
   return (
-    <footer class="flex relative flex-col mt-20 w-full max-md:mt-10 max-md:max-w-full">
+    <footer class="flex relative flex-col w-full max-md:mt-10 max-md:max-w-full">
       <div class="flex z-0 flex-col justify-between self-center pb-12 max-w-full text-black min-h-[174px] w-[1255px]">
         <div class="flex flex-wrap gap-10 justify-center items-center pt-12 pr-px w-full border-t border-zinc-400 max-md:max-w-full">
           {features.map((feature, index) => (

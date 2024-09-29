@@ -5,15 +5,19 @@ import { component$ } from "@builder.io/qwik";
 
 export const HeroSection = component$(() => {
   return (
-    <>
-      <section class="mt-8 flex w-full flex-col items-center bg-neutral-200 ">
-        <div class="container flex min-h-[274px] w-full flex-col md:items-start items-center justify-center py-10 text-sm">
+    <div class="flex flex-col">
+      <section
+        class="mt-8 flex w-full flex-col items-center"
+        style="background-image: url('/images/banner.jpg'); background-size: cover; background-position: center;"
+      >
+        <div class="container flex min-h-[350px] w-full flex-col items-center justify-center py-10 text-sm md:items-start">
           <div class="flex w-[339px] max-w-full flex-col">
             <h1 class="text-3xl font-bold text-zinc-800">
-              Tell your Stories with <br />a Photo Book
+              Create Photo Books to Tell Your Story
             </h1>
             <p class="mt-3 text-black">
-              Starting at $14.99 <br /> Get it by Sept 23 with Express
+              Starting at $14.99 <br />
+              Get it by Sept 23 with Express
             </p>
             <button class="mt-3 w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-white shadow-sm">
               Create your book
@@ -21,25 +25,22 @@ export const HeroSection = component$(() => {
           </div>
         </div>
       </section>
-      <section class="w-full flex justify-center items-center">
-        <div class="mt-6 flex w-full flex-col text-indigo-800 container">
-          <div class="flex flex-wrap items-center justify-between gap-10 rounded-2xl bg-blue-200 px-6 py-3">
-            <div class="flex md:w-[200px] w-full flex-col self-stretch md:items-start items-center">
-              <h2 class="gap-2 md:text-start text-center text-2xl font-bold w-full">
-                🍂 🍁
-                Fall Sale
+      <section class="flex w-full items-center justify-center bg-[#852365] text-white">
+          <div class="flex flex-wrap items-center justify-between gap-10 py-3 container">
+            <div class="flex w-full flex-col items-center self-stretch md:w-[200px] md:items-start">
+              <h2 class="w-full gap-2 text-center text-lg font-bold md:text-start">
+                Fall 🍁 <br />
+                <span class="text-5xl font-bold">Sale</span>
               </h2>
-              <p class="mt-2 text-sm">No Code Needed.</p>
             </div>
             <p class="my-auto self-stretch text-center text-2xl font-bold">
               Up to 50% off + an extra 10%
             </p>
-            <p class="my-auto self-stretch md:text-right text-center text-sm w-full md:w-[200px]">
-              No Code Needed. <br /> Discount applied on checkout.
+            <p class="my-auto w-full self-stretch text-center text-sm md:w-[200px] md:text-right text-neutral-200">
+            Ends Oct 14 <br /> No Code Needed. <br /> Discount applied on checkout.
             </p>
           </div>
-        </div>
       </section>
-    </>
+    </div>
   );
 });

@@ -5,7 +5,7 @@ import { component$ } from "@builder.io/qwik";
 
 export const InfoSection = component$(() => {
   return (
-    <section class="flex flex-col mt-20 w-full text-black  container mx-auto md:px-0 px-4">
+    <section class="flex flex-col w-full text-black  container mx-auto md:px-0 px-4">
       <div class="flex flex-col w-full max-md:max-w-full">
         <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
           <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">

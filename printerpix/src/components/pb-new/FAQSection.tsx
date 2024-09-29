@@ -34,7 +34,7 @@ export const FAQSection = component$(() => {
   ];
 
   return (
-    <section class="mt-20 flex w-full flex-col items-center px-24 max-md:mt-10 max-md:max-w-full max-md:px-5">
+    <section class="flex w-full flex-col items-center px-24 max-md:mt-10 max-md:max-w-full max-md:px-5">
       <h2 class="self-stretch text-center text-3xl font-bold text-zinc-800 max-md:max-w-full">
         FAQ About Photo Prints
       </h2>
