@@ -52,21 +52,21 @@ export const TestimonialsSection = component$(() => {
       <h2 class="text-center text-3xl font-bold text-zinc-800 max-md:max-w-full">
         Books Made with Love
       </h2>
-      <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-x-4 gap-y-[46px]">
+      <div class="grid lg:grid-cols-4 grid-cols-2 gap-x-4 gap-y-[46px]">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            class="my-auto flex flex-col items-center min-w-[240px] flex-1 shrink basis-0 justify-center self-stretch gap-4"
+            class="my-auto flex flex-col items-center lg:min-w-[240px] min-w-[150px] flex-1 shrink basis-0 justify-center self-stretch gap-4"
           >
             <div
-              class="min-h-[200px] w-[200px]"
+              class="lg:min-h-[200px] lg:w-[200px] min-h-[150px] min-w-[150px] w-full"
               style={{
                 backgroundImage: `url(${testimonial.img})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
             />
-            <div class="flex w-full flex-col items-center gap-3">
+            <div class="flex w-full flex-col items-center gap-3 text-center">
               <h3 class="text-2xl font-bold">{testimonial.title}</h3>
               <p class="text-sm">{testimonial.description}</p>
             </div>

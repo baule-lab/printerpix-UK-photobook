@@ -25,7 +25,7 @@ export const HeroSection = component$(() => {
           </div>
         </div>
       </section>
-      <section class="flex w-full items-center justify-center bg-[#852365] text-white">
+      <section class="flex w-full items-center justify-center bg-[#852365] text-white px-24">
           <div class="flex flex-wrap items-center justify-between gap-10 py-3 container">
             <div class="flex w-full flex-col items-center self-stretch md:w-[200px] md:items-start">
               <h2 class="w-full gap-2 text-center text-lg font-bold md:text-start">
