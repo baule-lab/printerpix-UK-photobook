@@ -31,10 +31,10 @@ export const HeroSection = component$(() => {
       >
       <div class="container flex w-full flex-col items-center justify-center text-sm md:items-start pt-10 pb-5">
           <div class="flex w-[339px] max-w-full flex-col">
-            <h1 class="text-3xl font-bold text-zinc-800">
+            <h1 class="text-3xl font-bold text-zinc-800 text-center">
               Create Photo Books to Tell Your Story
             </h1>
-            <p class="mt-3 text-black">
+            <p class="mt-3 text-black text-center">
               Starting at $14.99 <br />
               Get it by Sept 23 with Express
             </p>

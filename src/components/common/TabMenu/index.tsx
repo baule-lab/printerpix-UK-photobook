@@ -1,4 +1,3 @@
-// TabMenu.tsx
 import type { PropFunction } from "@builder.io/qwik";
 import { component$, $, useSignal } from "@builder.io/qwik";
 
@@ -22,11 +21,11 @@ export const TabMenu = component$(({ tabs, onTabClick }: TabMenuProps) => {
   });
 
   return (
-    <div class="flex flex-wrap items-center gap-10 self-center text-base font-semibold text-neutral-400 max-md:max-w-full overflow-x-auto">
+    <div class="flex overflow-x-auto whitespace-nowrap items-center text-base font-semibold text-neutral-400 gap-4">
       {tabs.map((tab) => (
         <button
           key={tab.name}
-          class={`my-auto self-stretch ${
+          class={`inline-block px-4 py-2 ${
             activeTab.value === tab.name ? "text-pink-600" : ""
           }`}
           onClick$={() => handleTabClick(tab.name)} // Use handleTabClick properly wrapped

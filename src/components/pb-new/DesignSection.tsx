@@ -76,7 +76,7 @@ export const DesignSection = component$(() => {
 
   return (
     <section class="container mx-auto flex flex-col items-center justify-center gap-6 px-4 first-letter:gap-6 md:px-0">
-      <div class="flex w-[713px] max-w-full flex-col gap-4">
+      <div class="flex max-w-full flex-col gap-4">
         <h2 class="text-center text-3xl font-bold text-zinc-800 max-md:max-w-full">
           Designs for your stories. Endless Possibilities
         </h2>

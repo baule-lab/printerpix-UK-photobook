@@ -99,7 +99,7 @@ export const ExploreSection = component$(() => {
             />
 
             {/* Navigation buttons */}
-            <button
+            {/* <button
               class="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full bg-white px-3 py-2 shadow-md"
               onClick$={prevSlide}
             >
@@ -110,7 +110,7 @@ export const ExploreSection = component$(() => {
               onClick$={nextSlide}
             >
               ❯
-            </button>
+            </button> */}
           </div>
 
           {/* Pagination Dots */}
