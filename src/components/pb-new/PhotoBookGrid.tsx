@@ -14,16 +14,13 @@ export const PhotoBookGrid = component$(() => {
       <div class="grid grid-cols-2 gap-6">
         {categories.map((category) => (
           <div key={category.name} class="flex flex-col items-center">
-            <div class="w-full h-[150px] bg-gray-300 flex items-center justify-center">
-              {/* Giả lập ảnh (nếu có ảnh thật bạn có thể thay vào) */}
-              <img
-                src={category.imageSrc || "/placeholder.jpg"}
-                alt={category.name}
-                class="w-[100px] h-[100px]"
-                width="100"
-                height="100"
-              />
-            </div>
+            <img
+              src={category.imageSrc || "/placeholder.jpg"}
+              alt={category.name}
+              class="w-[170px] h-[170px]"
+              width="170"
+              height="170"
+            />
             <p class="mt-2 text-center font-bold text-black">
               {category.name} <br /> Photo Book
             </p>

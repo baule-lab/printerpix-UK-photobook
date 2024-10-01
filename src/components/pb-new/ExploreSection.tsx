@@ -52,17 +52,17 @@ export const ExploreSection = component$(() => {
   });
 
   // Handle slide navigation
-  const nextSlide = $(() => {
-    currentSlide.value = (currentSlide.value + 1) % tabContents.value.length;
-    activeTab.value = tabContents.value[currentSlide.value].name; // Update tab to match the slide
-  });
+  // const nextSlide = $(() => {
+  //   currentSlide.value = (currentSlide.value + 1) % tabContents.value.length;
+  //   activeTab.value = tabContents.value[currentSlide.value].name; // Update tab to match the slide
+  // });
 
-  const prevSlide = $(() => {
-    currentSlide.value =
-      (currentSlide.value - 1 + tabContents.value.length) %
-      tabContents.value.length;
-    activeTab.value = tabContents.value[currentSlide.value].name; // Update tab to match the slide
-  });
+  // const prevSlide = $(() => {
+  //   currentSlide.value =
+  //     (currentSlide.value - 1 + tabContents.value.length) %
+  //     tabContents.value.length;
+  //   activeTab.value = tabContents.value[currentSlide.value].name; // Update tab to match the slide
+  // });
 
   // Handle dot click
   const goToSlide = $((index: number) => {

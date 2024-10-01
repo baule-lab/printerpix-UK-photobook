@@ -45,19 +45,17 @@ export const FAQSection = component$(() => {
             class="mt-5 flex w-full flex-col bg-zinc-100 p-6 max-md:max-w-full max-md:px-5"
           >
             <div
-              class="flex w-full cursor-pointer flex-wrap items-center justify-between gap-10 text-lg font-semibold tracking-normal text-zinc-900 max-md:max-w-full"
+              class="flex w-full cursor-pointer items-start justify-between gap-4 text-lg font-semibold tracking-normal text-zinc-900 max-md:max-w-full"
               onClick$={() => handleToggle(index)}
             >
-              <h3 class="my-auto self-stretch max-md:max-w-full">
-                {faq.question}
-              </h3>
+              <h3 class="flex-1 break-words">{faq.question}</h3>
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/7e462601e7cf3da72ed1a9485f391fbe6974a3ebc8fff130f41b85758b4bcd04?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27" // Replace with the correct arrow icon URL
                 alt={activeIndex.value === index ? "Collapse" : "Expand"}
                 width="24" // Add appropriate width
                 height="24" // Add appropriate height
-                class={`my-auto aspect-square w-6 shrink-0 self-stretch object-contain transition-transform duration-300 ${
+                class={`my-auto aspect-square w-6 shrink-0 object-contain transition-transform duration-300 ${
                   activeIndex.value === index ? "rotate-180" : "rotate-0"
                 }`}
               />
@@ -74,7 +72,7 @@ export const FAQSection = component$(() => {
           </div>
         ))}
       </div>
-      <button class="mt-6 w-[136px] max-w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm mx-auto">
+      <button class="mx-auto mt-6 md:w-[136px] w-full max-w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm">
         Order Prints
       </button>
     </section>

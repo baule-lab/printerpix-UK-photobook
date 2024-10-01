@@ -98,7 +98,7 @@ export const DesignSection = component$(() => {
         }}
       ></div>
 
-      <button class="m-auto w-[196px] max-w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm">
+      <button class="m-auto md:w-[196px] w-full max-w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm">
         Explore Travel Themes
       </button>
     </section>

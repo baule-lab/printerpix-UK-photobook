@@ -87,7 +87,7 @@ export const BookTypesSection = component$(() => {
             </div>
           ))}
         </div>
-        <button class="mx-auto w-[150px] max-w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm max-md:mt-10">
+        <button class="mx-auto md:w-[150px] w-full max-w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm max-md:mt-10">
           Start creating
         </button>
       </section>

@@ -73,7 +73,7 @@ export const TestimonialsSection = component$(() => {
           </div>
         ))}
       </div>
-      <button class="mt-12 w-[136px] max-w-full gap-2.5 self-center rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm max-md:mt-10">
+      <button class="mt-12 md:w-[136px] w-full max-w-full gap-2.5 self-center rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm max-md:mt-10">
         Start creating
       </button>
     </section>

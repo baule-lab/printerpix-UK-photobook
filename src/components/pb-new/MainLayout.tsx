@@ -13,6 +13,7 @@ import { ExploreSection } from "./ExploreSection";
 import { FAQSection } from "./FAQSection";
 import { InfoSection } from "./InfoSection";
 import { Footer } from "./Footer";
+import { MobileCreativeSection } from "./MobileCreativeSection";
 
 export const MainLayout = component$(() => {
   return (
@@ -26,6 +27,7 @@ export const MainLayout = component$(() => {
         <PrintOptionsSection />
         <BookTypesSection />
         <ExploreSection />
+        <MobileCreativeSection />
         <FAQSection />
         <InfoSection />
       </main>

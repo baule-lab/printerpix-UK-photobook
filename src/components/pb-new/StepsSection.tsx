@@ -26,7 +26,7 @@ export const StepsSection = component$(() => {
   ];
 
   return (
-    <section class="container mx-auto mt-12 flex flex-col justify-evenly gap-8 px-4 md:px-0">
+    <section class="container mx-auto mt-12 sm:flex flex-col justify-evenly gap-8 px-4 md:px-0 hidden">
       <h2 class="text-center text-3xl font-bold text-zinc-800 max-md:max-w-full">
         Your Books in 3 Easy Steps
       </h2>
