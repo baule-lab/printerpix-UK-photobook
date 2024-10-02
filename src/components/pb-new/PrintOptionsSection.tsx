@@ -80,7 +80,7 @@ export const PrintOptionsSection = component$(() => {
           >
             <div class="flex w-full bg-zinc-300 min-h-[547px]">
               <video
-                class="w-full h-full object-cover"
+                class="w-full min-h-[547px] object-cover"
                 src={option.video}
                 controls
                 loop

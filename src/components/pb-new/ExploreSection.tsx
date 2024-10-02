@@ -18,7 +18,7 @@ export const ExploreSection = component$(() => {
       description:
         "Our hardcover books are durable and designed to preserve your memories for a lifetime.",
       price: "$29.99",
-      image: "/images/photo-book-slide-1.png",
+      image: "/images/photo-book-slide-1.jpg",
     },
     {
       name: "Layflat",
@@ -26,7 +26,7 @@ export const ExploreSection = component$(() => {
       description:
         "Our clever binding technique lets you share your biggest moments and best photos across seamless two-page spreads.",
       price: "$48.99",
-      image: "/images/photo-book-slide-2.png",
+      image: "/images/photo-book-slide-2.jpg",
     },
     {
       name: "Softcover",
@@ -34,7 +34,7 @@ export const ExploreSection = component$(() => {
       description:
         "A lightweight and flexible option, our softcover books are easy to carry and enjoy.",
       price: "$19.99",
-      image: "/images/photo-book-slide-3.png",
+      image: "/images/photo-book-slide-3.jpg",
     },
   ]);
 

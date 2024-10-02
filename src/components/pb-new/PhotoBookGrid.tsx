@@ -3,10 +3,10 @@ import { component$ } from "@builder.io/qwik";
 export const PhotoBookGrid = component$(() => {
   // Dữ liệu các mục photo book
   const categories = [
-    { name: "Travel", imageSrc: "/images/types-of-photo-books/travel-book.png" },
-    { name: "Simple", imageSrc: "/images/types-of-photo-books/simple-book.png" },
-    { name: "Family", imageSrc: "/images/types-of-photo-books/family-book.png" },
-    { name: "All", imageSrc: "/images/types-of-photo-books/all-book.png" },
+    { name: "Travel", imageSrc: "/images/types-of-photo-books/travel-book.jpg" },
+    { name: "Simple", imageSrc: "/images/types-of-photo-books/simple-book.jpg" },
+    { name: "Family", imageSrc: "/images/types-of-photo-books/family-book.jpg" },
+    { name: "All", imageSrc: "/images/types-of-photo-books/all-book.jpg" },
   ];
 
   return (

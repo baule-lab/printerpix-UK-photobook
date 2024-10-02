@@ -9,43 +9,43 @@ export const BookTypesSection = component$(() => {
   const bookTypes: BookType[] = [
     {
       title: "Coffee Table Book",
-      image: "/images/coffee-book.png",
+      image: "/images/coffee-book.jpg",
     },
     {
       title: "Baby Book",
-      image: "/images/baby-book.png",
+      image: "/images/baby-book.jpg",
     },
     {
       title: "Memory Book",
-      image: "/images/memory-book.png",
+      image: "/images/memory-book.jpg",
     },
     {
       title: "Wedding Book",
-      image: "/images/wedding-book.png",
+      image: "/images/wedding-book.jpg",
     },
     {
       title: "Portfolio Book",
-      image: "/images/portfolio-book.png",
+      image: "/images/portfolio-book.jpg",
     },
     {
       title: "CookBook",
-      image: "/images/cookbook.png",
+      image: "/images/cookbook.jpg",
     },
     {
       title: "Yearbook",
-      image: "/images/yearbook.png",
+      image: "/images/yearbook.jpg",
     },
     {
       title: "Travel Photo Book",
-      image: "/images/travel-photo-book.png",
+      image: "/images/travel-photo-book.jpg",
     },
     {
       title: "Luxury Wedding Book",
-      image: "/images/luxury-wedding-book.png",
+      image: "/images/luxury-wedding-book.jpg",
     },
     {
       title: "Editorial Photo Book",
-      image: "/images/editorial-photo-book.png",
+      image: "/images/editorial-photo-book.jpg",
     },
   ];
 

@@ -6,7 +6,7 @@ import { TabMenu } from "../common/TabMenu";
 
 export const DesignSection = component$(() => {
   const isMobile = useSignal(false);
-  const isLoading = useSignal(false);  // Loading state
+  const isLoading = useSignal(false); // Loading state
 
   const designCategories = useSignal([
     { name: "Travel", active: true },
@@ -17,25 +17,70 @@ export const DesignSection = component$(() => {
     { name: "All", active: false },
   ]);
 
-  const imagesByTab = designCategories.value.reduce((acc: Record<string, { left: { src: string, alt: string, size?: string }[], right: { src: string, alt: string, size?: string }[], main: string }>, category) => {
-    const folderName = category.name.toLowerCase().replace(/ /g, '-');
-    acc[category.name] = {
-      left: [
-        { src: `/images/theme_category/${folderName}/${folderName}-1.png`, alt: `${category.name} Image 1`, size: 'large' },
-        { src: `/images/theme_category/${folderName}/${folderName}-2.png`, alt: `${category.name} Image 2`, size: 'small' },
-        { src: `/images/theme_category/${folderName}/${folderName}-3.png`, alt: `${category.name} Image 3`, size: 'large' },
-        { src: `/images/theme_category/${folderName}/${folderName}-4.png`, alt: `${category.name} Image 4`, size: 'small' }
-      ],
-      right: [
-        { src: `/images/theme_category/${folderName}/${folderName}-5.png`, alt: `${category.name} Image 5`, size: 'large' },
-        { src: `/images/theme_category/${folderName}/${folderName}-6.png`, alt: `${category.name} Image 6`, size: 'small' },
-        { src: `/images/theme_category/${folderName}/${folderName}-7.png`, alt: `${category.name} Image 7`, size: 'large' },
-        { src: `/images/theme_category/${folderName}/${folderName}-8.png`, alt: `${category.name} Image 8`, size: 'small' }
-      ],
-      main: `/images/theme_category/${folderName}/${folderName}-main.png`
-    };
-    return acc;
-  }, {}); 
+  const imagesByTab = designCategories.value.reduce(
+    (
+      acc: Record<
+        string,
+        {
+          left: { src: string; alt: string; size?: string }[];
+          right: { src: string; alt: string; size?: string }[];
+          main: string;
+        }
+      >,
+      category,
+    ) => {
+      const folderName = category.name.toLowerCase().replace(/ /g, "-");
+      acc[category.name] = {
+        left: [
+          {
+            src: `/images/theme_category/${folderName}/${folderName}-1.jpg`,
+            alt: `${category.name} Image 1`,
+            size: "small",
+          },
+          {
+            src: `/images/theme_category/${folderName}/${folderName}-2.jpg`,
+            alt: `${category.name} Image 2`,
+            size: "small",
+          },
+          {
+            src: `/images/theme_category/${folderName}/${folderName}-3.jpg`,
+            alt: `${category.name} Image 3`,
+            size: "large",
+          },
+          {
+            src: `/images/theme_category/${folderName}/${folderName}-4.jpg`,
+            alt: `${category.name} Image 4`,
+            size: "small",
+          },
+        ],
+        right: [
+          {
+            src: `/images/theme_category/${folderName}/${folderName}-5.jpg`,
+            alt: `${category.name} Image 5`,
+            size: "large",
+          },
+          {
+            src: `/images/theme_category/${folderName}/${folderName}-6.jpg`,
+            alt: `${category.name} Image 6`,
+            size: "small",
+          },
+          {
+            src: `/images/theme_category/${folderName}/${folderName}-7.jpg`,
+            alt: `${category.name} Image 7`,
+            size: "small",
+          },
+          {
+            src: `/images/theme_category/${folderName}/${folderName}-8.jpg`,
+            alt: `${category.name} Image 8`,
+            size: "small",
+          },
+        ],
+        main: `/images/theme_category/${folderName}/${folderName}-main.jpg`,
+      };
+      return acc;
+    },
+    {},
+  );
 
   const currentImages = useSignal(imagesByTab.Travel);
 
@@ -44,25 +89,31 @@ export const DesignSection = component$(() => {
     isLoading.value = true;
 
     // Simulate loading delay of 0.3s to 0.5s
-    setTimeout(() => {
-      const newImages = imagesByTab[tabName as keyof typeof imagesByTab];
-      if (!newImages) {
-        console.error(`Tab name "${tabName}" không tồn tại trong imagesByTab`);
-        return;
-      }
+    setTimeout(
+      () => {
+        const newImages = imagesByTab[tabName as keyof typeof imagesByTab];
+        if (!newImages) {
+          console.error(
+            `Tab name "${tabName}" không tồn tại trong imagesByTab`,
+          );
+          return;
+        }
 
-      // Update tab active status and images
-      designCategories.value = designCategories.value.map((tab) =>
-        tab.name === tabName
-          ? { ...tab, active: true }
-          : { ...tab, active: false }
-      ) || [];
+        // Update tab active status and images
+        designCategories.value =
+          designCategories.value.map((tab) =>
+            tab.name === tabName
+              ? { ...tab, active: true }
+              : { ...tab, active: false },
+          ) || [];
 
-      currentImages.value = newImages;
+        currentImages.value = newImages;
 
-      // Stop the loading effect
-      isLoading.value = false;
-    }, 700 + Math.random() * 200);  // Delay between 0.3s and 0.5s
+        // Stop the loading effect
+        isLoading.value = false;
+      },
+      700 + Math.random() * 200,
+    ); // Delay between 0.3s and 0.5s
   });
 
   useVisibleTask$(() => {
@@ -75,22 +126,22 @@ export const DesignSection = component$(() => {
     checkScreenSize();
 
     // Lắng nghe sự kiện thay đổi kích thước của màn hình
-    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
 
     // Hủy lắng nghe sự kiện khi component bị unmount
-    return () => window.removeEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   });
 
   // Skeleton component
   const SkeletonImage = ({ size }: { size: string }) => (
     <div
-      class="animate-pulse bg-gray-200 rounded-lg"
+      class="animate-pulse rounded-lg bg-gray-200"
       style={{ width: size, height: size }}
     />
   );
 
   return (
-    <section class="flex flex-col items-center justify-center gap-6 px-4 first-letter:gap-6 md:px-0 w-[90%] mx-auto">
+    <section class="mx-auto flex w-[90%] flex-col items-center justify-center gap-6 px-4 first-letter:gap-6 md:px-0">
       <div class="flex max-w-full flex-col gap-4">
         <h2 class="text-center text-3xl font-bold text-zinc-800 max-md:max-w-full">
           Designs for your stories. Endless Possibilities
@@ -100,38 +151,39 @@ export const DesignSection = component$(() => {
 
       {/* Background and images */}
       <div
-        class="relative flex flex-col items-center justify-center py-10 md:px-0 w-full"
+        class="relative flex w-full flex-col items-center justify-center py-10 md:px-0"
         style={{
-          backgroundImage: `url(${isMobile.value ? '/images/theme_category/mobile_background.png' : '/images/theme_category/background.svg'})`,
+          backgroundImage: `url(${isMobile.value ? "/images/theme_category/mobile_background.jpg" : "/images/theme_category/background.svg"})`,
           backgroundSize: "cover",
           backgroundPosition: `${isMobile.value ? "13% -30px" : "center -60px"}`,
           backgroundRepeat: "no-repeat",
         }}
       >
         {/* Desktop layout */}
-        <div class="hidden md:flex container relative items-center justify-center mt-[55px]">
+        <div class="container relative mt-[55px] hidden items-center justify-center md:flex">
           {/* Left and right layout */}
           <div class="grid grid-cols-3 gap-6">
             {/* Left side with two rows and two columns */}
-            <div class="flex flex-col gap-6 justify-between">
-              {[0, 2].map(rowIndex => (
-                <div key={rowIndex} class="flex justify-between gap-4">
-                  {[0, 1].map(colIndex => {
+            <div class="flex flex-col justify-between gap-6">
+              {[0, 2].map((rowIndex) => (
+                <div key={rowIndex} class="flex justify-around gap-4">
+                  {[0, 1].map((colIndex) => {
                     const image = currentImages.value.left[rowIndex + colIndex];
-                    const size = image.size === 'large' ? '240px' : '180px';
+                    const size = image.size === "large" ? "240px" : "180px";
                     return (
                       <div key={colIndex} class="relative">
                         {isLoading.value ? (
                           <SkeletonImage size={size} />
                         ) : (
                           <img
-                            class="h-auto max-w-full rounded-lg transition-transform transform hover:scale-105 shadow-lg duration-300"
+                            class="h-auto  transform rounded-lg shadow-lg transition-transform duration-300 hover:scale-110"
                             src={image.src}
                             alt={image.alt}
                             style={{
-                              objectFit: 'cover',
+                              objectFit: "cover",
                               width: size,
-                              height: size
+                              height: "auto",
+                              aspectRatio: "1 / 1",
                             }}
                           />
                         )}
@@ -143,7 +195,7 @@ export const DesignSection = component$(() => {
             </div>
 
             {/* Main image */}
-            <div class="flex justify-center items-center">
+            <div class="flex transform items-center justify-center rounded-lg shadow-lg transition-transform duration-300 hover:scale-110">
               {isLoading.value ? (
                 <SkeletonImage size="450px" />
               ) : (
@@ -151,31 +203,37 @@ export const DesignSection = component$(() => {
                   src={currentImages.value.main}
                   alt="Main Image"
                   class="object-cover shadow-lg"
-                  style={{ width: '450px', height: '400px' }}
+                  style={{
+                    width: "450px",
+                    height: "auto",
+                    aspectRatio: "1 / 1",
+                  }}
                 />
               )}
             </div>
 
             {/* Right side with two rows and two columns */}
             <div class="flex flex-col justify-between">
-              {[0, 2].map(rowIndex => (
-                <div key={rowIndex} class="flex justify-between gap-4">
-                  {[0, 1].map(colIndex => {
-                    const image = currentImages.value.right[rowIndex + colIndex];
-                    const size = image.size === 'large' ? '240px' : '180px';
+              {[0, 2].map((rowIndex) => (
+                <div key={rowIndex} class="flex justify-around gap-4">
+                  {[0, 1].map((colIndex) => {
+                    const image =
+                      currentImages.value.right[rowIndex + colIndex];
+                    const size = image.size === "large" ? "240px" : "180px";
                     return (
                       <div key={colIndex} class="relative">
                         {isLoading.value ? (
                           <SkeletonImage size={size} />
                         ) : (
                           <img
-                            class="h-auto max-w-full rounded-lg transition-transform transform hover:scale-105 shadow-lg duration-300"
+                            class="h-auto max-w-full transform rounded-lg shadow-lg transition-transform duration-300 hover:scale-110"
                             src={image.src}
                             alt={image.alt}
                             style={{
-                              objectFit: 'cover',
+                              objectFit: "cover",
                               width: size,
-                              height: size
+                              height: "auto",
+                              aspectRatio: "1 / 1",
                             }}
                           />
                         )}
@@ -189,17 +247,17 @@ export const DesignSection = component$(() => {
         </div>
 
         {/* Mobile layout */}
-        <div class="flex flex-col gap-4 md:hidden items-center mt-[55px]">
+        <div class="mt-[55px] flex flex-col items-center gap-4 md:hidden">
           {/* Main Image */}
-          <div class="flex justify-center items-center">
+          <div class="flex items-center justify-center">
             {isLoading.value ? (
               <SkeletonImage size="300px" />
             ) : (
               <img
                 src={currentImages.value.main}
                 alt="Main Image"
-                class="object-cover shadow-lg"
-                style={{ width: '300px', height: '300px' }}
+                class="transform object-cover shadow-lg transition-transform duration-300 hover:scale-110"
+                style={{ width: "300px", height: "300px" }}
               />
             )}
           </div>
@@ -212,13 +270,13 @@ export const DesignSection = component$(() => {
                   <SkeletonImage size="100px" />
                 ) : (
                   <img
-                    class="object-cover rounded-lg transition-transform transform hover:scale-105 shadow-lg hover:shadow-xl duration-300"
+                    class="transform rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-110"
                     src={image.src}
                     alt={image.alt}
                     style={{
-                      width: '100px',
-                      height: '100px',
-                      objectFit: 'cover',
+                      width: "100px",
+                      height: "100px",
+                      objectFit: "cover",
                     }}
                   />
                 )}

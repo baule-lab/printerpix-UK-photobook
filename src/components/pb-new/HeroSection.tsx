@@ -5,7 +5,7 @@ export const HeroSection = component$(() => {
   return (
     <div class="flex flex-col">
       <section
-        class="mt-8 flex w-full flex-col items-center bg-[url('/images/banner-mobile.png')] sm:bg-[url('/images/banner.jpg')] bg-cover bg-center"
+        class="mt-8 flex w-full flex-col items-center bg-[url('/images/banner-mobile.jpg')] sm:bg-[url('/images/banner.jpg')] bg-cover bg-center"
       >
         <div class="container flex min-h-[350px] w-full flex-col items-center justify-center py-10 text-sm md:items-start">
           <div class="sm:flex hidden w-[339px] max-w-full flex-col">
