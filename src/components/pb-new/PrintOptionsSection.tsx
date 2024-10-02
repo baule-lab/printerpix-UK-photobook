@@ -1,35 +1,38 @@
+/* eslint-disable qwik/no-use-visible-task */
+/* eslint-disable qwik/jsx-img */
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { component$, useSignal, $ } from "@builder.io/qwik";
 import { TabMenu } from "../common/TabMenu";
 
 export const PrintOptionsSection = component$(() => {
   const printOptions = [
     {
-      title: "Semi-Gloss",
+      title: "Semi-Gloss ",
       description:
-        "Make any photo book shine with vivid colors, bright details, smooth texture, and a subtle gloss finish.",
-      img: "/images/perfect-paper-img.png",
+        "A versatile, all-round paper that delivers vibrant colors, sharp details & a soft sheen.",
+      video: "/videos/perfect-paper/semi-gloss.mp4",
     },
     {
-      title: "Matte",
+      title: "Luster",
       description:
-        "A more modern look with no glare and a fingerprint- and scratch-proof finish. Smudge-resistant and great for writing on.",
-      img: "/images/perfect-paper-img.png",
+        "The go-to for photographers, this paper produces true-to-life skin tones with a pearlescent finish.",
+      video: "/videos/perfect-paper/luster.mp4",
     },
     {
-      title: "Lustre",
+      title: "Silk Layflat",
       description:
-        "A low-glare finish with superior clarity. Ultra-thick, archival-quality pages resist water, dirt, bending, and aging for 200+ years.",
-      img: "/images/perfect-paper-img.png",
+        "Elevate your photo book with extra-thick layflat paper, seamless page spreads & added durability.",
+      video: "/videos/perfect-paper/silk-layflat.mp4",
     },
   ];
 
   // Tạo danh sách tab cho mobile và tablet với tab đầu tiên active
   const tabs = printOptions.map((option, index) => ({
     name: option.title,
-    active: index === 0,  // Đặt tab đầu tiên là active
+    active: index === 0, // Đặt tab đầu tiên là active
   }));
 
-  const activeTab = useSignal(tabs[0].name);  // Tab đầu tiên được chọn mặc định
+  const activeTab = useSignal(tabs[0].name); // Tab đầu tiên được chọn mặc định
 
   const handleTabClick = $((name: string) => {
     activeTab.value = name;
@@ -49,14 +52,16 @@ export const PrintOptionsSection = component$(() => {
             .filter((option) => option.title === activeTab.value)
             .map((option, index) => (
               <div key={index} class="flex flex-col items-center">
-                <div
-                  class="flex w-full bg-zinc-300 min-h-[547px] mx-auto"
-                  style={{
-                    backgroundImage: `url(${option.img})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                />
+                <div class="flex w-full mx-auto">
+                  <video
+                    class="w-full h-full object-cover"
+                    src={option.video}
+                    controls
+                    loop
+                    muted
+                    playsInline
+                  />
+                </div>
                 <div class="flex flex-col mt-6 w-full">
                   <h3 class="text-2xl font-bold">{option.title}</h3>
                   <p class="mt-3 text-sm">{option.description}</p>
@@ -73,14 +78,16 @@ export const PrintOptionsSection = component$(() => {
             key={index}
             class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px]"
           >
-            <div
-              class="flex w-full bg-zinc-300 min-h-[547px]"
-              style={{
-                backgroundImage: `url(${option.img})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
+            <div class="flex w-full bg-zinc-300 min-h-[547px]">
+              <video
+                class="w-full h-full object-cover"
+                src={option.video}
+                controls
+                loop
+                muted
+                playsInline
+              />
+            </div>
             <div class="flex flex-col mt-6 w-full">
               <h3 class="text-2xl font-bold">{option.title}</h3>
               <p class="mt-3 text-sm">{option.description}</p>

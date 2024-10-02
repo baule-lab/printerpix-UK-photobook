@@ -13,7 +13,7 @@ export const MobileCreativeSection = component$(() => {
         <div
           class="justify-cente flex h-[400px] w-full max-w-md items-center"
           style={{
-            backgroundImage: `url("/images/simple-photo.jpg")`,
+            backgroundImage: `url("/images/get-creative.png")`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

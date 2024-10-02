@@ -1,9 +1,13 @@
-// DesignSection.tsx
+/* eslint-disable qwik/no-use-visible-task */
+/* eslint-disable qwik/jsx-img */
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { component$, useSignal, $, useVisibleTask$ } from "@builder.io/qwik";
 import { TabMenu } from "../common/TabMenu";
 
 export const DesignSection = component$(() => {
-  // Danh sách tab và trạng thái active
+  const isMobile = useSignal(false);
+  const isLoading = useSignal(false);  // Loading state
+
   const designCategories = useSignal([
     { name: "Travel", active: true },
     { name: "Wedding", active: false },
@@ -13,51 +17,54 @@ export const DesignSection = component$(() => {
     { name: "All", active: false },
   ]);
 
-  // Background image theo từng tab cho mobile và desktop
-  const backgrounds = {
-    Travel: {
-      desktop: "/images/travel-desktop.jpg",
-      mobile: "/images/travel-mobile.jpg",
-    },
-    Wedding: {
-      desktop: "/images/wedding-desktop.png",
-      mobile: "/images/wedding-mobile.png",
-    },
-    Family: {
-      desktop: "/images/family-desktop.png",
-      mobile: "/images/family-mobile.png",
-    },
-    Simple: {
-      desktop: "/images/simple-desktop.png",
-      mobile: "/images/simple-mobile.png",
-    },
-    "Year In Review": {
-      desktop: "/images/yearinreview-desktop.png",
-      mobile: "/images/yearinreview-mobile.png",
-    },
-    All: {
-      desktop: "/images/all-desktop.png",
-      mobile: "/images/all-mobile.png",
-    },
-  };
+  const imagesByTab = designCategories.value.reduce((acc: Record<string, { left: { src: string, alt: string, size?: string }[], right: { src: string, alt: string, size?: string }[], main: string }>, category) => {
+    const folderName = category.name.toLowerCase().replace(/ /g, '-');
+    acc[category.name] = {
+      left: [
+        { src: `/images/theme_category/${folderName}/${folderName}-1.png`, alt: `${category.name} Image 1`, size: 'large' },
+        { src: `/images/theme_category/${folderName}/${folderName}-2.png`, alt: `${category.name} Image 2`, size: 'small' },
+        { src: `/images/theme_category/${folderName}/${folderName}-3.png`, alt: `${category.name} Image 3`, size: 'large' },
+        { src: `/images/theme_category/${folderName}/${folderName}-4.png`, alt: `${category.name} Image 4`, size: 'small' }
+      ],
+      right: [
+        { src: `/images/theme_category/${folderName}/${folderName}-5.png`, alt: `${category.name} Image 5`, size: 'large' },
+        { src: `/images/theme_category/${folderName}/${folderName}-6.png`, alt: `${category.name} Image 6`, size: 'small' },
+        { src: `/images/theme_category/${folderName}/${folderName}-7.png`, alt: `${category.name} Image 7`, size: 'large' },
+        { src: `/images/theme_category/${folderName}/${folderName}-8.png`, alt: `${category.name} Image 8`, size: 'small' }
+      ],
+      main: `/images/theme_category/${folderName}/${folderName}-main.png`
+    };
+    return acc;
+  }, {}); 
 
-  // Background mặc định (tab đầu tiên)
-  const currentBackground = useSignal(backgrounds.Travel);
-  const isMobile = useSignal(false);
+  const currentImages = useSignal(imagesByTab.Travel);
 
-  // Khi nhấn vào tab, thay đổi trạng thái và cập nhật background
   const handleTabClick = $((tabName: string) => {
-    designCategories.value = designCategories.value.map((tab) =>
-      tab.name === tabName
-        ? { ...tab, active: true }
-        : { ...tab, active: false },
-    );
+    // Show the skeleton loading effect
+    isLoading.value = true;
 
-    // Cập nhật background cho tab hiện tại
-    currentBackground.value = backgrounds[tabName as keyof typeof backgrounds];
+    // Simulate loading delay of 0.3s to 0.5s
+    setTimeout(() => {
+      const newImages = imagesByTab[tabName as keyof typeof imagesByTab];
+      if (!newImages) {
+        console.error(`Tab name "${tabName}" không tồn tại trong imagesByTab`);
+        return;
+      }
+
+      // Update tab active status and images
+      designCategories.value = designCategories.value.map((tab) =>
+        tab.name === tabName
+          ? { ...tab, active: true }
+          : { ...tab, active: false }
+      ) || [];
+
+      currentImages.value = newImages;
+
+      // Stop the loading effect
+      isLoading.value = false;
+    }, 700 + Math.random() * 200);  // Delay between 0.3s and 0.5s
   });
 
-  // Sử dụng useVisibleTask$ để kiểm tra kích thước màn hình ở phía client
   useVisibleTask$(() => {
     const checkScreenSize = () => {
       // Kiểm tra xem màn hình có nhỏ hơn 768px hay không
@@ -74,8 +81,16 @@ export const DesignSection = component$(() => {
     return () => window.removeEventListener('resize', checkScreenSize);
   });
 
+  // Skeleton component
+  const SkeletonImage = ({ size }: { size: string }) => (
+    <div
+      class="animate-pulse bg-gray-200 rounded-lg"
+      style={{ width: size, height: size }}
+    />
+  );
+
   return (
-    <section class="container mx-auto flex flex-col items-center justify-center gap-6 px-4 first-letter:gap-6 md:px-0">
+    <section class="flex flex-col items-center justify-center gap-6 px-4 first-letter:gap-6 md:px-0 w-[90%] mx-auto">
       <div class="flex max-w-full flex-col gap-4">
         <h2 class="text-center text-3xl font-bold text-zinc-800 max-md:max-w-full">
           Designs for your stories. Endless Possibilities
@@ -83,23 +98,138 @@ export const DesignSection = component$(() => {
         <TabMenu tabs={designCategories.value} onTabClick={handleTabClick} />
       </div>
 
-      {/* Thay đổi background theo tab và thiết bị */}
+      {/* Background and images */}
       <div
-        class="flex h-[400px] w-full items-center justify-center gap-7"
+        class="relative flex flex-col items-center justify-center py-10 md:px-0 w-full"
         style={{
-          backgroundImage: `url(${
-            isMobile.value
-              ? currentBackground.value.mobile
-              : currentBackground.value.desktop
-          })`,
+          backgroundImage: `url(${isMobile.value ? '/images/theme_category/mobile_background.png' : '/images/theme_category/background.svg'})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: `${isMobile.value ? "13% -30px" : "center -60px"}`,
           backgroundRepeat: "no-repeat",
         }}
-      ></div>
+      >
+        {/* Desktop layout */}
+        <div class="hidden md:flex container relative items-center justify-center mt-[55px]">
+          {/* Left and right layout */}
+          <div class="grid grid-cols-3 gap-6">
+            {/* Left side with two rows and two columns */}
+            <div class="flex flex-col gap-6 justify-between">
+              {[0, 2].map(rowIndex => (
+                <div key={rowIndex} class="flex justify-between gap-4">
+                  {[0, 1].map(colIndex => {
+                    const image = currentImages.value.left[rowIndex + colIndex];
+                    const size = image.size === 'large' ? '240px' : '180px';
+                    return (
+                      <div key={colIndex} class="relative">
+                        {isLoading.value ? (
+                          <SkeletonImage size={size} />
+                        ) : (
+                          <img
+                            class="h-auto max-w-full rounded-lg transition-transform transform hover:scale-105 shadow-lg duration-300"
+                            src={image.src}
+                            alt={image.alt}
+                            style={{
+                              objectFit: 'cover',
+                              width: size,
+                              height: size
+                            }}
+                          />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
 
-      <button class="m-auto md:w-[196px] w-full max-w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm">
-        Explore Travel Themes
+            {/* Main image */}
+            <div class="flex justify-center items-center">
+              {isLoading.value ? (
+                <SkeletonImage size="450px" />
+              ) : (
+                <img
+                  src={currentImages.value.main}
+                  alt="Main Image"
+                  class="object-cover shadow-lg"
+                  style={{ width: '450px', height: '400px' }}
+                />
+              )}
+            </div>
+
+            {/* Right side with two rows and two columns */}
+            <div class="flex flex-col justify-between">
+              {[0, 2].map(rowIndex => (
+                <div key={rowIndex} class="flex justify-between gap-4">
+                  {[0, 1].map(colIndex => {
+                    const image = currentImages.value.right[rowIndex + colIndex];
+                    const size = image.size === 'large' ? '240px' : '180px';
+                    return (
+                      <div key={colIndex} class="relative">
+                        {isLoading.value ? (
+                          <SkeletonImage size={size} />
+                        ) : (
+                          <img
+                            class="h-auto max-w-full rounded-lg transition-transform transform hover:scale-105 shadow-lg duration-300"
+                            src={image.src}
+                            alt={image.alt}
+                            style={{
+                              objectFit: 'cover',
+                              width: size,
+                              height: size
+                            }}
+                          />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile layout */}
+        <div class="flex flex-col gap-4 md:hidden items-center mt-[55px]">
+          {/* Main Image */}
+          <div class="flex justify-center items-center">
+            {isLoading.value ? (
+              <SkeletonImage size="300px" />
+            ) : (
+              <img
+                src={currentImages.value.main}
+                alt="Main Image"
+                class="object-cover shadow-lg"
+                style={{ width: '300px', height: '300px' }}
+              />
+            )}
+          </div>
+
+          {/* Three smaller images below the main image */}
+          <div class="grid grid-cols-3 gap-4">
+            {currentImages.value.left.slice(0, 3).map((image, index) => (
+              <div key={index} class="relative">
+                {isLoading.value ? (
+                  <SkeletonImage size="100px" />
+                ) : (
+                  <img
+                    class="object-cover rounded-lg transition-transform transform hover:scale-105 shadow-lg hover:shadow-xl duration-300"
+                    src={image.src}
+                    alt={image.alt}
+                    style={{
+                      width: '100px',
+                      height: '100px',
+                      objectFit: 'cover',
+                    }}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <button class="m-auto w-full max-w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm md:w-[196px]">
+        Explore Wedding Themes
       </button>
     </section>
   );

@@ -8,7 +8,7 @@ interface Tab {
 
 interface TabMenuProps {
   tabs: Tab[];
-  onTabClick: PropFunction<(name: string) => void>; // Use PropFunction to ensure proper serialization
+  onTabClick: PropFunction<(name: string) => void>;
 }
 
 export const TabMenu = component$(({ tabs, onTabClick }: TabMenuProps) => {
@@ -21,7 +21,7 @@ export const TabMenu = component$(({ tabs, onTabClick }: TabMenuProps) => {
   });
 
   return (
-    <div class="flex overflow-x-auto whitespace-nowrap items-center text-base font-semibold text-neutral-400 gap-4">
+    <div class="flex overflow-x-auto whitespace-nowrap items-center md:text-lg text-base font-semibold text-neutral-400 gap-2">
       {tabs.map((tab) => (
         <button
           key={tab.name}

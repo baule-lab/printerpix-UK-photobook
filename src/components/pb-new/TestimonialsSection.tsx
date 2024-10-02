@@ -59,11 +59,12 @@ export const TestimonialsSection = component$(() => {
             class="my-auto flex flex-col items-center lg:min-w-[240px] min-w-[150px] flex-1 shrink basis-0 justify-center self-stretch gap-4"
           >
             <div
-              class="lg:min-h-[200px] lg:w-[200px] min-h-[150px] min-w-[150px] w-full"
+              class="lg:min-h-[200px] lg:w-[200px] min-h-[100px] min-w-[100px] w-full"
               style={{
                 backgroundImage: `url(${testimonial.img})`,
-                backgroundSize: "cover",
+                backgroundSize: "contain",
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
               }}
             />
             <div class="flex w-full flex-col items-center gap-3 text-center">
