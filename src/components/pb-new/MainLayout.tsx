@@ -23,10 +23,15 @@ export const MainLayout = component$(() => {
         <HeroSection />
         <DesignSection />
         <StepsSection />
-        <TestimonialsSection />
+        <div class="md:block hidden">
+          <TestimonialsSection />
+        </div>
         <ExploreSection />
         <PrintOptionsSection />
         <BookTypesSection />
+        <div class="md:hidden block">
+          <TestimonialsSection />
+        </div>
         <MobileCreativeSection />
         <FAQSection />
         <InfoSection />
