@@ -51,8 +51,8 @@ export const BookTypesSection = component$(() => {
 
   return (
     <>
-      <section class="flex w-full items-center justify-center">
-        <div class="container flex flex-wrap items-center justify-between gap-10 py-3 bg-[#852365] text-white px-8 rounded-2xl">
+      <section class="flex w-full items-center justify-center md:px-0 px-4">
+        <div class="container flex flex-wrap items-center justify-between gap-10 py-3 bg-[#9B1E67] text-white px-8 rounded-2xl">
           <div class="flex w-full flex-col items-center self-stretch md:w-[200px] md:items-start">
             <h2 class="w-full gap-2 text-center text-lg font-bold md:text-start">
               Fall 🍁 <br />
@@ -68,9 +68,9 @@ export const BookTypesSection = component$(() => {
           </p>
         </div>
       </section>
-      <section class="container mx-auto flex w-full flex-col items-center gap-12 px-4  font-semibold text-black *:text-lg md:px-0">
-        <h2 class="text-center !text-3xl font-bold text-zinc-800">
-          The perfect book for you to tell your story.
+      <section class="container mx-auto md:flex hidden w-full flex-col items-center gap-12 px-4  font-semibold text-black *:text-lg md:px-0">
+        <h2 class="text-center !text-3xl font-bold text-[#1A1A1A]">
+          Explore Designs for Every Type of Book
         </h2>
         <div class="my-auto grid w-full min-w-[240px] basis-0 grid-cols-2 gap-x-[16px] gap-y-[46px] self-stretch max-md:max-w-full md:grid-cols-3 lg:grid-cols-5">
           {bookTypes.map((type, index) => (
@@ -87,8 +87,8 @@ export const BookTypesSection = component$(() => {
             </div>
           ))}
         </div>
-        <button class="mx-auto md:w-[150px] w-full max-w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm max-md:mt-10">
-          Start creating
+        <button class="mx-auto md:w-[340px] w-full max-w-full gap-2.5 self-stretch rounded bg-[#F02480] px-4 py-3 text-white shadow-sm max-md:mt-10 text-base font-semibold">
+          Explore Themes
         </button>
       </section>
     </>

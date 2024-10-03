@@ -24,9 +24,9 @@ export const MainLayout = component$(() => {
         <DesignSection />
         <StepsSection />
         <TestimonialsSection />
+        <ExploreSection />
         <PrintOptionsSection />
         <BookTypesSection />
-        <ExploreSection />
         <MobileCreativeSection />
         <FAQSection />
         <InfoSection />

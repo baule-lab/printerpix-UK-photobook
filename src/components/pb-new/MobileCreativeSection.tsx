@@ -3,21 +3,22 @@ import { component$ } from "@builder.io/qwik";
 export const MobileCreativeSection = component$(() => {
   return (
     <section class="block px-4 md:hidden">
-      {/* Tiêu đề */}
       <h2 class="text-center !text-3xl font-bold text-black">
         Get Creative, Wherever You Go
       </h2>
 
-      {/* Ảnh Placeholder */}
+      {/* Video Placeholder */}
       <div class="mt-8 flex justify-center">
-        <div
-          class="justify-cente flex h-[400px] w-full max-w-md items-center"
-          style={{
-            backgroundImage: `url("/images/get-creative.jpg")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        ></div>
+        <div class="justify-cente flex h-[400px] w-full max-w-md items-center">
+          <video
+            class="w-full h-full object-cover"
+            src="/videos/get-creative/video.mp4"
+            autoplay
+            loop
+            muted
+            playsInline
+          />
+        </div>
       </div>
 
       {/* Nội dung mô tả */}
@@ -28,7 +29,7 @@ export const MobileCreativeSection = component$(() => {
 
       {/* Nút */}
       <div class="mt-6 flex justify-center">
-        <button class=" bg-pink-500 px-6 py-3 text-white shadow-md w-full">
+        <button class="bg-[#F02480] px-6 py-3 text-white shadow-md w-full">
           Start Creating
         </button>
       </div>

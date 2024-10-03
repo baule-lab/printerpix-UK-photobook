@@ -39,9 +39,9 @@ export const PrintOptionsSection = component$(() => {
   });
 
   return (
-    <section class="flex flex-col w-full max-md:px-5 max-md:mt-10 container mx-auto md:px-0 px-4">
-      <h2 class="text-3xl font-bold text-center text-zinc-800 max-md:max-w-full">
-        The right print for you
+    <section class="flex flex-col w-full max-md:px-5 container mx-auto md:px-0 px-4">
+      <h2 class="text-3xl font-bold text-center text-[#1A1A1A] max-md:max-w-full">
+        Perfect Paper Types
       </h2>
 
       {/* Hiển thị TabMenu chỉ trên iPad và điện thoại */}
@@ -56,14 +56,14 @@ export const PrintOptionsSection = component$(() => {
                   <video
                     class="w-full h-full object-cover"
                     src={option.video}
-                    controls
+                    autoplay
                     loop
                     muted
                     playsInline
                   />
                 </div>
                 <div class="flex flex-col mt-6 w-full">
-                  <h3 class="text-2xl font-bold">{option.title}</h3>
+                  <h3 class="text-2xl font-bold md:block hidden">{option.title}</h3>
                   <p class="mt-3 text-sm">{option.description}</p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export const PrintOptionsSection = component$(() => {
               <video
                 class="w-full min-h-[547px] object-cover"
                 src={option.video}
-                controls
+                autoplay
                 loop
                 muted
                 playsInline
@@ -96,7 +96,7 @@ export const PrintOptionsSection = component$(() => {
         ))}
       </div>
 
-      <button class="overflow-hidden gap-2.5 self-center px-4 py-3 mt-8 max-w-full text-sm font-semibold leading-6 bg-pink-500 rounded shadow-sm text-slate-50 md:w-[204px] w-full">
+      <button class="overflow-hidden gap-2.5 self-center px-4 py-3 mt-8 max-w-full text-base font-semibold leading-6 bg-[#F02480] rounded shadow-sm text-slate-50 md:w-[340px] w-full">
         Start Creating
       </button>
     </section>

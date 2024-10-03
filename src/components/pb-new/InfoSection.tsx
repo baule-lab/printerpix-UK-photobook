@@ -10,115 +10,80 @@ export const InfoSection = component$(() => {
         <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
           <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
             <span class="text-base font-bold tracking-normal leading-6 text-zinc-900">
-              Online Photo Printing Service
+              Relive Your Moments With Photo Books
             </span>
           </h2>
           <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-            Digital photo printing with Printerpix is easy. It only takes a few
-            simple steps to order photo prints online. You can even crop and
-            adjust the orientation of your photo by taking advantage of our
-            design tool. Whether you want to showcase a stunning landscape or
-            capture a special moment with loved ones, our design tool gives you
-            full control over the final result. With Printerpix, you can order
-            your photo prints in less than five minutes, from any device.
+            A photo book allows you to preserve special memories, from spontaneous adventures to once-in-a-lifetime events, in a way that’s tangible and lasting. Each page captures your experiences, turning digital files into a keepsake you can hold, share, and relive whenever you want.
           </p>
         </div>
         <div class="flex flex-col mt-8 w-full max-md:max-w-full">
           <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
             <span class="text-base font-bold tracking-normal leading-6 text-black">
-              Order Photo Prints Online
+              Why Create a Photo Book?
             </span>
           </h2>
           <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-            Once you've selected all your photos to be printed and chosen the
-            right size, make sure to add premium extras to make your photo
-            prints really stand out. Consider removing our logo for a clean,
-            professional look. Want to make the colours pop? Choose our 6-colour
-            HD printing option for richer, more saturated tones. When you're
-            satisfied with your choices, finalise your order by filling in your
-            shipping and payment details. Your online photo prints will be
-            delivered to your door in no time.
+            Photo books offer a physical connection to your memories—something digital albums can’t replicate. Holding a custom book in your hands and flipping through pages filled with faces and places dear to you is an experience no screen can match.
             <br />
-            Creative Display Ideas for Your Photo Prints
+            Beyond their physical appeal, photo books help preserve your memories in a more lasting way. Digital files can be lost or corrupted, but a high-quality photo book stands the test of time. Whether you’re creating a wedding album, a travel scrapbook, or a family yearbook, the printed pages will always be there.
             <br />
-            Nature-Inspired Branch Display: Use a piece of wood or a branch to
-            hang your photo prints. Secure your prints with twine and clips onto
-            the branch for a unique and rustic display.
+            With personalized books, you won’t have to worry about losing photos or finding ways to store them since your images are already printed directly on the pages. Plus, the customization options offer more room for creativity and expression, making the book truly yours.
           </p>
         </div>
         <div class="flex flex-col mt-8 w-full max-md:max-w-full">
           <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
             <span class="text-base font-bold tracking-normal leading-6 text-black">
-              Vintage Ladder Collage:{" "}
+              Types of Personalized Books
             </span>
           </h2>
           <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-            Give an old ladder a new purpose by repurposing it into a creative
-            photo display. Lean the ladder against a wall and hang your photo
-            prints from the rungs using strings or ribbons. This
-            vintage-inspired setup adds character and charm, turning an everyday
-            object into a stunning showcase for your memories.
+            Photo books offer a physical connection to your memories—something digital albums can’t replicate. Holding a custom book in your hands and flipping through pages filled with faces and places dear to you is an experience no screen can match.
+            <br />
+            Beyond their physical appeal, photo books help preserve your memories in a more lasting way. Digital files can be lost or corrupted, but a high-quality photo book stands the test of time. Whether you’re creating a wedding album, a travel scrapbook, or a family yearbook, the printed pages will always be there.
+            <br />
+            With personalized books, you won’t have to worry about losing photos or finding ways to store them since your images are already printed directly on the pages. Plus, the customization options offer more room for creativity and expression, making the book truly yours.
           </p>
         </div>
         <div class="flex flex-col mt-8 w-full max-md:max-w-full">
           <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
             <span class="text-base font-bold tracking-normal leading-6 text-black">
-              Insta-Worthy Photo Wall:
-            </span>{" "}
+              Types of Personalized Books
+            </span>
           </h2>
           <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-            Create a photo wall by arranging your online photo prints in a
-            visually appealing and eclectic manner. Combine frames, canvas
-            prints, and even photo tiles for a diverse yet cohesive display.
-            This trendsetting approach turns your wall into a personalised art
-            gallery that reflects your unique style.
+            At Printerpix, we offer several types of personalized photo books to match your style, each with different paper options to enhance your photos.
             <br />
+            Our hardcover style features classic binding & glossy pages for a stunning presentation. These photo books are perfect for every occasion. Use them for weddings, milestones, seasonal events, birthdays & more.
+            <br />
+            Looking for something more budget-friendly? Our softcover photo books are lightweight, flexible & feature glossy pages — ideal for displaying your favorite photos. 
+            <br />
+            Our layflat photo books use thick board & heavyweight paper to create an heirloom-worthy keepsake. The binding sets this book apart, opening fully to reveal seamless photo spreads. This photo book is ideal for epic milestones, adventures & moments. 
           </p>
         </div>
         <div class="flex flex-col mt-8 w-full max-md:max-w-full">
           <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
             <span class="text-base font-bold tracking-normal leading-6 text-black">
-              Memory Jar Centrepiece:
+              How to Create a Custom Book for Any Occasion
             </span>
           </h2>
           <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-            Place your photo prints in a decorative glass jar or vase. This
-            unique centrepiece not only showcases your memories but also
-            provides an elegant and charming focal point for a coffee table or
-            mantelpiece.
+            Designing a custom book for any occasion is easy with our online tool, where you can upload your photos, arrange them in custom layouts, and add text or captions to tell your story.
+            <br />
+            For weddings, you can include images from the prenup photoshoot, ceremony, and every moment in between. Our easy-to-use design tool also makes it quick and fun to create personalized books for birthdays, graduations, holidays, and more!
+            <br />
+            No matter the occasion, you have the flexibility to customize every detail—from backgrounds and layouts down to fonts and colors.
           </p>
         </div>
         <div class="flex flex-col mt-8 w-full max-md:max-w-full">
           <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
             <span class="text-base font-bold tracking-normal leading-6 text-black">
-              Affordable Digital Photo Printing & Gifting
+              Personalized Photo Books That Last
             </span>
           </h2>
+          <br />
           <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-            In the age of phones, digital cameras, and cloud storage, our
-            devices are overflowing with countless photos that often go
-            unnoticed. Transforming these digital memories into tangible
-            keepsakes by printing them on exquisite glossy paper brings them to
-            life and places them right at your fingertips.
-            <br />
-            <br />
-            Our classic photo prints add a retro-inspired touch to your photos.
-            With space to customise with a printed or written caption, our photo
-            booth strips become an even more cherished keepsake. What sets our
-            photo posters apart is their large format – perfect for displaying
-            those larger-than-life moments. Whichever format you choose, rest
-            assured that you've found the cheapest photo prints at the highest
-            quality.
-            <br />
-            <br />
-            In the era of high-quality digital photo printing, your memories can
-            now be preserved forever with ease. We understand the importance of
-            sharing your memories with loved ones – and we know they'll always
-            love receiving photo prints from you. From days at the beach to
-            milestone birthdays, we offer a cost-effective solution to bring
-            your pictures to life. Finding the cheapest photo prints couldn't be
-            easier. Print your latest adventure or that Christmas party they
-            couldn't attend, and send the joy through the mail!
+            A photo book is all about preserving memories and creating something that will last. With our wide range of customization options, high-quality paper, and durable binding, each book is designed to capture a part of your history and be cherished by loved ones for years to come.
           </p>
         </div>
       </div>

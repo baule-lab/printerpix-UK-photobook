@@ -7,6 +7,7 @@ import { TabMenu } from "../common/TabMenu";
 export const DesignSection = component$(() => {
   const isMobile = useSignal(false);
   const isLoading = useSignal(false); // Loading state
+  const activeTabName = useSignal("Travel"); // Default active tab
 
   const designCategories = useSignal([
     { name: "Travel", active: true },
@@ -87,15 +88,15 @@ export const DesignSection = component$(() => {
   const handleTabClick = $((tabName: string) => {
     // Show the skeleton loading effect
     isLoading.value = true;
+    activeTabName.value = tabName; // Update the active tab name
 
     // Simulate loading delay of 0.3s to 0.5s
     setTimeout(
       () => {
         const newImages = imagesByTab[tabName as keyof typeof imagesByTab];
         if (!newImages) {
-          console.error(
-            `Tab name "${tabName}" không tồn tại trong imagesByTab`,
-          );
+          console.error(`Tab name "${tabName}" không tồn tại trong imagesByTab`);
+          console.log("Existing tabs:", Object.keys(imagesByTab)); // Debug existing tabs
           return;
         }
 
@@ -118,44 +119,38 @@ export const DesignSection = component$(() => {
 
   useVisibleTask$(() => {
     const checkScreenSize = () => {
-      // Kiểm tra xem màn hình có nhỏ hơn 768px hay không
       isMobile.value = window.innerWidth < 768;
     };
 
-    // Lần đầu khi component được render
     checkScreenSize();
-
-    // Lắng nghe sự kiện thay đổi kích thước của màn hình
     window.addEventListener("resize", checkScreenSize);
-
-    // Hủy lắng nghe sự kiện khi component bị unmount
     return () => window.removeEventListener("resize", checkScreenSize);
   });
 
   // Skeleton component
   const SkeletonImage = ({ size }: { size: string }) => (
     <div
-      class="animate-pulse rounded-lg bg-gray-200"
+      class="animate-pulse  bg-gray-200"
       style={{ width: size, height: size }}
     />
   );
 
   return (
-    <section class="mx-auto flex w-[90%] flex-col items-center justify-center gap-6 px-4 first-letter:gap-6 md:px-0">
-      <div class="flex max-w-full flex-col gap-4">
-        <h2 class="text-center text-3xl font-bold text-zinc-800 max-md:max-w-full">
-          Designs for your stories. Endless Possibilities
+    <section class="mx-auto flex md:w-[90%] w-full flex-col items-center justify-center gap-6 first-letter:gap-6 md:px-0">
+      <div class="flex md:w-full w-[90%] flex-col gap-4">
+        <h2 class="text-center text-3xl font-bold text-[#1A1A1A] max-md:max-w-full">
+          Hundreds of Themes for Every Story
         </h2>
         <TabMenu tabs={designCategories.value} onTabClick={handleTabClick} />
       </div>
 
       {/* Background and images */}
       <div
-        class="relative flex w-full flex-col items-center justify-center py-10 md:px-0"
+        class="relative flex w-full flex-col items-center justify-center md:py-10 md:px-0 px-4"
         style={{
           backgroundImage: `url(${isMobile.value ? "/images/theme_category/mobile_background.jpg" : "/images/theme_category/background.svg"})`,
           backgroundSize: "cover",
-          backgroundPosition: `${isMobile.value ? "13% -30px" : "center -60px"}`,
+          backgroundPosition: `${isMobile.value ? "13% 30px" : "-57px -50px"}`,
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -176,7 +171,7 @@ export const DesignSection = component$(() => {
                           <SkeletonImage size={size} />
                         ) : (
                           <img
-                            class="h-auto  transform rounded-lg shadow-lg transition-transform duration-300 hover:scale-110"
+                            class="h-auto  transform shadow-lg transition-transform duration-300 hover:scale-105"
                             src={image.src}
                             alt={image.alt}
                             style={{
@@ -195,7 +190,7 @@ export const DesignSection = component$(() => {
             </div>
 
             {/* Main image */}
-            <div class="flex transform items-center justify-center rounded-lg shadow-lg transition-transform duration-300 hover:scale-110">
+            <div class="flex transform items-center justify-center shadow-lg transition-transform duration-300 hover:scale-105">
               {isLoading.value ? (
                 <SkeletonImage size="450px" />
               ) : (
@@ -226,7 +221,7 @@ export const DesignSection = component$(() => {
                           <SkeletonImage size={size} />
                         ) : (
                           <img
-                            class="h-auto max-w-full transform rounded-lg shadow-lg transition-transform duration-300 hover:scale-110"
+                            class="h-auto max-w-full transform shadow-lg transition-transform duration-300 hover:scale-105"
                             src={image.src}
                             alt={image.alt}
                             style={{
@@ -247,7 +242,7 @@ export const DesignSection = component$(() => {
         </div>
 
         {/* Mobile layout */}
-        <div class="mt-[55px] flex flex-col items-center gap-4 md:hidden">
+        <div class="mt-0 flex flex-col items-center gap-4 md:hidden">
           {/* Main Image */}
           <div class="flex items-center justify-center">
             {isLoading.value ? (
@@ -256,8 +251,8 @@ export const DesignSection = component$(() => {
               <img
                 src={currentImages.value.main}
                 alt="Main Image"
-                class="transform object-cover shadow-lg transition-transform duration-300 hover:scale-110"
-                style={{ width: "300px", height: "300px" }}
+                class="transform object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                style={{ width: "332px", height: "300px" }}
               />
             )}
           </div>
@@ -270,7 +265,7 @@ export const DesignSection = component$(() => {
                   <SkeletonImage size="100px" />
                 ) : (
                   <img
-                    class="transform rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-110"
+                    class="transform object-cover shadow-lg transition-transform duration-300 hover:scale-105"
                     src={image.src}
                     alt={image.alt}
                     style={{
@@ -286,8 +281,9 @@ export const DesignSection = component$(() => {
         </div>
       </div>
 
-      <button class="m-auto w-full max-w-full gap-2.5 self-stretch rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm md:w-[196px]">
-        Explore Wedding Themes
+      {/* Button with dynamic tab name */}
+      <button class="m-auto w-[90%] max-w-full gap-2.5 self-stretch rounded bg-[#F02480] px-4 py-3 text-base text-white shadow-sm md:w-[340px] font-semibold">
+        Explore {activeTabName.value} Themes
       </button>
     </section>
   );

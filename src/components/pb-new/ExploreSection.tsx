@@ -6,19 +6,23 @@ interface TabContent {
   title: string;
   description: string;
   price: string;
-  image: string;
+  images: string[]; // Each tab now contains multiple images
 }
 
 export const ExploreSection = component$(() => {
-  // Define tab contents
+  // Define tab contents with 3 images per tab
   const tabContents = useSignal<TabContent[]>([
     {
       name: "Hardcover",
       title: "Hardcover",
       description:
         "Our hardcover books are durable and designed to preserve your memories for a lifetime.",
-      price: "$29.99",
-      image: "/images/photo-book-slide-1.jpg",
+      price: "$24.99",
+      images: [
+        "/images/slide/photo-book-slide-1.jpg",
+        "/images/slide/photo-book-slide-1-2.jpg",
+        "/images/slide/photo-book-slide-1-3.jpg",
+      ],
     },
     {
       name: "Layflat",
@@ -26,48 +30,41 @@ export const ExploreSection = component$(() => {
       description:
         "Our clever binding technique lets you share your biggest moments and best photos across seamless two-page spreads.",
       price: "$48.99",
-      image: "/images/photo-book-slide-2.jpg",
+      images: [
+        "/images/slide/photo-book-slide-2.jpg",
+        "/images/slide/photo-book-slide-2-2.jpg",
+        "/images/slide/photo-book-slide-2-3.jpg",
+      ],
     },
     {
       name: "Softcover",
       title: "Softcover",
       description:
         "A lightweight and flexible option, our softcover books are easy to carry and enjoy.",
-      price: "$19.99",
-      image: "/images/photo-book-slide-3.jpg",
+      price: "$24.99",
+      images: [
+        "/images/slide/photo-book-slide-3.jpg",
+        "/images/slide/photo-book-slide-3-2.jpg",
+        "/images/slide/photo-book-slide-3-3.jpg",
+      ],
     },
   ]);
 
   // Manage active tab state
   const activeTab = useSignal(tabContents.value[1].name); // Default to "Layflat"
 
-  // Manage slide index state
-  const currentSlide = useSignal(1); // Default to "Layflat"
+  // Manage active slide for the currently selected tab
+  const currentSlide = useSignal(0); // Start with the first slide
 
-  // Handle tab click and update slide
+  // Handle tab click and reset slide to the first image
   const handleTabClick = $((tabName: string) => {
-    const tabIndex = tabContents.value.findIndex((tab) => tab.name === tabName);
     activeTab.value = tabName;
-    currentSlide.value = tabIndex; // Update the current slide to match the tab
+    currentSlide.value = 0; // Reset to the first slide when the tab is changed
   });
-
-  // Handle slide navigation
-  // const nextSlide = $(() => {
-  //   currentSlide.value = (currentSlide.value + 1) % tabContents.value.length;
-  //   activeTab.value = tabContents.value[currentSlide.value].name; // Update tab to match the slide
-  // });
-
-  // const prevSlide = $(() => {
-  //   currentSlide.value =
-  //     (currentSlide.value - 1 + tabContents.value.length) %
-  //     tabContents.value.length;
-  //   activeTab.value = tabContents.value[currentSlide.value].name; // Update tab to match the slide
-  // });
 
   // Handle dot click
   const goToSlide = $((index: number) => {
     currentSlide.value = index;
-    activeTab.value = tabContents.value[index].name; // Update tab to match the slide
   });
 
   // Find the content for the active tab
@@ -83,42 +80,30 @@ export const ExploreSection = component$(() => {
       <div class="flex w-full max-w-full flex-wrap gap-12">
         {/* Display the image slider */}
         <div class="relative flex flex-1 items-center justify-center">
-          {/* "Most Loved" Tag */}
-          <div class="absolute left-[-25px] top-[-25px] z-10 rounded-full bg-blue-500 text-sm font-bold text-white w-[70px] h-[70px] text-center flex flex-col">
-            <span>💟</span>
-            <span>Most Loved</span>
-          </div>
+          {/* Only show "Most Loved" Tag for the first image in the slide */}
+          {currentSlide.value === 0 && (
+            <div class="absolute left-[-25px] top-[-25px] z-10 rounded-full bg-blue-500 text-sm font-bold text-white w-[70px] h-[70px] text-center flex flex-col">
+              <span>💟</span>
+              <span>Most Loved</span>
+            </div>
+          )}
 
           {/* Image Slider */}
-          <div class="relative">
+          <div class="relative transition-opacity duration-700 ease-in-out">
             <img
               loading="lazy"
               alt="Book preview"
-              class="aspect-square min-w-[240px] self-start rounded object-contain max-md:max-w-full"
-              src={tabContents.value[currentSlide.value].image}
+              class="aspect-square min-w-[240px] self-start rounded object-contain max-md:max-w-full transition-transform duration-500 ease-in-out"
+              src={currentContent?.images[currentSlide.value]}
             />
-
-            {/* Navigation buttons */}
-            {/* <button
-              class="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full bg-white px-3 py-2 shadow-md"
-              onClick$={prevSlide}
-            >
-              ❮
-            </button>
-            <button
-              class="absolute right-0 top-1/2 -translate-y-1/2 transform rounded-full bg-white px-3 py-2 shadow-md"
-              onClick$={nextSlide}
-            >
-              ❯
-            </button> */}
           </div>
 
           {/* Pagination Dots */}
           <div class="absolute bottom-4 flex space-x-2">
-            {tabContents.value.map((_, index) => (
+            {currentContent?.images.map((_, index) => (
               <button
                 key={index}
-                class={`block h-2 w-2 rounded-full ${
+                class={`block h-4 w-4 rounded-full ${
                   currentSlide.value === index ? "bg-black" : "bg-gray-400"
                 }`}
                 onClick$={() => goToSlide(index)}
@@ -147,7 +132,7 @@ export const ExploreSection = component$(() => {
           <div class="flex min-h-[459px] w-full flex-col rounded-lg bg-neutral-100 px-8 pb-20 pt-8 max-md:max-w-full max-md:px-5">
             <div class="flex w-full flex-col max-md:max-w-full">
               <div class="flex w-[157px] max-w-full flex-col">
-                <h3 class="text-3xl font-bold leading-loose tracking-tight text-zinc-800">
+                <h3 class="text-3xl font-bold leading-loose tracking-tight text-[#1A1A1A]">
                   {currentContent?.title}
                 </h3>
                 <p class="mt-3 font-bold leading-none text-green-600">
@@ -176,7 +161,7 @@ export const ExploreSection = component$(() => {
               </p>
             </div>
           </div>
-          <button class="w-full gap-2.5 self-stretch overflow-hidden rounded  bg-pink-500 px-4 py-3 text-sm font-semibold leading-6 text-slate-50 shadow-sm max-md:max-w-full">
+          <button class="w-full gap-2.5 self-stretch overflow-hidden rounded  bg-[#F02480] px-4 py-3 text-sm font-semibold leading-6 text-slate-50 shadow-sm max-md:max-w-full">
             Shop {currentContent?.title}
           </button>
         </div>

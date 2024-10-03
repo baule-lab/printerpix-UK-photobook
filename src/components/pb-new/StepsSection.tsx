@@ -6,29 +6,29 @@ import { component$ } from "@builder.io/qwik";
 export const StepsSection = component$(() => {
   const steps = [
     {
-      title: "Digital backups",
+      title: "1. Upload",
       description:
-        "Qucikly add images from your phon﻿e, computer, social media, & Google photos.",
-      img: "/images/simple-step-1.jpg",
+        "Upload photos straight from your phone, desktop, tablet or social media.",
+      video: "/videos/create-your-ways/step1.mp4",
     },
     {
-      title: "Auto-Create",
+      title: "2. Auto-Create",
       description:
-        "We'll instantly organize your photos into a cohesiv﻿e, well-designed story.",
-      img: "/images/simple-step-2.jpg",
+        "Our smart AI instantly arranges your photos into a beautifully crafted story.",
+      video: "/videos/create-your-ways/step2.mp4",
     },
     {
-      title: "Customize",
+      title: "3. Personalize",
       description:
-        "Easily change fonts, backgrounds,colors, shapes, stickers, and more.",
-      img: "/images/simple-step-3.jpg",
+        "Easily edit layouts, backgrounds, fonts & more embellishments in just two taps.",
+      video: "/videos/create-your-ways/step3.mp4",
     },
   ];
 
   return (
     <section class="container mx-auto mt-12 sm:flex flex-col justify-evenly gap-8 px-4 md:px-0 hidden">
-      <h2 class="text-center text-3xl font-bold text-zinc-800 max-md:max-w-full">
-        Your Books in 3 Easy Steps
+      <h2 class="text-center text-3xl font-bold text-[#1A1A1A] max-md:max-w-full">
+        How it Works — in 3 Simple Steps
       </h2>
       <div class="flex w-full flex-wrap items-stretch gap-6 text-center text-black max-md:max-w-full">
         {steps.map((step, index) => (
@@ -36,14 +36,17 @@ export const StepsSection = component$(() => {
             key={index}
             class="flex min-w-[240px] flex-1 shrink basis-0 flex-col justify-center"
           >
-            <div
-              class="flex min-h-[547px] w-full flex-grow bg-zinc-300"
-              style={{
-                backgroundImage: `url(${step.img})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
+            <div class="flex min-h-[547px] w-full flex-grow bg-zinc-300">
+              {/* Replacing image with video */}
+              <video
+                class="w-full h-full object-cover"
+                src={step.video}
+                autoplay
+                loop
+                muted
+                playsInline
+              />
+            </div>
             <div class="mt-6 flex w-full flex-grow flex-col">
               <h3 class="text-2xl font-bold">{step.title}</h3>
               <p class="mt-3 text-sm">{step.description}</p>
@@ -51,7 +54,7 @@ export const StepsSection = component$(() => {
           </div>
         ))}
       </div>
-      <button class="w-[136px] max-w-full gap-2.5 self-center rounded bg-pink-500 px-4 py-3 text-sm text-white shadow-sm">
+      <button class="w-[340px] max-w-full gap-2.5 self-center rounded bg-[#F02480] px-4 py-3 text-base text-white shadow-sm font-semibold">
         Start creating
       </button>
     </section>
