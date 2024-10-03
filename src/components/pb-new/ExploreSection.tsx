@@ -89,11 +89,11 @@ export const ExploreSection = component$(() => {
           )}
 
           {/* Image Slider */}
-          <div class="relative transition-opacity duration-700 ease-in-out">
+          <div class="relative transition-opacity duration-700 ease-in-out h-full">
             <img
               loading="lazy"
               alt="Book preview"
-              class="aspect-square min-w-[240px] self-start rounded object-contain transition-transform duration-500 ease-in-out max-md:max-w-full"
+              class="aspect-square min-w-[240px] self-start rounded object-cover transition-transform duration-500 ease-in-out max-md:max-w-full h-full"
               src={currentContent?.images[currentSlide.value]}
             />
           </div>
