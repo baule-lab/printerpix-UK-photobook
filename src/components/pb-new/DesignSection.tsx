@@ -137,7 +137,7 @@ export const DesignSection = component$(() => {
 
   return (
     <section class="mx-auto flex md:w-[90%] w-full flex-col items-center justify-center gap-6 first-letter:gap-6 md:px-0">
-      <div class="flex md:w-full w-[90%] flex-col gap-4">
+      <div class="flex md:w-full w-[90%] flex-col items-center gap-4">
         <h2 class="text-center text-3xl font-bold text-[#1A1A1A] max-md:max-w-full">
           Hundreds of Themes for Every Story
         </h2>
