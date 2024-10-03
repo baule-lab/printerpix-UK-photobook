@@ -82,7 +82,7 @@ export const ExploreSection = component$(() => {
         <div class="relative flex flex-1 items-center justify-center">
           {/* Only show "Most Loved" Tag for the first image in the slide */}
           {currentSlide.value === 0 && (
-            <div class="absolute left-[-25px] top-[-25px] z-10 rounded-full bg-blue-500 text-sm font-bold text-white w-[70px] h-[70px] text-center flex flex-col">
+            <div class="absolute left-[-25px] top-[-25px] z-10 flex h-[70px] w-[70px] flex-col rounded-full bg-blue-500 text-center text-sm font-bold text-white">
               <span>💟</span>
               <span>Most Loved</span>
             </div>
@@ -93,7 +93,7 @@ export const ExploreSection = component$(() => {
             <img
               loading="lazy"
               alt="Book preview"
-              class="aspect-square min-w-[240px] self-start rounded object-contain max-md:max-w-full transition-transform duration-500 ease-in-out"
+              class="aspect-square min-w-[240px] self-start rounded object-contain transition-transform duration-500 ease-in-out max-md:max-w-full"
               src={currentContent?.images[currentSlide.value]}
             />
           </div>
@@ -113,52 +113,55 @@ export const ExploreSection = component$(() => {
         </div>
 
         {/* Tabs Content */}
-        <div class="flex min-w-[240px] flex-1 shrink basis-0 flex-col gap-7 max-md:max-w-full">
+        <div class="flex min-w-[240px] flex-1 shrink basis-0 flex-col justify-between gap-7 max-md:max-w-full">
           {/* Tabs */}
-          <div class="flex min-h-[48px] w-full flex-wrap gap-3 whitespace-nowrap rounded-lg bg-neutral-100 p-1.5 text-sm font-medium leading-none text-slate-700 max-md:max-w-full">
-            {tabContents.value.map((tab) => (
-              <button
-                key={tab.name}
-                onClick$={() => handleTabClick(tab.name)}
-                class={`h-full flex-1 shrink gap-2.5 self-stretch rounded px-3 py-1.5 ${
-                  activeTab.value === tab.name ? "bg-white text-pink-600" : ""
-                }`}
-              >
-                {tab.name}
-              </button>
-            ))}
-          </div>
-          {/* Content Section */}
-          <div class="flex min-h-[459px] w-full flex-col rounded-lg bg-neutral-100 px-8 pb-20 pt-8 max-md:max-w-full max-md:px-5">
-            <div class="flex w-full flex-col max-md:max-w-full">
-              <div class="flex w-[157px] max-w-full flex-col">
-                <h3 class="text-3xl font-bold leading-loose tracking-tight text-[#1A1A1A]">
-                  {currentContent?.title}
-                </h3>
-                <p class="mt-3 font-bold leading-none text-green-600">
-                  Starting at{" "}
-                  <span class="font-bold">{currentContent?.price}</span>
+          <div class="flex w-full flex-col gap-4">
+            <div class="flex min-h-[48px] w-full flex-wrap gap-3 whitespace-nowrap rounded-lg bg-neutral-100 p-1.5 text-sm font-medium leading-none text-slate-700 max-md:max-w-full">
+              {tabContents.value.map((tab) => (
+                <button
+                  key={tab.name}
+                  onClick$={() => handleTabClick(tab.name)}
+                  class={`h-full flex-1 shrink gap-2.5 self-stretch rounded px-3 py-1.5 ${
+                    activeTab.value === tab.name ? "bg-white text-pink-600" : ""
+                  }`}
+                >
+                  {tab.name}
+                </button>
+              ))}
+            </div>
+            {/* Content Section */}
+            <div class="flex min-h-[459px] w-full flex-col rounded-lg bg-neutral-100 px-8 pb-20 pt-8 max-md:max-w-full max-md:px-5 md:min-h-[550px]">
+              <div class="flex w-full flex-col max-md:max-w-full">
+                <div class="flex w-[157px] max-w-full flex-col">
+                  <h3 class="text-3xl font-bold leading-loose tracking-tight text-[#1A1A1A]">
+                    {currentContent?.title}
+                  </h3>
+                  <p class="mt-3 font-bold leading-none text-green-600">
+                    Starting at{" "}
+                    <span class="font-bold">{currentContent?.price}</span>
+                  </p>
+                </div>
+                <p class="mt-6 text-base tracking-normal text-black max-md:max-w-full">
+                  {currentContent?.description}
                 </p>
               </div>
-              <p class="mt-6 text-base tracking-normal text-black max-md:max-w-full">
-                {currentContent?.description}
-              </p>
-            </div>
-            <div class="flex flex-col justify-center self-start text-base text-black">
-              <p>
-                <span class="font-bold">Cover:</span> Standard, Acrylic, Fabric
-              </p>
-              <p class="mt-6">
-                <span class="font-bold">Paper Finishes:</span> Semi-Gloss,
-                Matte, Lustre
-              </p>
-              <p class="mt-6">
-                <span class="font-bold">Pages:</span> Up to 400 pages
-              </p>
-              <p class="mt-6">
-                <span class="font-bold">Sizes:</span> 8x8", 12x8", 12x12",
-                16x12"
-              </p>
+              <div class="flex flex-col justify-center self-start text-base text-black">
+                <p>
+                  <span class="font-bold">Cover:</span> Standard, Acrylic,
+                  Fabric
+                </p>
+                <p class="mt-6">
+                  <span class="font-bold">Paper Finishes:</span> Semi-Gloss,
+                  Matte, Lustre
+                </p>
+                <p class="mt-6">
+                  <span class="font-bold">Pages:</span> Up to 400 pages
+                </p>
+                <p class="mt-6">
+                  <span class="font-bold">Sizes:</span> 8x8", 12x8", 12x12",
+                  16x12"
+                </p>
+              </div>
             </div>
           </div>
           <button class="w-full gap-2.5 self-stretch overflow-hidden rounded  bg-[#F02480] px-4 py-3 text-sm font-semibold leading-6 text-slate-50 shadow-sm max-md:max-w-full">
