@@ -25,7 +25,7 @@ export const TabMenu = component$(({ tabs, onTabClick }: TabMenuProps) => {
       {tabs.map((tab) => (
         <button
           key={tab.name}
-          class={`inline-block px-4 py-2 pb-6 ${
+          class={`inline-block px-4 py-2 pb-2 ${
             activeTab.value === tab.name ? "text-[#F02480] border-b-4 border-[#F02480]" : ""
           }`}
           onClick$={() => handleTabClick(tab.name)} // Use handleTabClick properly wrapped

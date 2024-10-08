@@ -139,11 +139,13 @@ export const DesignSection = component$(() => {
 
   return (
     <section class="mx-auto flex w-full flex-col items-center justify-center gap-6 first-letter:gap-6 md:w-[90%] md:px-0">
-      <div class="flex w-[90%] flex-col items-center gap-4 md:w-full">
+      <div class="flex w-[90%] flex-col md:items-center items-start gap-4 md:w-full overflow-hidden">
         <h2 class="text-center md:text-5xl md:text-5xl text-3xl font-bold leading-tight text-[#1A1A1A] max-md:max-w-full">
           Hundreds of Themes for Every Story
         </h2>
-        <TabMenu tabs={designCategories.value} onTabClick={handleTabClick} />
+        <div class="w-full overflow-hidden">
+          <TabMenu tabs={designCategories.value} onTabClick={handleTabClick} />
+        </div>
       </div>
 
       {/* Background and images */}

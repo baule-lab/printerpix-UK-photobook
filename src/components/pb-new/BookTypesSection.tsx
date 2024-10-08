@@ -54,20 +54,18 @@ export const BookTypesSection = component$(() => {
       <section class="flex w-full items-center justify-center md:px-0 px-4">
         <div class="container flex flex-wrap items-center md:justify-between justify-center md:gap-10 gap-4 py-3 bg-[#9B1E67] text-white md:rounded-2xl rounded-lg md:px-8 px-0">
           <div class="flex w-full flex-col items-center self-stretch md:w-[200px] md:items-start">
-            <h2 class="w-full gap-2 text-center md:text-lg text-xl font-bold md:text-start">
-              <span class="block md:hidden">Fall Sale 🍁</span>
-              <span class="hidden md:block">
-                Fall 🍁 <br />
-                <span class="text-5xl font-bold">Sale</span>
-              </span>
+            <h2 class="w-full flex flex-col gap-2 text-center md:text-lg text-xl font-bold md:text-start">
+              <span>Fall Sale 🍁</span>
+              <span class="text-neutral-200 text-xs font-normal md:block hidden">Ends Oct 14</span>
             </h2>
           </div>
           <p class="my-auto self-stretch text-center md:text-2xl text-xl font-bold">
             Up to 50% off + an extra 10% Off
           </p>
-          <p class="my-auto w-full self-stretch text-center text-sm text-neutral-200 md:w-[200px] md:text-right">
-            Ends Oct 14 <br /> No Code Needed. <br /> Discount applied on
-            checkout.
+          <p class="flex flex-col md:gap-2 gap-0 my-auto w-full self-stretch text-center text-sm text-neutral-200 md:w-[200px] md:text-right">
+            <span class="text-neutral-200 text-xs font-normal md:hidden block">Ends Oct 14 </span>
+            <span>No Code Needed.</span>
+            <span> Discount applied on checkout.</span>
           </p>
         </div>
       </section>
