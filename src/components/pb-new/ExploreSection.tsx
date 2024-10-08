@@ -74,18 +74,18 @@ export const ExploreSection = component$(() => {
 
   return (
     <section class="container mx-auto flex flex-col items-center gap-8 px-4 md:px-0">
-      <h2 class="text-center md:text-5xl text-3xl font-bold">
+      <h2 class="text-center text-3xl font-bold md:text-5xl">
         Our Best-Selling Photo Book Styles
       </h2>
       <div class="flex w-full max-w-full flex-wrap gap-12">
         {/* Display the image slider */}
         <div class="relative flex flex-1 items-center justify-center">
           {/* Image Slider */}
-          <div class="relative transition-opacity duration-700 ease-in-out h-full">
+          <div class="relative h-full transition-opacity duration-700 ease-in-out">
             <img
               loading="lazy"
               alt="Book preview"
-              class="aspect-square min-w-[240px] self-start rounded object-cover transition-transform duration-500 ease-in-out max-md:max-w-full h-full"
+              class="aspect-square h-full min-w-[240px] self-start rounded object-cover transition-transform duration-500 ease-in-out max-md:max-w-full"
               src={currentContent?.images[currentSlide.value]}
             />
           </div>
@@ -95,8 +95,10 @@ export const ExploreSection = component$(() => {
             {currentContent?.images.map((_, index) => (
               <button
                 key={index}
-                class={`block h-4 w-4 rounded-full ${
-                  currentSlide.value === index ? "bg-black" : "bg-gray-400"
+                class={`block h-4 w-4 rounded-full border-2 ${
+                  currentSlide.value === index
+                    ? "border-black bg-black"
+                    : "border-black bg-white"
                 }`}
                 onClick$={() => goToSlide(index)}
               ></button>
@@ -125,7 +127,7 @@ export const ExploreSection = component$(() => {
             <div class="flex min-h-[459px] w-full flex-col rounded-lg bg-neutral-100 px-8 pb-20 pt-8 max-md:max-w-full max-md:px-5 md:min-h-[550px]">
               <div class="flex w-full flex-col max-md:max-w-full">
                 <div class="flex w-[157px] max-w-full flex-col">
-                  <h3 class="md:text-5xl text-3xl font-bold leading-loose tracking-tight text-[#1A1A1A]">
+                  <h3 class="text-3xl font-bold leading-loose tracking-tight text-[#1A1A1A] md:text-5xl">
                     {currentContent?.title}
                   </h3>
                   <p class="mt-3 font-bold leading-none text-green-600">
