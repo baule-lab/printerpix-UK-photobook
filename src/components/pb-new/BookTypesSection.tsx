@@ -52,9 +52,9 @@ export const BookTypesSection = component$(() => {
   return (
     <>
       <section class="flex w-full items-center justify-center md:px-0 px-4">
-        <div class="container flex flex-wrap items-center justify-between gap-10 py-3 bg-[#9B1E67] text-white px-8 rounded-2xl">
+        <div class="container flex flex-wrap items-center md:justify-between justify-center md:gap-10 gap-4 py-3 bg-[#9B1E67] text-white md:rounded-2xl rounded-lg md:px-8 px-0">
           <div class="flex w-full flex-col items-center self-stretch md:w-[200px] md:items-start">
-            <h2 class="w-full gap-2 text-center md:text-lg text-3xl font-bold md:text-start">
+            <h2 class="w-full gap-2 text-center md:text-lg text-xl font-bold md:text-start">
               <span class="block md:hidden">Fall Sale 🍁</span>
               <span class="hidden md:block">
                 Fall 🍁 <br />
@@ -62,7 +62,7 @@ export const BookTypesSection = component$(() => {
               </span>
             </h2>
           </div>
-          <p class="my-auto self-stretch text-center text-2xl font-bold">
+          <p class="my-auto self-stretch text-center md:text-2xl text-xl font-bold">
             Up to 50% off + an extra 10% Off
           </p>
           <p class="my-auto w-full self-stretch text-center text-sm text-neutral-200 md:w-[200px] md:text-right">

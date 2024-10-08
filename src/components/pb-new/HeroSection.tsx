@@ -41,9 +41,9 @@ export const HeroSection = component$(() => {
       <PhotoBookGrid />
 
       <section class="flex w-[calc(100%-36px)] items-center justify-center bg-[#9B1E67] px-4 text-white md:w-full md:px-24">
-        <div class="container flex flex-wrap items-center justify-between gap-10 py-3">
+        <div class="container flex flex-wrap items-center justify-center gap-4 rounded-lg bg-[#9B1E67] py-3 text-white md:justify-between md:gap-10 md:rounded-2xl">
           <div class="flex w-full flex-col items-center self-stretch md:w-[200px] md:items-start">
-            <h2 class="w-full gap-2 text-center text-3xl font-bold md:text-start md:text-lg">
+            <h2 class="w-full gap-2 text-center text-xl font-bold md:text-start md:text-lg">
               <span class="block md:hidden">Fall Sale 🍁</span>
               <span class="hidden md:block">
                 Fall 🍁 <br />
@@ -51,10 +51,10 @@ export const HeroSection = component$(() => {
               </span>
             </h2>
           </div>
-          <p class="my-auto self-stretch text-center text-2xl font-bold">
+          <p class="my-auto self-stretch text-center text-xl font-bold md:text-2xl">
             Up to 50% off + an extra 10% Off
           </p>
-          <p class="my-auto w-full self-stretch text-center text-sm text-[#FBBDD3] md:w-[200px] md:text-right">
+          <p class="my-auto w-full self-stretch text-center text-sm text-neutral-200 md:w-[200px] md:text-right">
             Ends Oct 14 <br /> No Code Needed. <br /> Discount applied on
             checkout.
           </p>
