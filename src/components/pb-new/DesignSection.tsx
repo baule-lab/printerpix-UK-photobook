@@ -143,7 +143,7 @@ export const DesignSection = component$(() => {
         <h2 class="text-center md:text-5xl md:text-5xl text-3xl font-bold leading-tight text-[#1A1A1A] max-md:max-w-full">
           Hundreds of Themes for Every Story
         </h2>
-        <div class="w-full overflow-hidden">
+        <div class="w-full overflow-hidden flex items-center justify-center">
           <TabMenu tabs={designCategories.value} onTabClick={handleTabClick} />
         </div>
       </div>

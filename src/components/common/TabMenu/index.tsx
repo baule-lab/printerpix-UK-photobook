@@ -21,7 +21,7 @@ export const TabMenu = component$(({ tabs, onTabClick }: TabMenuProps) => {
   });
 
   return (
-    <div class="flex overflow-x-auto whitespace-nowrap md:items-center items-start md:text-[32px] text-base font-semibold text-[#B1B1B1] gap-2">
+    <div class="flex overflow-x-auto whitespace-nowrap items-center md:text-[32px] text-base font-semibold text-[#B1B1B1] gap-2">
       {tabs.map((tab) => (
         <button
           key={tab.name}
