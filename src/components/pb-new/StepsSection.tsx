@@ -27,10 +27,10 @@ export const StepsSection = component$(() => {
 
   return (
     <section class="container mx-auto mt-12 sm:flex flex-col justify-evenly gap-8 px-4 md:px-0 hidden">
-      <h2 class="text-center text-3xl font-bold text-[#1A1A1A] max-md:max-w-full">
+      <h2 class="text-center md:text-5xl text-3xl font-bold text-[#1A1A1A] max-md:max-w-full">
         How it Works — in 3 Simple Steps
       </h2>
-      <div class="flex w-full flex-wrap items-stretch gap-6 text-center text-black max-md:max-w-full">
+      <div class="flex w-full flex-wrap items-stretch gap-4 text-center text-black max-md:max-w-full">
         {steps.map((step, index) => (
           <div
             key={index}

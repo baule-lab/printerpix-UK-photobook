@@ -74,20 +74,12 @@ export const ExploreSection = component$(() => {
 
   return (
     <section class="container mx-auto flex flex-col items-center gap-8 px-4 md:px-0">
-      <h2 class="text-center !text-3xl font-bold">
-        Explore all the amazing books
+      <h2 class="text-center !md:text-5xl text-3xl font-bold">
+        Our Best-Selling Photo Book Styles
       </h2>
       <div class="flex w-full max-w-full flex-wrap gap-12">
         {/* Display the image slider */}
         <div class="relative flex flex-1 items-center justify-center">
-          {/* Only show "Most Loved" Tag for the first image in the slide */}
-          {currentSlide.value === 0 && (
-            <div class="absolute left-[-25px] top-[-25px] z-10 flex h-[70px] w-[70px] flex-col rounded-full bg-blue-500 text-center text-sm font-bold text-white">
-              <span>💟</span>
-              <span>Most Loved</span>
-            </div>
-          )}
-
           {/* Image Slider */}
           <div class="relative transition-opacity duration-700 ease-in-out h-full">
             <img
@@ -133,7 +125,7 @@ export const ExploreSection = component$(() => {
             <div class="flex min-h-[459px] w-full flex-col rounded-lg bg-neutral-100 px-8 pb-20 pt-8 max-md:max-w-full max-md:px-5 md:min-h-[550px]">
               <div class="flex w-full flex-col max-md:max-w-full">
                 <div class="flex w-[157px] max-w-full flex-col">
-                  <h3 class="text-3xl font-bold leading-loose tracking-tight text-[#1A1A1A]">
+                  <h3 class="md:text-5xl text-3xl font-bold leading-loose tracking-tight text-[#1A1A1A]">
                     {currentContent?.title}
                   </h3>
                   <p class="mt-3 font-bold leading-none text-green-600">

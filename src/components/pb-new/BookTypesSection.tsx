@@ -54,13 +54,16 @@ export const BookTypesSection = component$(() => {
       <section class="flex w-full items-center justify-center md:px-0 px-4">
         <div class="container flex flex-wrap items-center justify-between gap-10 py-3 bg-[#9B1E67] text-white px-8 rounded-2xl">
           <div class="flex w-full flex-col items-center self-stretch md:w-[200px] md:items-start">
-            <h2 class="w-full gap-2 text-center text-lg font-bold md:text-start">
-              Fall 🍁 <br />
-              <span class="text-5xl font-bold">Sale</span>
+            <h2 class="w-full gap-2 text-center md:text-lg text-3xl font-bold md:text-start">
+              <span class="block md:hidden">Fall Sale 🍁</span>
+              <span class="hidden md:block">
+                Fall 🍁 <br />
+                <span class="text-5xl font-bold">Sale</span>
+              </span>
             </h2>
           </div>
           <p class="my-auto self-stretch text-center text-2xl font-bold">
-            Up to 50% off + an extra 10%
+            Up to 50% off + an extra 10% Off
           </p>
           <p class="my-auto w-full self-stretch text-center text-sm text-neutral-200 md:w-[200px] md:text-right">
             Ends Oct 14 <br /> No Code Needed. <br /> Discount applied on
@@ -69,7 +72,7 @@ export const BookTypesSection = component$(() => {
         </div>
       </section>
       <section class="container mx-auto md:flex hidden w-full flex-col items-center gap-12 px-4  font-semibold text-black *:text-lg md:px-0">
-        <h2 class="text-center !text-3xl font-bold text-[#1A1A1A]">
+        <h2 class="text-center !md:text-5xl text-3xl font-bold text-[#1A1A1A]">
           Explore Designs for Every Type of Book
         </h2>
         <div class="my-auto grid w-full min-w-[240px] basis-0 grid-cols-2 gap-x-[16px] gap-y-[46px] self-stretch max-md:max-w-full md:grid-cols-3 lg:grid-cols-5">
@@ -87,7 +90,7 @@ export const BookTypesSection = component$(() => {
             </div>
           ))}
         </div>
-        <button class="mx-auto md:w-[340px] w-full max-w-full gap-2.5 self-stretch rounded bg-[#F02480] px-4 py-3 text-white shadow-sm max-md:mt-10 text-base font-semibold">
+        <button class="mx-auto md:w-[340px] md:h-auto h-[56px] w-full max-w-full gap-2.5 self-stretch rounded bg-[#F02480] px-4 py-3 text-white shadow-sm max-md:mt-10 text-base font-semibold">
           Explore Themes
         </button>
       </section>

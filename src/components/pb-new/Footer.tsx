@@ -202,7 +202,7 @@ export const Footer = component$(() => {
             </form>
           </div>
           <div class="flex flex-col justify-center pl-5 text-white border-l border-zinc-400 min-w-[240px]">
-            <h3 class="text-3xl font-bold">Rated 4.5/5</h3>
+            <h3 class="md:text-5xl text-3xl font-bold">Rated 4.5/5</h3>
             <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/fdcfb44403345d08ecff84e4c40de732e6939d3415fd1510ba4c0d78a01535b4?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"

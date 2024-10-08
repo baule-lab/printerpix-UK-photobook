@@ -4,7 +4,7 @@ export const Header = component$(() => {
   return (
     <header class="flex flex-col w-full max-md:max-w-full">
       <div class="gap-2.5 self-stretch p-2.5 w-full text-xs text-center text-white bg-[#1A1A1A] max-md:max-w-full">
-        ✅ Applied: FALLSALE | Up to 50% off + an extra 10% | Ends: 9/24
+        ✅ Applied: FALLSALE | Up to 50% off + an extra 10% Off | Ends: 9/24
       </div>
       <nav class="flex flex-col items-center w-full max-md:mt-10 max-md:max-w-full mt-20">
         <div class="flex flex-col px-24text-center text-black max-md:px-5 container">

@@ -95,7 +95,9 @@ export const DesignSection = component$(() => {
       () => {
         const newImages = imagesByTab[tabName as keyof typeof imagesByTab];
         if (!newImages) {
-          console.error(`Tab name "${tabName}" không tồn tại trong imagesByTab`);
+          console.error(
+            `Tab name "${tabName}" không tồn tại trong imagesByTab`,
+          );
           console.log("Existing tabs:", Object.keys(imagesByTab)); // Debug existing tabs
           return;
         }
@@ -136,9 +138,9 @@ export const DesignSection = component$(() => {
   );
 
   return (
-    <section class="mx-auto flex md:w-[90%] w-full flex-col items-center justify-center gap-6 first-letter:gap-6 md:px-0">
-      <div class="flex md:w-full w-[90%] flex-col items-center gap-4">
-        <h2 class="text-center text-3xl font-bold text-[#1A1A1A] max-md:max-w-full">
+    <section class="mx-auto flex w-full flex-col items-center justify-center gap-6 first-letter:gap-6 md:w-[90%] md:px-0">
+      <div class="flex w-[90%] flex-col items-center gap-4 md:w-full">
+        <h2 class="text-center md:text-5xl md:text-5xl text-3xl font-bold leading-tight text-[#1A1A1A] max-md:max-w-full">
           Hundreds of Themes for Every Story
         </h2>
         <TabMenu tabs={designCategories.value} onTabClick={handleTabClick} />
@@ -146,25 +148,26 @@ export const DesignSection = component$(() => {
 
       {/* Background and images */}
       <div
-        class="relative flex w-full flex-col items-center justify-center md:py-10 md:px-0 px-4"
-        style={{
-          backgroundImage: `url(${isMobile.value ? "/images/theme_category/mobile_background.jpg" : "/images/theme_category/background.svg"})`,
-          backgroundSize: "cover",
-          backgroundPosition: `${isMobile.value ? "13% 30px" : "-57px -50px"}`,
-          backgroundRepeat: "no-repeat",
-        }}
+        class="relative flex w-full flex-col items-center justify-center px-4 md:px-0"
+        // style={{
+        //   backgroundImage: `url(${isMobile.value ? "/images/theme_category/mobile_background.jpg" : "/images/theme_category/background.svg"})`,
+        //   backgroundSize: "cover",
+        //   backgroundPosition: `${isMobile.value ? "13% 30px" : "-57px -50px"}`,
+        //   backgroundRepeat: "no-repeat",
+        // }}
       >
         {/* Desktop layout */}
-        <div class="container relative mt-[55px] hidden items-center justify-center md:flex">
+        <div class="container relative mt-6 flex hidden items-center justify-center md:flex">
           {/* Left and right layout */}
-          <div class="grid grid-cols-3 gap-6">
+          <div class="grid grid-cols-[1fr_300px_1fr] justify-between gap-6">
+            {/* Added justify-center and max-w */}
             {/* Left side with two rows and two columns */}
             <div class="flex flex-col justify-between gap-6">
               {[0, 2].map((rowIndex) => (
                 <div key={rowIndex} class="flex justify-around gap-4">
                   {[0, 1].map((colIndex) => {
                     const image = currentImages.value.left[rowIndex + colIndex];
-                    const size = image.size === "large" ? "240px" : "180px";
+                    const size = image.size === "large" ? "220px" : "190px";
                     return (
                       <div key={colIndex} class="relative">
                         {isLoading.value ? (
@@ -188,25 +191,22 @@ export const DesignSection = component$(() => {
                 </div>
               ))}
             </div>
-
             {/* Main image */}
-            <div class="flex transform items-center justify-center shadow-lg transition-transform duration-300 hover:scale-105">
+            <div class="flex transform items-center justify-center">
               {isLoading.value ? (
-                <SkeletonImage size="450px" />
+                <SkeletonImage size="300px" />
               ) : (
                 <img
                   src={currentImages.value.main}
                   alt="Main Image"
-                  class="object-cover shadow-lg"
+                  class="object-cover shadow-lg transition-transform duration-300 hover:scale-105"
                   style={{
-                    width: "450px",
-                    height: "auto",
-                    aspectRatio: "1 / 1",
+                    width: "300px",
+                    height: "450px",
                   }}
                 />
               )}
             </div>
-
             {/* Right side with two rows and two columns */}
             <div class="flex flex-col justify-between">
               {[0, 2].map((rowIndex) => (
@@ -214,7 +214,7 @@ export const DesignSection = component$(() => {
                   {[0, 1].map((colIndex) => {
                     const image =
                       currentImages.value.right[rowIndex + colIndex];
-                    const size = image.size === "large" ? "240px" : "180px";
+                    const size = image.size === "large" ? "220px" : "190px";
                     return (
                       <div key={colIndex} class="relative">
                         {isLoading.value ? (
@@ -241,48 +241,57 @@ export const DesignSection = component$(() => {
           </div>
         </div>
 
-        {/* Mobile layout */}
         <div class="mt-0 flex flex-col items-center gap-4 md:hidden">
           {/* Main Image */}
-          <div class="flex items-center justify-center">
+          <div class="flex items-center justify-center w-full">
             {isLoading.value ? (
-              <SkeletonImage size="300px" />
+              <SkeletonImage size="100%" />
             ) : (
               <img
                 src={currentImages.value.main}
                 alt="Main Image"
                 class="transform object-cover shadow-lg transition-transform duration-300 hover:scale-105"
-                style={{ width: "332px", height: "300px" }}
+                style={{ width: "100%", height: "200px", objectFit: "cover" }}
               />
             )}
           </div>
 
-          {/* Three smaller images below the main image */}
-          <div class="grid grid-cols-3 gap-4">
-            {currentImages.value.left.slice(0, 3).map((image, index) => (
-              <div key={index} class="relative">
-                {isLoading.value ? (
-                  <SkeletonImage size="100px" />
-                ) : (
-                  <img
-                    class="transform object-cover shadow-lg transition-transform duration-300 hover:scale-105"
-                    src={image.src}
-                    alt={image.alt}
-                    style={{
-                      width: "100px",
-                      height: "100px",
-                      objectFit: "cover",
-                    }}
-                  />
-                )}
-              </div>
-            ))}
-          </div>
+          {/* Four smaller images in uneven grid below the main image */}
+          <div class="flex flex-col justify-between gap-4">
+              {[0, 2].map((rowIndex) => (
+                <div key={rowIndex} class="flex justify-around gap-4">
+                  {[0, 1].map((colIndex) => {
+                    const image =
+                      currentImages.value.right[rowIndex + colIndex];
+                    const size = image.size === "large" ? "190px" : "150px";
+                    return (
+                      <div key={colIndex} class="relative">
+                        {isLoading.value ? (
+                          <SkeletonImage size={size} />
+                        ) : (
+                          <img
+                            class="h-auto max-w-full transform shadow-lg transition-transform duration-300 hover:scale-105"
+                            src={image.src}
+                            alt={image.alt}
+                            style={{
+                              objectFit: "cover",
+                              width: size,
+                              height: "auto",
+                              aspectRatio: "1 / 1",
+                            }}
+                          />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
         </div>
       </div>
 
       {/* Button with dynamic tab name */}
-      <button class="m-auto w-[90%] max-w-full gap-2.5 self-stretch rounded bg-[#F02480] px-4 py-3 text-base text-white shadow-sm md:w-[340px] font-semibold">
+      <button class="m-auto w-[90%] max-w-full gap-2.5 self-stretch rounded bg-[#F02480] px-4 py-3 text-base font-semibold text-white shadow-sm md:w-[340px] md:h-auto h-[56px]">
         Explore {activeTabName.value} Themes
       </button>
     </section>

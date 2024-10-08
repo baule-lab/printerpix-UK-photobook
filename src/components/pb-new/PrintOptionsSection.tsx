@@ -40,7 +40,7 @@ export const PrintOptionsSection = component$(() => {
 
   return (
     <section class="flex flex-col w-full max-md:px-5 container mx-auto md:px-0 px-4">
-      <h2 class="text-3xl font-bold text-center text-[#1A1A1A] max-md:max-w-full">
+      <h2 class="md:text-5xl text-3xl font-bold text-center text-[#1A1A1A] max-md:max-w-full">
         Perfect Paper Types
       </h2>
 
@@ -96,7 +96,7 @@ export const PrintOptionsSection = component$(() => {
         ))}
       </div>
 
-      <button class="overflow-hidden gap-2.5 self-center px-4 py-3 mt-8 max-w-full text-base font-semibold leading-6 bg-[#F02480] rounded shadow-sm text-slate-50 md:w-[340px] w-full">
+      <button class="overflow-hidden gap-2.5 self-center px-4 py-3 mt-8 max-w-full text-base font-semibold leading-6 bg-[#F02480] rounded shadow-sm text-slate-50 md:w-[340px] md:h-auto h-[56px] w-full">
         Start Creating
       </button>
     </section>
