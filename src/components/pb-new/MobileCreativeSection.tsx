@@ -3,7 +3,7 @@ import { component$ } from "@builder.io/qwik";
 export const MobileCreativeSection = component$(() => {
   return (
     <section class="block px-4 md:hidden">
-      <h2 class="text-center !md:text-5xl text-3xl font-bold text-black">
+      <h2 class="text-center md:text-5xl text-3xl font-bold text-black">
         Get Creative, Wherever You Go
       </h2>
 

@@ -74,7 +74,7 @@ export const ExploreSection = component$(() => {
 
   return (
     <section class="container mx-auto flex flex-col items-center gap-8 px-4 md:px-0">
-      <h2 class="text-center !md:text-5xl text-3xl font-bold">
+      <h2 class="text-center md:text-5xl text-3xl font-bold">
         Our Best-Selling Photo Book Styles
       </h2>
       <div class="flex w-full max-w-full flex-wrap gap-12">
