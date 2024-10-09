@@ -1,7 +1,8 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
 
 export const FAQSection = component$(() => {
-  const activeIndex = useSignal<number | null>(null);
+  // Set the default open question to the first one (index 0)
+  const activeIndex = useSignal<number | null>(0);
 
   const handleToggle = $((index: number) => {
     activeIndex.value = activeIndex.value === index ? null : index;

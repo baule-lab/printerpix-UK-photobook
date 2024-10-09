@@ -21,13 +21,15 @@ export const TabMenu = component$(({ tabs, onTabClick }: TabMenuProps) => {
   });
 
   return (
-    <div class="flex overflow-x-auto whitespace-nowrap items-center md:text-[32px] text-base font-semibold text-[#B1B1B1] gap-2">
-      {tabs.map((tab) => (
+    <div class="flex overflow-x-auto whitespace-nowrap items-center gap-1 md:gap-4 md:text-[32px] text-lg font-semibold text-[#B1B1B1]">
+      {tabs.map((tab, index) => (
         <button
           key={tab.name}
-          class={`inline-block px-4 py-2 pb-2 ${
-            activeTab.value === tab.name ? "text-[#F02480] border-b-4 border-[#F02480]" : ""
-          }`}
+          class={`inline-block px-2 py-1 pb-2 md:px-4 md:py-2 ${
+            activeTab.value === tab.name
+              ? "text-[#F02480] border-b-4 border-[#F02480]"
+              : ""
+          } ${index === tabs.length - 1 ? 'pr-8 md:pr-12' : ''}`} // Thêm khoảng cách cho item cuối cùng
           onClick$={() => handleTabClick(tab.name)} // Use handleTabClick properly wrapped
         >
           {tab.name}

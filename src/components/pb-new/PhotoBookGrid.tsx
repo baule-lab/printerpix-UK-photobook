@@ -17,9 +17,9 @@ export const PhotoBookGrid = component$(() => {
             <img
               src={category.imageSrc || "/placeholder.jpg"}
               alt={category.name}
-              class="w-[170px] h-[170px]"
-              width="170"
-              height="170"
+              class="w-[150px] h-[150px]"
+              width="150"
+              height="150"
             />
             <p class="mt-2 text-center font-bold text-black">
               {category.name} <br /> Photo Book

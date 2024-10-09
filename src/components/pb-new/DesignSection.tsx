@@ -137,6 +137,19 @@ export const DesignSection = component$(() => {
     />
   );
 
+  const mappingPosition = ( rowIndex: number, colIndex: number ) => {
+    console.log(rowIndex, colIndex)
+    if (rowIndex === 0 && colIndex === 0) {
+      return { left: "-10px", top: "-70px" };
+    } else if (rowIndex === 0 && colIndex === 1) {
+      return { right: "-10px", top: "30px" };
+    } else if (rowIndex === 2 && colIndex === 0) {
+      return { left: "25px", bottom: "100px" };
+    } else {
+      return { right: "15px", bottom: "0" };
+    }
+  }
+
   return (
     <section class="mx-auto flex w-full flex-col items-center justify-center gap-6 first-letter:gap-6 md:w-[90%] md:px-0">
       <div class="flex w-[90%] flex-col md:items-center items-start gap-4 md:w-full overflow-hidden">
@@ -242,32 +255,41 @@ export const DesignSection = component$(() => {
             </div>
           </div>
         </div>
-
-        <div class="mt-0 flex flex-col items-center gap-4 md:hidden">
+        {/* Mobile layout */}
+        <div class="mt-0 flex flex-col items-center gap-4 md:hidden w-full">
           {/* Main Image */}
-          <div class="flex items-center justify-center w-full">
+          <div class="flex items-center justify-center w-[85%] rounded-xl">
             {isLoading.value ? (
               <SkeletonImage size="100%" />
             ) : (
               <img
                 src={currentImages.value.main}
                 alt="Main Image"
-                class="transform object-cover shadow-lg transition-transform duration-300 hover:scale-105"
-                style={{ width: "100%", height: "200px", objectFit: "cover" }}
+                class="transform object-cover shadow-xl transition-transform duration-300 hover:scale-105"
+                style={{ width: "100%", height: "250px", objectFit: "cover" }}
               />
             )}
           </div>
 
           {/* Four smaller images in uneven grid below the main image */}
-          <div class="flex flex-col justify-between gap-4">
+          <div class="flex flex-col justify-between gap-4 h-[400px] w-full relative">
               {[0, 2].map((rowIndex) => (
                 <div key={rowIndex} class="flex justify-around gap-4">
                   {[0, 1].map((colIndex) => {
                     const image =
-                      currentImages.value.right[rowIndex + colIndex];
-                    const size = image.size === "large" ? "190px" : "150px";
+                      currentImages.value.left[rowIndex + colIndex];
+                    const size = "150px";
                     return (
-                      <div key={colIndex} class="relative">
+                      <div 
+                        key={colIndex} 
+                        class={`absolute`} 
+                        style={{
+                          ...mappingPosition(rowIndex, colIndex),
+                          width: size,
+                          height: "auto",
+                          boxShadow: "0 0 0 1px #E5E5E5",
+                        }}
+                      >
                         {isLoading.value ? (
                           <SkeletonImage size={size} />
                         ) : (
