@@ -30,7 +30,7 @@ export const HeroSection = component$(() => {
             <h1 class="text-[38px] font-bold leading-tight">
               Photo Books to Tell Your Story
             </h1>
-            <p class="mt-3">
+            <p class="mt-3 text-lg">
               Starting at $14.99 <br />
               Get it by Sept 23 with Rush Shipping
             </p>
