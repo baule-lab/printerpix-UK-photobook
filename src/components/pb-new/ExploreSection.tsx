@@ -51,7 +51,7 @@ export const ExploreSection = component$(() => {
   ]);
 
   // Manage active tab state
-  const activeTab = useSignal(tabContents.value[1].name); // Default to "Layflat"
+  const activeTab = useSignal(tabContents.value[0].name);
 
   // Manage active slide for the currently selected tab
   const currentSlide = useSignal(0); // Start with the first slide

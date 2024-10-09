@@ -26,11 +26,11 @@ export const HeroSection = component$(() => {
           </div>
 
           {/* Nội dung cho Desktop */}
-          <div class="hidden w-[339px] max-w-full flex-col text-black sm:flex z-10">
-            <h1 class="text-[38px] font-bold leading-tight">
+          <div class="hidden w-[40%] max-w-full flex-col text-black sm:flex z-10">
+            <h1 class="md:text-[68px] text-[38px] font-bold leading-tight">
               Photo Books to Tell Your Story
             </h1>
-            <p class="mt-3 text-lg">
+            <p class="mt-3 text-2xl">
               Starting at $14.99 <br />
               Get it by Sept 23 with Rush Shipping
             </p>

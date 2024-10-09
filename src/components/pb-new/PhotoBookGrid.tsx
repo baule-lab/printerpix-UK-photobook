@@ -10,7 +10,7 @@ export const PhotoBookGrid = component$(() => {
   ];
 
   return (
-    <section class="block md:hidden px-4 py-10"> {/* Chỉ hiển thị trên mobile */}
+    <section class="block md:hidden px-4 py-5">
       <div class="grid grid-cols-2 gap-6">
         {categories.map((category) => (
           <div key={category.name} class="flex flex-col items-center">
