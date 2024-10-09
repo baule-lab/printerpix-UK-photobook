@@ -138,13 +138,12 @@ export const DesignSection = component$(() => {
   );
 
   const mappingPosition = ( rowIndex: number, colIndex: number ) => {
-    console.log(rowIndex, colIndex)
     if (rowIndex === 0 && colIndex === 0) {
       return { left: "-10px", top: "-70px" };
     } else if (rowIndex === 0 && colIndex === 1) {
       return { right: "-10px", top: "30px" };
     } else if (rowIndex === 2 && colIndex === 0) {
-      return { left: "25px", bottom: "100px" };
+      return { left: "25px", bottom: "90px" };
     } else {
       return { right: "15px", bottom: "0" };
     }
@@ -272,7 +271,7 @@ export const DesignSection = component$(() => {
           </div>
 
           {/* Four smaller images in uneven grid below the main image */}
-          <div class="flex flex-col justify-between gap-4 h-[400px] w-full relative">
+          <div class="flex flex-col justify-between gap-4 h-[360px] w-full relative">
               {[0, 2].map((rowIndex) => (
                 <div key={rowIndex} class="flex justify-around gap-4">
                   {[0, 1].map((colIndex) => {
