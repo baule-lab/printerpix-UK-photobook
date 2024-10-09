@@ -52,7 +52,7 @@ export const BookTypesSection = component$(() => {
   return (
     <>
       <section class="flex w-full items-center justify-center md:px-0 px-4">
-        <div class="container flex flex-wrap items-center md:justify-between justify-center md:gap-10 gap-4 py-3 bg-[#9B1E67] text-white md:rounded-2xl rounded-lg md:px-8 px-0">
+        <div class="container flex flex-wrap items-center md:justify-between justify-center md:gap-10 gap-2 py-3 bg-[#9B1E67] text-white md:rounded-2xl rounded-lg md:px-8 px-0">
           <div class="flex w-full flex-col items-center self-stretch md:w-[200px] md:items-start">
             <h2 class="w-full flex flex-col gap-2 text-center md:text-lg text-xl font-bold md:text-start">
               <span>Fall Sale 🍁</span>
