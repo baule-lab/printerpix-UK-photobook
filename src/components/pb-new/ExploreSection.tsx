@@ -81,7 +81,7 @@ export const ExploreSection = component$(() => {
         {/* Display the image slider */}
         <div class="relative flex flex-1 items-center justify-center">
           {/* Image Slider */}
-          <div class="relative h-full transition-opacity duration-700 ease-in-out">
+          <div class="relative h-full transition-opacity duration-700 ease-in-out max-md:h-[350px]">
             <img
               loading="lazy"
               alt="Book preview"
