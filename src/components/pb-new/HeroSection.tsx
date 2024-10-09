@@ -10,7 +10,7 @@ export const HeroSection = component$(() => {
         {/* Overlay với gradient đen mờ */}
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.6)] block md:hidden"></div>
         
-        <div class="container relative flex min-h-[500px] w-full flex-col items-center justify-end md:justify-center py-10 text-sm md:min-h-[350px] md:items-start">
+        <div class="container relative flex min-h-[500px] w-full flex-col items-center justify-end md:justify-center py-10 text-sm md:min-h-[500px] md:items-start">
           {/* Nội dung cho Mobile */}
           <div class="flex w-[339px] max-w-full flex-col items-center text-center text-white sm:hidden z-10">
             <h1 class="text-3xl font-bold leading-tight">
