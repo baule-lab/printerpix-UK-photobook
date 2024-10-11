@@ -3,7 +3,7 @@ import { component$ } from "@builder.io/qwik";
 export const CtaSection = component$(() => {
   return (
     <section class="flex w-full items-center justify-center px-4 md:px-0">
-      <div class="container flex flex-wrap items-center justify-between rounded-lg bg-[#9B1E67] px-4 py-3 text-white md:rounded-2xl md:px-8">
+      <div class="container flex flex-wrap items-center justify-between rounded-lg bg-[#9B1E67] px-4 py-5 text-white md:rounded-2xl md:px-8">
         <div class="flex items-center gap-4">
           <p class="my-auto flex w-full flex-col gap-0 self-stretch text-center text-sm text-neutral-200 md:w-[200px] md:gap-2 md:text-left">
             <span class="block text-xs font-normal text-neutral-200 md:hidden">
