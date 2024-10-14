@@ -95,7 +95,7 @@ export const FAQSection = component$(() => {
   ];
 
   return (
-    <section class="flex w-full flex-col items-center px-24 max-md:mt-10 max-md:max-w-full max-md:px-5">
+    <section class="flex w-full flex-col items-center container mx-auto">
       <h2 class="self-stretch text-center md:text-5xl text-3xl font-bold text-[#1A1A1A] max-md:max-w-full">
         FAQ About Photo Books
       </h2>
