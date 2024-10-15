@@ -152,7 +152,7 @@ export const GallerySection = component$(() => {
   return (
     <section class="mx-auto flex w-full flex-col items-center justify-center gap-6 first-letter:gap-6 md:w-[90%] md:px-0">
       <div class="flex w-[90%] flex-col md:items-center items-start gap-4 md:w-full overflow-hidden">
-        <h2 class="text-center md:text-5xl md:text-5xl text-3xl font-bold leading-tight text-[#1A1A1A] max-md:max-w-full">
+        <h2 class="text-center md:text-5xl text-3xl font-bold leading-tight text-[#1A1A1A] max-md:max-w-full">
           Calendar Themes to Inspire Your 2025
         </h2>
         <div class="w-full overflow-hidden flex items-center justify-center">

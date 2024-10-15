@@ -8,7 +8,7 @@ import { GallerySection } from "./GallerySection";
 import { DiscoverWaySection } from "./DiscoverWaySection";
 import { GiftSection } from "./GiftSection";
 import { PrintOptionsSection } from "./PrintOptionsSection";
-import { BookTypesSection } from "./BookTypesSection";
+import { CalendarTypesSection } from "./CalendarTypesSection";
 import { FAQSection } from "./FAQSection";
 import { InfoSection } from "./InfoSection";
 import { Footer } from "./Footer";
@@ -29,7 +29,7 @@ export const CalendarLayout = component$(() => {
           <GiftSection />
         </div>
         <PrintOptionsSection />
-        <BookTypesSection />
+        <CalendarTypesSection />
         <div class="md:hidden block">
           <GiftSection />
         </div>

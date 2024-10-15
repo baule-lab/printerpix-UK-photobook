@@ -3,80 +3,81 @@ import { component$ } from "@builder.io/qwik";
 export const InfoSection = component$(() => {
   return (
     <section class="flex flex-col w-full text-black container mx-auto md:px-0 px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-md:max-w-full">
-        {/* Left Column */}
-        <div class="flex flex-col space-y-8">
-          <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
-            <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
-              <span class="text-base font-bold tracking-normal leading-6 text-zinc-900">
-                Relive Your Moments With Photo Books
-              </span>
-            </h2>
-            <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-              A photo book allows you to preserve special memories, from spontaneous adventures to once-in-a-lifetime events, in a way that’s tangible and lasting. Each page captures your experiences, turning digital files into a keepsake you can hold, share, and relive whenever you want.
-            </p>
-          </div>
-
-          <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
-            <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
-              <span class="text-base font-bold tracking-normal leading-6 text-black">
-                Why Create a Photo Book?
-              </span>
-            </h2>
-            <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-              Photo books offer a physical connection to your memories—something digital albums can’t replicate. Holding a custom book in your hands and flipping through pages filled with faces and places dear to you is an experience no screen can match.
-              <br />
-              Beyond their physical appeal, photo books help preserve your memories in a more lasting way. Digital files can be lost or corrupted, but a high-quality photo book stands the test of time. Whether you’re creating a wedding album, a travel scrapbook, or a family yearbook, the printed pages will always be there.
-              <br />
-              With personalized books, you won’t have to worry about losing photos or finding ways to store them since your images are already printed directly on the pages. Plus, the customization options offer more room for creativity and expression, making the book truly yours.
-            </p>
-          </div>
-
-          <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
-            <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
-              <span class="text-base font-bold tracking-normal leading-6 text-black">
-                Types of Personalized Books
-              </span>
-            </h2>
-            <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-              At Printerpix, we offer several types of personalized photo books to match your style, each with different paper options to enhance your photos.
-              <br />
-              Our hardcover style features classic binding & glossy pages for a stunning presentation. These photo books are perfect for every occasion. Use them for weddings, milestones, seasonal events, birthdays & more.
-              <br />
-              Looking for something more budget-friendly? Our softcover photo books are lightweight, flexible & feature glossy pages — ideal for displaying your favorite photos.
-              <br />
-              Our layflat photo books use thick board & heavyweight paper to create an heirloom-worthy keepsake. The binding sets this book apart, opening fully to reveal seamless photo spreads. This photo book is ideal for epic milestones, adventures & moments.
-            </p>
-          </div>
+      <div class="flex flex-col gap-8 w-full max-md:max-w-full">
+        <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
+          <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
+            <span class="text-base font-bold tracking-normal leading-6 text-zinc-900">
+              Photo Calendar vs. Standard Calendar
+            </span>
+          </h2>
+          <p class="mt-3 text-base tracking-normal max-md:max-w-full">
+            Unlike store-bought calendars, our custom photo calendars allow you to personalize each page with your own photos, captions, stickers, backgrounds, and other fun design elements. Plus, while standard calendars only mark popular events and national holidays, our photo calendars let you highlight the dates that matter most to you with custom photos or stickers. Another exciting feature is that you can choose your own start month. Whether you want to kick things off in January or start mid-year, it’s completely up to you!
+          </p>
         </div>
 
-        {/* Right Column */}
-        <div class="flex flex-col space-y-8">
-          <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
-            <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
-              <span class="text-base font-bold tracking-normal leading-6 text-black">
-                How to Create a Custom Book for Any Occasion
-              </span>
-            </h2>
-            <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-              Designing a custom book for any occasion is easy with our online tool, where you can upload your photos, arrange them in custom layouts, and add text or captions to tell your story.
-              <br />
-              For weddings, you can include images from the prenup photoshoot, ceremony, and every moment in between. Our easy-to-use design tool also makes it quick and fun to create personalized books for birthdays, graduations, holidays, and more!
-              <br />
-              No matter the occasion, you have the flexibility to customize every detail—from backgrounds and layouts down to fonts and colors.
-            </p>
-          </div>
+        <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
+          <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
+            <span class="text-base font-bold tracking-normal leading-6 text-black">
+              Types of Custom Calendars
+            </span>
+          </h2>
+          <p class="mt-3 text-base tracking-normal max-md:max-w-full">
+            At Printerpix, we offer three types of calendars: slim calendars, calendars with binding on top, and calendars with binding in the middle. Slim calendars are ideal for kitchens, as they provide ample space to jot down grocery lists, to-do lists, and other notes. These calendars can easily fit in any area of your home.
+            <br />
+            <br />            
+            Our calendars with binding on top allow a continuous flow between your photo and the date grid. On the other hand, our calendars with binding in the middle display the photo at the top and the date grid at the bottom. These can be hung in a way that showcases both the photo and the dates at the same time.
+            <br />
+            <br />            
+            Your choice of calendar type and size depends on your preferences. All our calendars are printed on high-quality uncoated paper, making it easy to write on with any pen. For a more premium feel, we also offer an upgrade to luster paper.
+          </p>
+        </div>
 
-          <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
-            <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
-              <span class="text-base font-bold tracking-normal leading-6 text-black">
-                Personalized Photo Books That Last
-              </span>
-            </h2>
-            <p class="mt-3 text-base tracking-normal max-md:max-w-full">
-              A photo book is all about preserving memories and creating something that will last. With our wide range of customization options, high-quality paper, and durable binding, each book is designed to capture a part of your history and be cherished by loved ones for years to come.
-            </p>
-          </div>
+        <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
+          <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
+            <span class="text-base font-bold tracking-normal leading-6 text-black">
+              Creating Your Personalized Calendar
+            </span>
+          </h2>
+          <p class="mt-3 text-base tracking-normal max-md:max-w-full">
+            1. Start by clicking the "Start Your Calendar" button, which will take you to our online design tool where you can choose the type and size of your calendar.
+            <br />
+            <br />
+            2. Select a design to set the background. Don’t worry—you can always switch to a different design if you change your mind later.
+            <br />
+            <br />            
+            3. Upload your photos and use the arrows at the bottom of the screen to flip through the calendar pages.
+            <br />
+            <br />            
+            4. Customize even further! Add extra photo boxes, text, borders, or clipart to give each page your personal touch. You can also choose from different layout options for both the cover and inside pages.
+            <br />
+            <br />            
+            5. Once you're happy with your design, simply click “Add to Cart” and head to checkout.
+            <br />
+            <br />            
+            Our tool is designed for convenience, working smoothly on any device—whether you’re using a desktop, laptop, or phone—so you can create your calendar in as little as 5 minutes!
+          </p>
+        </div>
+
+        <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
+          <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
+            <span class="text-base font-bold tracking-normal leading-6 text-black">
+              Photo Calendars for Every Occasion
+            </span>
+          </h2>
+          <p class="mt-3 text-base tracking-normal max-md:max-w-full">
+            Our photo calendars make fantastic gifts for any occasion. You can create an elegant design for a wedding present or a milestone-themed calendar for a graduation gift. And because you can start your calendar on any month, they’re a perfect gift anytime, for any season.
+          </p>
+        </div>
+
+        <div class="flex flex-col w-full text-zinc-900 max-md:max-w-full">
+          <h2 class="text-lg font-semibold tracking-normal max-md:max-w-full">
+            <span class="text-base font-bold tracking-normal leading-6 text-black">
+              Get Your Custom Calendar Today!
+            </span>
+          </h2>
+          <p class="mt-3 text-base tracking-normal max-md:max-w-full">
+            With Printerpix, creating your own photo calendar is as easy as 1-2-3, and the possibilities for customization are endless. Plus, with our high-quality printing and materials, you’re sure to get a stunning result that gives you real bang for your buck!
+          </p>
         </div>
       </div>
     </section>

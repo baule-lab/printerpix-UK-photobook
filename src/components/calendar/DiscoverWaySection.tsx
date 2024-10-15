@@ -6,7 +6,7 @@ export const DiscoverWaySection = component$(() => {
       title: "Desk Calendar",
       description:
         "Desk calendars arrive with a built-in stand for instant display.",
-      video: "/videos/create-your-ways/step1.mp4",
+      image: "/calendar/images/discover/desk-calendar.jpg",
       buttonText: "Create Desk Calendar",
       buttonLink: "/create-desk-calendar",
     },
@@ -14,7 +14,7 @@ export const DiscoverWaySection = component$(() => {
       title: "Slim Calendar",
       description:
         "Compact calendars with room for appointments & notes.",
-      video: "/videos/create-your-ways/step2.mp4",
+      image: "/calendar/images/discover/slim-calendar.jpg",
       buttonText: "Create Slim Calendar",
       buttonLink: "/create-slim-calendar",
     },
@@ -22,7 +22,7 @@ export const DiscoverWaySection = component$(() => {
       title: "Wall Calendar",
       description:
         "Beautifully display memories across two-page spreads.",
-      video: "/videos/create-your-ways/step3.mp4",
+      image: "/calendar/images/discover/wall-calendar.jpg",
       buttonText: "Create Wall Calendar",
       buttonLink: "/create-wall-calendar",
     },
@@ -41,13 +41,13 @@ export const DiscoverWaySection = component$(() => {
           >
             <div class="flex min-h-[547px] w-full flex-grow bg-zinc-300">
               {/* Replacing image with video */}
-              <video
+              <img
                 class="w-full h-full object-cover"
-                src={step.video}
-                autoplay
-                loop
-                muted
-                playsInline
+                src={step.image}
+                alt={step.title}
+                loading="lazy"
+                height="547"
+                width="240"
               />
             </div>
             <div class="mt-6 flex w-full flex-grow flex-col">

@@ -5,14 +5,14 @@ export const CustomCalenderSection = component$(() => {
     {
       title: "16x11 Wall Calendars",
       description: "Show off your favorite photos with our largest calendar.",
-      video: "/videos/create-your-ways/step1.mp4",
+      image: "/calendar/images/custom-calendar/Photo-Calendar-Mid-Bind-A2-US.jpg",
       buttonText: "Shop 16x11 Wall Calendars",
       buttonLink: "/create-16x11-calendar",
     },
     {
       title: "8x11 Wall Calendars",
       description: "Schedule in style with our classic wall calendar.",
-      video: "/videos/create-your-ways/step2.mp4",
+      image: "/calendar/images/custom-calendar/Photo-Calendar-Mid-Bind-A3-US.jpg",
       buttonText: "Shop 8x11 Wall Calendars",
       buttonLink: "/create-8x11-calendar",
     },
@@ -30,13 +30,13 @@ export const CustomCalenderSection = component$(() => {
             class="flex min-w-[240px] flex-1 shrink basis-0 flex-col justify-center"
           >
             <div class="flex min-h-[547px] w-full flex-grow bg-zinc-300">
-              <video
+              <img
                 class="w-full h-full object-cover"
-                src={step.video}
-                autoplay
-                loop
-                muted
-                playsInline
+                src={step.image}
+                alt={step.title}
+                loading="lazy"
+                height="547"
+                width="240"
               />
             </div>
             <div class="mt-6 flex w-full flex-grow flex-col">

@@ -5,48 +5,28 @@ interface BookType {
   image: string;
 }
 
-export const BookTypesSection = component$(() => {
+export const CalendarTypesSection = component$(() => {
   const bookTypes: BookType[] = [
     {
-      title: "Coffee Table Book",
-      image: "/images/coffee-book.jpg",
+      title: "Holiday Calendar",
+      image: "/calendar/images/calendar-type/holiday-calendar.jpg",
     },
     {
-      title: "Baby Book",
-      image: "/images/baby-book.jpg",
+      title: "Office Calendar",
+      image: "/calendar/images/calendar-type/office-calendar.jpg",
     },
     {
-      title: "Memory Book",
-      image: "/images/memory-book.jpg",
+      title: "Recipe Calendar",
+      image: "/calendar/images/calendar-type/recipe-calendar.jpg",
     },
     {
-      title: "Wedding Book",
-      image: "/images/wedding-book.jpg",
+      title: "Wedding Calendar",
+      image: "/calendar/images/calendar-type/wedding-calendar.jpg",
     },
     {
-      title: "Portfolio Book",
-      image: "/images/portfolio-book.jpg",
+      title: "Baby's First Year Calendar",
+      image: "/calendar/images/calendar-type/baby-calendar.jpg",
     },
-    // {
-    //   title: "CookBook",
-    //   image: "/images/cookbook.jpg",
-    // },
-    // {
-    //   title: "Yearbook",
-    //   image: "/images/yearbook.jpg",
-    // },
-    // {
-    //   title: "Travel Photo Book",
-    //   image: "/images/travel-photo-book.jpg",
-    // },
-    // {
-    //   title: "Luxury Wedding Book",
-    //   image: "/images/luxury-wedding-book.jpg",
-    // },
-    // {
-    //   title: "Editorial Photo Book",
-    //   image: "/images/editorial-photo-book.jpg",
-    // },
   ];
 
   return (
@@ -55,15 +35,15 @@ export const BookTypesSection = component$(() => {
         <div class="container flex flex-wrap items-center md:justify-between justify-center md:gap-10 gap-2 py-3 bg-[#9B1E67] text-white md:rounded-2xl rounded-lg md:px-8 px-0">
           <div class="flex w-full flex-col items-center self-stretch md:w-[200px] md:items-start">
             <h2 class="w-full flex flex-col gap-2 text-center md:text-lg text-xl font-bold md:text-start">
-              <span>Fall Sale 🍁</span>
-              <span class="text-neutral-200 text-xs font-normal md:block hidden">Ends Oct 14</span>
+              <span class="text-3xl font-bold">Fall Sale 🍁</span>
+              <span class="text-[#FBBDD3] text-base font-normal md:block hidden">Ends Oct 14</span>
             </h2>
           </div>
-          <p class="my-auto self-stretch text-center md:text-2xl text-xl font-bold">
+          <p class="my-auto self-stretch text-center md:text-4xl text-xl font-bold">
             Up to 50% off + an extra 10% Off
           </p>
-          <p class="flex flex-col md:gap-2 gap-0 my-auto w-full self-stretch text-center text-sm text-neutral-200 md:w-[200px] md:text-right">
-            <span class="text-neutral-200 text-xs font-normal md:hidden block">Ends Oct 14 </span>
+          <p class="flex flex-col md:gap-2 gap-0 my-auto w-full self-stretch text-center text-base text-[#FBBDD3] md:w-[250px] md:text-right">
+            <span class="text-[#FBBDD3] text-base font-normal md:hidden block">Ends Oct 14 </span>
             <span>No Code Needed.</span>
             <span> Discount applied on checkout.</span>
           </p>

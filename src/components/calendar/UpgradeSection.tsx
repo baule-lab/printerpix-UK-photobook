@@ -7,7 +7,7 @@ export const UpgradeSection = component$(() => {
         Upgrade Your Photo Calendar
       </h1>
       {/* Section cho Banner */}
-      <div class="container relative mt-8 flex w-full flex-col items-center bg-[url('/images/banner-mobile.jpg')] bg-cover bg-center sm:bg-[url('/images/banner.jpg')] sm:bg-right">
+      <div class="container relative mt-8 flex w-full flex-col items-center bg-[url('/calendar/images/cta-upgrade-photo.jpg')] bg-cover bg-center sm:bg-[url('/calendar/images/cta-upgrade-photo.jpg')] sm:bg-right">
         <div class="absolute inset-0 block bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.6)] md:hidden"></div>
 
         <div class="relative flex min-h-[500px] w-[90%] flex-col items-center justify-end py-10 text-sm md:min-h-[500px] md:items-start md:justify-center">
