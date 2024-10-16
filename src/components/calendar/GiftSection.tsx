@@ -5,42 +5,42 @@ export const GiftSection = component$(() => {
     {
       title: "Free Templates",
       description: "Start fast with free templates you can edit in seconds.",
-      img: "/svg/book-cover.svg", // Giữ nguyên hình ảnh gốc
+      img: "/calendar/svg/free-templates.svg", 
     },
     {
       title: "Start Any Month",
       description: "Create a photo calendar anytime of the year.",
-      img: "/svg/quality-paper.svg", // Giữ nguyên hình ảnh gốc
+      img: "/calendar/svg/start-any-month.svg", 
     },
     {
       title: "Add Special Events",
       description: "Never forget a birthday or appointment again!",
-      img: "/svg/add-pages.svg", // Giữ nguyên hình ảnh gốc
+      img: "/calendar/svg/add-special-events.svg", 
     },
     {
       title: "Auto-Create",
       description: "AI instantly organizes your photos to tell your story.",
-      img: "/svg/discounted-copies.svg", // Giữ nguyên hình ảnh gốc
+      img: "/calendar/svg/auto-create.svg", 
     },
     {
       title: "Create Anywhere",
       description: "Upload photos from mobile, desktop or tablet.",
-      img: "/svg/free-templates.svg", // Giữ nguyên hình ảnh gốc
+      img: "/calendar/svg/create-anywhere.svg", 
     },
     {
       title: "Quality Paper",
       description: "Expect vivid, precise colors on the paper of your choice.",
-      img: "/svg/save-project.svg", // Giữ nguyên hình ảnh gốc
+      img: "/calendar/svg/quality-paper.svg", 
     },
     {
       title: "American Made",
       description: "Printed & hand-inspected in Orlando, Florida.",
-      img: "/svg/american-flag.svg", // Giữ nguyên hình ảnh gốc
+      img: "/calendar/svg/american-made.svg", 
     },
     {
       title: "Easy Gifting",
       description: "Order extra copies of your calendar to gift & share.",
-      img: "/svg/delivery-black.svg", // Giữ nguyên hình ảnh gốc
+      img: "/calendar/svg/easy-gifting.svg", 
     },
   ];
 

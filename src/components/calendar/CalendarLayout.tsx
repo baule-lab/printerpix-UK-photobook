@@ -15,6 +15,7 @@ import { Footer } from "./Footer";
 import { CustomCalenderSection } from "./CustomCalenderSection";
 import { UpgradeSection } from "./UpgradeSection";
 import { CtaSection } from "./CtaSection";
+import { GiftLoveSection } from "./GiftLoveSection";
 
 export const CalendarLayout = component$(() => {
   return (
@@ -25,6 +26,7 @@ export const CalendarLayout = component$(() => {
         <GallerySection />
         <CustomCalenderSection />
         <DiscoverWaySection />
+        <GiftLoveSection />
         <div class="md:block hidden">
           <GiftSection />
         </div>
