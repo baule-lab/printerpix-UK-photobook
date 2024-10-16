@@ -7,7 +7,7 @@ export const GiftLoveSection = component$(() => {
       <h2 class="text-center text-3xl font-bold text-[#1A1A1A] max-md:max-w-full md:text-5xl">
         Crafted with Love, Gifted by You
       </h2>
-      <div class="flex items-start justify-center py-10">
+      <div class="flex items-start justify-center">
         {/* Left Column */}
         <div class="flex w-[20%] flex-col items-center gap-14">
           <div class="h-[160px] w-[150px] rounded-md bg-yellow-100 p-4 text-center text-3xl shadow-[rgba(0,_0,_0,_0.35)_0px_5px_15px]">
