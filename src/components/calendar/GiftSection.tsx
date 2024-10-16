@@ -72,7 +72,7 @@ export const GiftSection = component$(() => {
         ))}
       </div>
       <button class="mt-12 md:w-[340px] md:h-auto h-[56px] w-full max-w-full gap-2.5 self-center rounded bg-[#F02480] px-4 py-3 text-white shadow-sm max-md:mt-10 font-semibold text-base">
-        Create Your Photo Book
+        Create Your Calendar
       </button>
     </section>
   );
