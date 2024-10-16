@@ -43,24 +43,6 @@ export const HeroSection = component$(() => {
           </div>
         </div>
       </section>
-      <section class="flex w-full items-center justify-center md:px-0 px-4 bg-[#9B1E67]">
-        <div class="container flex flex-wrap items-center md:justify-between justify-center md:gap-10 gap-2 py-3 text-white">
-          <div class="flex w-full flex-col items-center self-stretch md:w-[150px] md:items-start">
-            <p class="w-full flex flex-col text-center font-bold md:text-start">
-              <span class="text-3xl font-bold">Fall 🍁</span>
-              <span class="text-6xl font-bold">Sale</span>
-            </p>
-          </div>
-          <p class="my-auto self-stretch text-center md:text-4xl text-xl font-bold">
-            Buy 1, Get 1 Free Wall Calendar
-          </p>
-          <p class="flex flex-col md:gap-2 gap-0 my-auto w-full self-stretch text-center text-base text-[#FBBDD3] md:w-[250px] md:text-right">
-            <span>Ends Oct 14 </span>
-            <span>No Code Needed.</span>
-            <span> Discount applied on checkout.</span>
-          </p>
-        </div>
-      </section>
     </div>
   );
 });
