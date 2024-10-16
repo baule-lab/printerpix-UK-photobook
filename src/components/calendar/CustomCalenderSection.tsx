@@ -19,7 +19,7 @@ export const CustomCalenderSection = component$(() => {
   ];
 
   return (
-    <section class="container mx-auto mt-12 sm:flex flex-col justify-evenly gap-8 px-4 md:px-0 hidden">
+    <section class="container mx-auto sm:flex flex-col justify-evenly gap-8 px-4 md:px-0 hidden">
       <h2 class="text-center md:text-5xl text-3xl font-bold text-[#1A1A1A] max-md:max-w-full">
         Custom Calendars for Every Space
       </h2>

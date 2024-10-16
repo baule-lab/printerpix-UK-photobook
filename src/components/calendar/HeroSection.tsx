@@ -4,7 +4,7 @@ export const HeroSection = component$(() => {
   return (
     <div class="flex flex-col items-center">
       {/* Section cho Banner */}
-      <section class="relative mt-8 flex w-full flex-col items-center bg-[url('/calendar/images/banner.jpg')] bg-cover bg-center sm:bg-[url('/calendar/images/banner.jpg')] sm:bg-right">
+      <section class="relative mt-8 flex w-full flex-col items-center bg-[url('/calendar/images/banner-mobile.jpg')] bg-cover bg-center sm:bg-[url('/calendar/images/banner.jpg')] sm:bg-right">
         
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.6)] block md:hidden"></div>
         
@@ -26,7 +26,7 @@ export const HeroSection = component$(() => {
           </div>
 
           {/* Nội dung cho Desktop */}
-          <div class="hidden w-[40%] max-w-full flex-col text-black sm:flex z-10">
+          <div class="hidden w-[40%] max-w-full flex-col text-white sm:flex z-10">
             <p class="text-3xl font-normal">
               Custom Calendars
             </p>
