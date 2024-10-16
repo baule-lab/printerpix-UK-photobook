@@ -42,7 +42,7 @@ export const GiftLoveSection = component$(() => {
           </div>
         </div>
       </div>
-      <button class="mt-12 h-[56px] w-full max-w-full gap-2.5 self-center rounded bg-[#F02480] px-4 py-3 text-base font-semibold text-white shadow-sm max-md:mt-10 md:h-auto md:w-[340px]">
+      <button class="mt-8 h-[56px] w-full max-w-full gap-2.5 self-center rounded bg-[#F02480] px-4 py-3 text-base font-semibold text-white shadow-sm max-md:mt-10 md:h-auto md:w-[340px]">
         Create Your Calendar
       </button>
     </section>
