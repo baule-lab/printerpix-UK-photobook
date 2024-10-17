@@ -15,7 +15,9 @@ import { Footer } from "./Footer";
 import { CustomCalenderSection } from "./CustomCalenderSection";
 import { UpgradeSection } from "./UpgradeSection";
 import { CtaSection } from "./CtaSection";
-import { GiftLoveSection } from "./GiftLoveSection";
+import { CalendarSpecialities } from "./CalendarSpecialities";
+import { CalendarPreview } from "./CalendarPreview";
+import { TestimonialsSection } from "./TestimonialsSection";
 
 export const CalendarLayout = component$(() => {
   return (
@@ -24,9 +26,11 @@ export const CalendarLayout = component$(() => {
       <main class="flex flex-col md:gap-20 gap-20">
         <HeroSection />
         <CustomCalenderSection />
+        <CalendarSpecialities />
         <GallerySection />
         <DiscoverWaySection />
-        <GiftLoveSection />
+        <CalendarPreview />
+        <TestimonialsSection />
         <div class="md:block hidden">
           <GiftSection />
         </div>

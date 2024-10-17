@@ -2,7 +2,7 @@ import { component$, useSignal, $ } from "@builder.io/qwik";
 
 export const FAQSection = component$(() => {
   // Set the default open question to the first one (index 0)
-  const activeIndex = useSignal<number | null>(0);
+  const activeIndex = useSignal<number | null>(0); // Đặt mặc định là câu hỏi đầu tiên
 
   const handleToggle = $((index: number) => {
     activeIndex.value = activeIndex.value === index ? null : index;
@@ -19,7 +19,7 @@ export const FAQSection = component$(() => {
       ],
     },
     {
-      question: "Do custom calendars make good gifts? ",
+      question: "Do custom calendars make good gifts?",
       answer: [
         {
           type: "html",
@@ -61,45 +61,88 @@ export const FAQSection = component$(() => {
       <h2 class="self-stretch text-center md:text-5xl text-3xl font-bold text-[#1A1A1A] max-md:max-w-full">
         FAQ About Photo Books
       </h2>
-      <div class="mt-6 flex flex-col gap-6 w-[650px] max-w-full">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            class="flex w-full flex-col bg-zinc-100 p-6 max-md:max-w-full max-md:px-5"
-          >
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-full">
+        <div class="flex flex-col space-y-5">
+          {faqs.slice(0, 3).map((faq, index) => (
             <div
-              class="flex w-full cursor-pointer items-start justify-between gap-4 text-lg font-semibold tracking-normal text-zinc-900 max-md:max-w-full"
-              onClick$={() => handleToggle(index)}
+              key={index}
+              class="flex w-full flex-col bg-zinc-100 p-6 max-md:max-w-full max-md:px-5"
             >
-              <h3 class="flex-1 break-words">{faq.question}</h3>
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/7e462601e7cf3da72ed1a9485f391fbe6974a3ebc8fff130f41b85758b4bcd04"
-                alt={activeIndex.value === index ? "Collapse" : "Expand"}
-                width="24"
-                height="24"
-                class={`my-auto aspect-square w-6 shrink-0 object-contain transition-transform duration-300 ${
-                  activeIndex.value === index ? "rotate-180" : "rotate-0"
+              <div
+                class="flex w-full cursor-pointer items-start justify-between gap-4 text-lg font-semibold tracking-normal text-zinc-900 max-md:max-w-full"
+                onClick$={() => handleToggle(index)}
+              >
+                <h3 class="flex-1 break-words">{faq.question}</h3>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/7e462601e7cf3da72ed1a9485f391fbe6974a3ebc8fff130f41b85758b4bcd04"
+                  alt={activeIndex.value === index ? "Collapse" : "Expand"}
+                  width="24"
+                  height="24"
+                  class={`my-auto aspect-square w-6 shrink-0 object-contain transition-transform duration-300 ${
+                    activeIndex.value === index ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              </div>
+              <div
+                class={`transition-max-height overflow-hidden duration-300 ease-in-out ${
+                  activeIndex.value === index ? "max-h-40" : "max-h-0"
                 }`}
-              />
-            </div>
-            <div
-              class={`transition-max-height overflow-hidden duration-300 ease-in-out ${
-                activeIndex.value === index ? "max-h-40" : "max-h-0"
-              }`}
-            >
-              <div class="mt-6 text-sm text-black max-md:max-w-full faq-content">
-                {faq.answer.map((item, idx) => (
-                  <div
-                    key={idx}
-                    class="faq-content"
-                    dangerouslySetInnerHTML={item.content}
-                  />
-                ))}
+              >
+                <div class="mt-6 text-sm text-black max-md:max-w-full faq-content">
+                  {faq.answer.map((item, idx) => (
+                    <div
+                      key={idx}
+                      class="faq-content"
+                      dangerouslySetInnerHTML={item.content}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <div class="flex flex-col space-y-5">
+          {faqs.slice(3).map((faq, index) => (
+            <div
+              key={index}
+              class="flex w-full flex-col bg-zinc-100 p-6 max-md:max-w-full max-md:px-5"
+            >
+              <div
+                class="flex w-full cursor-pointer items-start justify-between gap-4 text-lg font-semibold tracking-normal text-zinc-900 max-md:max-w-full"
+                onClick$={() => handleToggle(index + 3)}
+              >
+                <h3 class="flex-1 break-words">{faq.question}</h3>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/7e462601e7cf3da72ed1a9485f391fbe6974a3ebc8fff130f41b85758b4bcd04"
+                  alt={activeIndex.value === index + 3 ? "Collapse" : "Expand"}
+                  width="24"
+                  height="24"
+                  class={`my-auto aspect-square w-6 shrink-0 object-contain transition-transform duration-300 ${
+                    activeIndex.value === index + 3 ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              </div>
+              <div
+                class={`transition-max-height overflow-hidden duration-300 ease-in-out ${
+                  activeIndex.value === index + 3 ? "max-h-40" : "max-h-0"
+                }`}
+              >
+                <div class="mt-6 text-sm text-black max-md:max-w-full faq-content">
+                  {faq.answer.map((item, idx) => (
+                    <div
+                      key={idx}
+                      class="faq-content"
+                      dangerouslySetInnerHTML={item.content}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       <button class="mx-auto mt-6 md:w-[340px] md:h-auto h-[56px] w-full max-w-full gap-2.5 self-stretch rounded bg-[#F02480] px-4 py-3 text-base text-white shadow-sm font-semibold">
         Create Your Photo Book
