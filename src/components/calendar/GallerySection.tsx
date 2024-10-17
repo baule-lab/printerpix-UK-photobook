@@ -34,49 +34,49 @@ export const GallerySection = component$(() => {
       acc[category.name] = {
         left: [
           {
-            src: `/images/theme_category/${folderName}/${folderName}-1.jpg`,
+            src: `/calendar/images/theme_category/${folderName}/${folderName}-1.jpg`,
             alt: `${category.name} Image 1`,
             size: "small",
           },
           {
-            src: `/images/theme_category/${folderName}/${folderName}-2.jpg`,
+            src: `/calendar/images/theme_category/${folderName}/${folderName}-2.jpg`,
             alt: `${category.name} Image 2`,
             size: "small",
           },
           {
-            src: `/images/theme_category/${folderName}/${folderName}-3.jpg`,
+            src: `/calendar/images/theme_category/${folderName}/${folderName}-3.jpg`,
             alt: `${category.name} Image 3`,
             size: "large",
           },
           {
-            src: `/images/theme_category/${folderName}/${folderName}-4.jpg`,
+            src: `/calendar/images/theme_category/${folderName}/${folderName}-4.jpg`,
             alt: `${category.name} Image 4`,
             size: "small",
           },
         ],
         right: [
           {
-            src: `/images/theme_category/${folderName}/${folderName}-5.jpg`,
+            src: `/calendar/images/theme_category/${folderName}/${folderName}-5.jpg`,
             alt: `${category.name} Image 5`,
             size: "large",
           },
           {
-            src: `/images/theme_category/${folderName}/${folderName}-6.jpg`,
+            src: `/calendar/images/theme_category/${folderName}/${folderName}-6.jpg`,
             alt: `${category.name} Image 6`,
             size: "small",
           },
           {
-            src: `/images/theme_category/${folderName}/${folderName}-7.jpg`,
+            src: `/calendar/images/theme_category/${folderName}/${folderName}-7.jpg`,
             alt: `${category.name} Image 7`,
             size: "small",
           },
           {
-            src: `/images/theme_category/${folderName}/${folderName}-8.jpg`,
+            src: `/calendar/images/theme_category/${folderName}/${folderName}-8.jpg`,
             alt: `${category.name} Image 8`,
             size: "small",
           },
         ],
-        main: `/images/theme_category/${folderName}/${folderName}-main.jpg`,
+        main: `/calendar/images/theme_category/${folderName}/${folderName}-main.jpg`,
       };
       return acc;
     },
