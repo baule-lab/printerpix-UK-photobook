@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 
 interface BookType {
   title: string;
@@ -29,6 +29,21 @@ export const CalendarTypesSection = component$(() => {
     },
   ];
 
+  const isMobile = useSignal(false);
+
+  // Determine if the view is mobile
+  useVisibleTask$(() => {
+    const updateIsMobile = () => {
+      isMobile.value = window.innerWidth < 768; // Adjust the threshold as needed
+    };
+
+    updateIsMobile(); // Call on mount
+    window.addEventListener("resize", updateIsMobile); // Update on resize
+    return () => {
+      window.removeEventListener("resize", updateIsMobile); // Cleanup event listener
+    };
+  });
+
   return (
     <>
       <section class="flex w-full items-center justify-center md:px-0 px-4">
@@ -49,12 +64,12 @@ export const CalendarTypesSection = component$(() => {
           </p>
         </div>
       </section>
-      <section class="container mx-auto flex w-full flex-col items-center md:gap-12 gap-8 px-4  font-semibold text-black *:text-lg md:px-0">
+      <section class="container mx-auto flex w-full flex-col items-center md:gap-12 gap-8 px-4 font-semibold text-black *:text-lg md:px-0">
         <h2 class="text-center md:text-5xl !text-3xl font-bold text-[#1A1A1A]">
           Explore Designs for Every Type of Book
         </h2>
         <div class="my-auto grid w-full min-w-[240px] basis-0 grid-cols-2 gap-x-[16px] gap-y-[46px] self-stretch max-md:max-w-full md:grid-cols-3 lg:grid-cols-5">
-          {bookTypes.map((type, index) => (
+          {bookTypes.slice(0, isMobile.value ? 4 : bookTypes.length).map((type, index) => (
             <div key={index} class="flex flex-col items-center gap-6">
               <div
                 class="flex aspect-square min-h-[237px] w-full rounded-md"
