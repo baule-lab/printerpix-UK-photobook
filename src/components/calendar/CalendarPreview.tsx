@@ -3,7 +3,7 @@ import { component$ } from "@builder.io/qwik";
 
 export const CalendarPreview = component$(() => {
   return (
-    <section class="mx-auto flex  flex-col gap-8 px-4 text-black md:px-0">
+    <section class="mx-auto flex flex-col gap-8 px-4 text-black md:px-0 container">
       <div class="flex items-start justify-center">
         <div class="flex w-full justify-center">
           <img
