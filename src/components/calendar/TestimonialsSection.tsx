@@ -1,3 +1,4 @@
+/* eslint-disable qwik/jsx-img */
 // src/components/TestimonialsSection.tsx
 import { component$, useSignal, $, useVisibleTask$ } from "@builder.io/qwik";
 
@@ -73,7 +74,7 @@ export const TestimonialsSection = component$(() => {
     <div class="bg-[#474E3C] px-5 py-12 text-white">
       <div class="container relative mx-auto text-center">
         <h2 class="mb-8 text-3xl font-bold">Customers Love our Calendars</h2>
-        <div class="flex justify-center items-center gap-3">
+        <div class="md:flex grid grid-cols-2  justify-center items-center gap-3">
           <span class="text-nowrap font-medium">Great 9/10</span>
           <img
             src="/calendar/svg/4.5-stars.svg"
@@ -137,7 +138,7 @@ export const TestimonialsSection = component$(() => {
 
         <button
           onClick$={prevSlide}
-          class="absolute left-[-30px] top-2/3 -translate-y-1/2 transform rounded-full border border-neutral-200 bg-white p-2 shadow-lg"
+          class="absolute md:left-[-30px] left-[-15px] top-2/3 -translate-y-1/2 transform rounded-full border border-neutral-200 bg-white p-2 shadow-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +158,7 @@ export const TestimonialsSection = component$(() => {
 
         <button
           onClick$={nextSlide}
-          class="absolute right-[-25px] top-2/3 -translate-y-1/2 transform rounded-full border border-neutral-200 bg-white p-2 shadow-lg"
+          class="absolute md:right-[-25px] right-[-5px] top-2/3 -translate-y-1/2 transform rounded-full border border-neutral-200 bg-white p-2 shadow-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

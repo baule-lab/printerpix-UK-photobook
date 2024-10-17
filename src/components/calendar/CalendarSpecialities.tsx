@@ -31,7 +31,7 @@ export const CalendarSpecialities = component$(() => {
   ];
 
   return (
-    <section class="container mx-auto hidden flex-col justify-evenly gap-8 px-4 sm:flex md:px-0">
+    <section class="container mx-auto flex-col justify-evenly gap-8 px-4 flex md:px-0">
       <h2 class="text-center text-3xl font-bold text-[#1A1A1A] max-md:max-w-full md:text-5xl">
         Create Your Calendar, Your Way
       </h2>

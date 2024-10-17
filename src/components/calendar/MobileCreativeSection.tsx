@@ -1,3 +1,4 @@
+/* eslint-disable qwik/jsx-img */
 import { component$ } from "@builder.io/qwik";
 
 export const MobileCreativeSection = component$(() => {
@@ -10,13 +11,11 @@ export const MobileCreativeSection = component$(() => {
       {/* Video Placeholder */}
       <div class="mt-8 flex justify-center">
         <div class="justify-cente flex h-[400px] w-full max-w-md items-center">
-          <video
+          <img
             class="w-full h-full object-cover"
-            src="/videos/get-creative/video.mp4"
-            autoplay
-            loop
-            muted
-            playsInline
+            src="/calendar/images/get-creative/image.jpg"
+            width="400"
+            height="400"
           />
         </div>
       </div>

@@ -18,6 +18,7 @@ import { CtaSection } from "./CtaSection";
 import { CalendarSpecialities } from "./CalendarSpecialities";
 import { CalendarPreview } from "./CalendarPreview";
 import { TestimonialsSection } from "./TestimonialsSection";
+import { MobileCreativeSection } from "./MobileCreativeSection";
 
 export const CalendarLayout = component$(() => {
   return (
@@ -31,16 +32,12 @@ export const CalendarLayout = component$(() => {
         <DiscoverWaySection />
         <CalendarPreview />
         <TestimonialsSection />
-        <div class="md:block hidden">
-          <GiftSection />
-        </div>
+        <GiftSection />
         <PrintOptionsSection />
         <CalendarTypesSection />
-        <div class="md:hidden block">
-          <GiftSection />
-        </div>
         <UpgradeSection />
         <CtaSection />
+        <MobileCreativeSection />
         <FAQSection />
         <InfoSection />
       </main>
