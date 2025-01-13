@@ -137,18 +137,6 @@ export const GallerySection = component$(() => {
     />
   );
 
-  const mappingPosition = ( rowIndex: number, colIndex: number ) => {
-    if (rowIndex === 0 && colIndex === 0) {
-      return { left: "-10px", top: "-70px" };
-    } else if (rowIndex === 0 && colIndex === 1) {
-      return { right: "-10px", top: "30px" };
-    } else if (rowIndex === 2 && colIndex === 0) {
-      return { left: "25px", bottom: "90px" };
-    } else {
-      return { right: "15px", bottom: "0" };
-    }
-  }
-
   return (
     <section class="mx-auto flex w-full flex-col items-center justify-center gap-6 first-letter:gap-6 md:w-[90%] md:px-0">
       <div class="flex w-[90%] flex-col md:items-center items-start gap-4 md:w-full overflow-hidden">
@@ -170,153 +158,174 @@ export const GallerySection = component$(() => {
         //   backgroundRepeat: "no-repeat",
         // }}
       >
-        {/* Desktop layout */}
-        <div class="container relative mt-6 flex hidden items-center justify-center md:flex">
-          {/* Left and right layout */}
-          <div class="grid grid-cols-[1fr_300px_1fr] justify-between gap-6">
-            {/* Added justify-center and max-w */}
-            {/* Left side with two rows and two columns */}
-            <div class="flex flex-col justify-between gap-6">
-              {[0, 2].map((rowIndex) => (
-                <div key={rowIndex} class="flex justify-around gap-4">
-                  {[0, 1].map((colIndex) => {
-                    const image = currentImages.value.left[rowIndex + colIndex];
-                    const size = image.size === "large" ? "220px" : "190px";
-                    return (
-                      <div key={colIndex} class="relative">
-                        {isLoading.value ? (
-                          <SkeletonImage size={size} />
-                        ) : (
-                          <img
-                            class="h-auto  transform shadow-lg transition-transform duration-300 hover:scale-105"
-                            src={image.src}
-                            alt={image.alt}
-                            style={{
-                              objectFit: "cover",
-                              width: size,
-                              height: "auto",
-                              aspectRatio: "1 / 1",
-                            }}
-                          />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
+        {/* Desktop layout (>= 820px) */}
+        <div class="hidden lg:block w-full">
+          <div class="container mx-auto max-w-[1320px]">
+            <div class="grid grid-cols-[1fr_auto_1fr] gap-6 items-center">
+              {/* Left side */}
+              <div class="flex flex-col justify-between gap-6">
+                {[0, 2].map((rowIndex) => (
+                  <div key={rowIndex} class="flex justify-between gap-4">
+                    {[0, 1].map((colIndex) => {
+                      const image = currentImages.value.left[rowIndex + colIndex];
+                      const isLarge = image.size === "large";
+                      return (
+                        <div 
+                          key={colIndex} 
+                          class={`${isLarge ? 'w-[55%]' : 'w-[45%]'}`}
+                        >
+                          {isLoading.value ? (
+                            <SkeletonImage size="100%" />
+                          ) : (
+                            <div class="relative w-full pb-[100%]">
+                              <img
+                                class="absolute inset-0 w-full h-full object-cover shadow-lg rounded-lg transform transition-transform duration-300 hover:scale-105"
+                                src={image.src}
+                                alt={image.alt}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+
+              {/* Center main image */}
+              <div class="w-[30vw] max-w-[375px] min-w-[200px]">
+                {isLoading.value ? (
+                  <SkeletonImage size="100%" />
+                ) : (
+                  <div class="relative w-full pb-[150%]">
+                    <img
+                      src={currentImages.value.main}
+                      alt="Main Image"
+                      class="absolute inset-0 w-full h-full object-cover shadow-lg rounded-lg transform transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                )}
+              </div>
+
+              {/* Right side */}
+              <div class="flex flex-col justify-between gap-6">
+                {[0, 2].map((rowIndex) => (
+                  <div key={rowIndex} class="flex justify-between gap-4">
+                    {[0, 1].map((colIndex) => {
+                      const image = currentImages.value.right[rowIndex + colIndex];
+                      const isLarge = image.size === "large";
+                      return (
+                        <div 
+                          key={colIndex} 
+                          class={`${isLarge ? 'w-[55%]' : 'w-[45%]'}`}
+                        >
+                          {isLoading.value ? (
+                            <SkeletonImage size="100%" />
+                          ) : (
+                            <div class="relative w-full pb-[100%]">
+                              <img
+                                class="absolute inset-0 w-full h-full object-cover shadow-lg rounded-lg transform transition-transform duration-300 hover:scale-105"
+                                src={image.src}
+                                alt={image.alt}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
             </div>
-            {/* Main image */}
-            <div class="flex transform items-center justify-center">
+          </div>
+        </div>
+        {/* Mobile and Tablet layout (<820px) */}
+        <div class="flex flex-col w-full lg:hidden">
+          {/* Main container with relative positioning */}
+          <div class="relative w-[90%] mx-auto">
+            {/* Main Image */}
+            <div class="w-full">
               {isLoading.value ? (
-                <SkeletonImage size="300px" />
+                <SkeletonImage size="100%" />
               ) : (
                 <img
                   src={currentImages.value.main}
                   alt="Main Image"
-                  class="object-cover shadow-lg transition-transform duration-300 hover:scale-105"
-                  style={{
-                    width: "300px",
-                    height: "450px",
-                  }}
+                  class="w-full aspect-[4/3] object-cover shadow-lg rounded-lg"
                 />
               )}
             </div>
-            {/* Right side with two rows and two columns */}
-            <div class="flex flex-col justify-between">
-              {[0, 2].map((rowIndex) => (
-                <div key={rowIndex} class="flex justify-around gap-4">
-                  {[0, 1].map((colIndex) => {
-                    const image =
-                      currentImages.value.right[rowIndex + colIndex];
-                    const size = image.size === "large" ? "220px" : "190px";
-                    return (
-                      <div key={colIndex} class="relative">
-                        {isLoading.value ? (
-                          <SkeletonImage size={size} />
-                        ) : (
-                          <img
-                            class="h-auto max-w-full transform shadow-lg transition-transform duration-300 hover:scale-105"
-                            src={image.src}
-                            alt={image.alt}
-                            style={{
-                              objectFit: "cover",
-                              width: size,
-                              height: "auto",
-                              aspectRatio: "1 / 1",
-                            }}
-                          />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
+
+            {/* Container for smaller images */}
+            <div class="relative w-full" style={{ paddingTop: "120%" }}>
+              {/* Image 1 - Top Left */}
+              <div class="absolute left-[-5%] top-[-10%] md:w-[42%] w-[45%] z-10">
+                {isLoading.value ? (
+                  <SkeletonImage size="100%" />
+                ) : (
+                  <div class="relative w-full pb-[100%]">
+                    <img
+                      class="absolute inset-0 w-full h-full object-cover shadow-lg rounded-lg transform transition-transform duration-300 hover:scale-105"
+                      src={currentImages.value.left[0].src}
+                      alt={currentImages.value.left[0].alt}
+                    />
+                  </div>
+                )}
+              </div>
+
+              {/* Image 2 - Top Right */}
+              <div class="absolute right-[-5%] top-[5%] md:w-[42%] w-[45%] z-20">
+                {isLoading.value ? (
+                  <SkeletonImage size="100%" />
+                ) : (
+                  <div class="relative w-full pb-[100%]">
+                    <img
+                      class="absolute inset-0 w-full h-full object-cover shadow-lg rounded-lg transform transition-transform duration-300 hover:scale-105"
+                      src={currentImages.value.left[1].src}
+                      alt={currentImages.value.left[1].alt}
+                    />
+                  </div>
+                )}
+              </div>
+
+              {/* Image 3 - Bottom Left */}
+              <div class="absolute left-[5%] bottom-[25%] md:w-[42%] w-[45%] z-30">
+                {isLoading.value ? (
+                  <SkeletonImage size="100%" />
+                ) : (
+                  <div class="relative w-full pb-[100%]">
+                    <img
+                      class="absolute inset-0 w-full h-full object-cover shadow-lg rounded-lg transform transition-transform duration-300 hover:scale-105"
+                      src={currentImages.value.left[2].src}
+                      alt={currentImages.value.left[2].alt}
+                    />
+                  </div>
+                )}
+              </div>
+
+              {/* Image 4 - Bottom Right */}
+              <div class="absolute right-[2%] bottom-[0%] md:w-[42%] w-[45%] z-40">
+                {isLoading.value ? (
+                  <SkeletonImage size="100%" />
+                ) : (
+                  <div class="relative w-full pb-[100%]">
+                    <img
+                      class="absolute inset-0 w-full h-full object-cover shadow-lg rounded-lg transform transition-transform duration-300 hover:scale-105"
+                      src={currentImages.value.left[3].src}
+                      alt={currentImages.value.left[3].alt}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        </div>
-        {/* Mobile layout */}
-        <div class="mt-0 flex flex-col items-center gap-4 md:hidden w-full">
-          {/* Main Image */}
-          <div class="flex items-center justify-center w-[85%] rounded-xl">
-            {isLoading.value ? (
-              <SkeletonImage size="100%" />
-            ) : (
-              <img
-                src={currentImages.value.main}
-                alt="Main Image"
-                class="transform object-cover shadow-xl transition-transform duration-300 hover:scale-105"
-                style={{ width: "100%", height: "250px", objectFit: "cover" }}
-              />
-            )}
           </div>
 
-          {/* Four smaller images in uneven grid below the main image */}
-          <div class="flex flex-col justify-between gap-4 h-[360px] w-full relative">
-              {[0, 2].map((rowIndex) => (
-                <div key={rowIndex} class="flex justify-around gap-4">
-                  {[0, 1].map((colIndex) => {
-                    const image =
-                      currentImages.value.left[rowIndex + colIndex];
-                    const size = "150px";
-                    return (
-                      <div 
-                        key={colIndex} 
-                        class={`absolute`} 
-                        style={{
-                          ...mappingPosition(rowIndex, colIndex),
-                          width: size,
-                          height: "auto",
-                          boxShadow: "0 0 0 1px #E5E5E5",
-                        }}
-                      >
-                        {isLoading.value ? (
-                          <SkeletonImage size={size} />
-                        ) : (
-                          <img
-                            class="h-auto max-w-full transform shadow-lg transition-transform duration-300 hover:scale-105"
-                            src={image.src}
-                            alt={image.alt}
-                            style={{
-                              objectFit: "cover",
-                              width: size,
-                              height: "auto",
-                              aspectRatio: "1 / 1",
-                            }}
-                          />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
+          {/* Button */}
+          <button class="w-[90%] mx-auto mt-6 py-3 bg-[#F02480] text-white rounded-md font-semibold">
+            Explore {activeTabName.value} Themes
+          </button>
         </div>
       </div>
-
-      {/* Button with dynamic tab name */}
-      <button class="m-auto w-[90%] max-w-full gap-2.5 self-stretch rounded bg-[#F02480] px-4 py-3 text-base font-semibold text-white shadow-sm md:w-[340px] md:h-auto h-[56px]">
-        Explore {activeTabName.value} Themes
-      </button>
     </section>
   );
 });
