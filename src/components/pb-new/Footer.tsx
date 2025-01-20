@@ -113,216 +113,122 @@ export const Footer = component$(() => {
 
   return (
     <footer class="flex relative flex-col w-full max-md:mt-10 max-md:max-w-full">
-      <div class="flex z-0 flex-col justify-between self-center pb-12 max-w-full text-black min-h-[174px] w-[1255px]">
-        <div class="flex flex-wrap gap-10 justify-center items-center pt-12 pr-px w-full border-t border-zinc-400 max-md:max-w-full">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              class="flex grow shrink gap-3 items-center self-stretch my-auto min-w-[240px] w-[221px]"
-            >
-              <img
-                loading="lazy"
-                src={feature.icon}
-                alt={feature.title}
-                class="object-contain shrink-0 self-stretch my-auto aspect-square w-[73px]"
-              />
-              <div class="flex flex-col items-center self-stretch my-auto min-w-[240px] w-[243px]">
-                <h3 class="z-10 pb-3.5 max-w-full text-lg font-bold w-[243px] max-md:pr-5">
-                  {feature.title}
-                </h3>
-                <p class="pb-2 mt-2 max-w-full text-sm w-[243px] max-md:pr-5">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div class="flex z-0 flex-wrap gap-9 justify-center items-center py-10 pr-24 pl-24 w-full text-xl text-white bg-indigo-800 border-b border-zinc-400 min-h-[177px] max-md:px-5 max-md:max-w-full">
+      <div class="flex z-0 flex-wrap gap-9 justify-center items-center py-10 px-24 w-full text-xl text-white bg-indigo-800 border-b border-zinc-400 max-lg:px-8 max-md:px-4">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fe1f9f9ec335e222b96e6cf73444a27edf4e459da9cbf2eb4dcd6694f4b202f?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
           alt="Sustainability icon"
-          class="object-contain shrink-0 self-stretch my-auto aspect-square w-[97px]"
+          class="object-contain shrink-0 aspect-square w-[97px] max-md:w-[60px] max-md:mx-auto"
         />
-        <p class="flex-1 shrink self-stretch my-auto basis-0 max-md:max-w-full">
+        <p class="flex-1 my-auto max-md:text-base max-md:text-center">
           Your item is sustainably made, always. Each item we produce is printed
           with non-toxic inks and crafted under fair labour conditions. Plus,
           for every tree you plant at checkout, we plant another – all while
           keeping our offices 100% paperless.
         </p>
       </div>
-      <div class="flex z-0 flex-col justify-center items-center px-14 py-7 w-full text-white bg-indigo-800 border-b border-zinc-400 max-md:px-5 max-md:max-w-full">
-        <div class="flex flex-wrap gap-10 justify-center items-center max-md:max-w-full">
-          <div class="flex flex-col self-stretch my-auto min-h-[98px] min-w-[240px] w-[353px]">
-            <h2 class="flex-1 text-4xl font-bold">Need help?</h2>
-            <p class="flex-1 mt-3 text-xl">
-              We will complete your project for you:
-            </p>
-          </div>
-          <div class="flex flex-wrap gap-6 self-stretch my-auto text-xl text-center min-h-[167px] min-w-[240px] max-md:max-w-full">
-            {helpOptions.map((option, index) => (
-              <div key={index} class="flex flex-col items-center w-40">
-                <img
-                  loading="lazy"
-                  src={option.icon}
-                  alt={option.title}
-                  class="object-contain aspect-square w-[60px]"
-                />
-                <p class="mt-6">{option.title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div class="flex z-0 flex-col justify-center items-center py-14 pr-24 pl-24 w-full bg-indigo-800 max-md:px-5 max-md:max-w-full">
-        <div class="flex flex-wrap gap-10 justify-between max-w-full min-h-[236px] w-[1251px]">
-          <div class="flex flex-col justify-center min-w-[240px] w-[530px] max-md:max-w-full">
-            <div class="flex flex-col w-full text-white max-md:max-w-full">
-              <h2 class="text-4xl font-bold max-md:max-w-full">
-                Enjoy 40% OFF Your First Order
-              </h2>
-              <p class="mt-6 text-xl max-md:max-w-full">
-                When you join our newsletter! Be the first to receive exclusive
-                offers, inspiration & more.
-              </p>
-            </div>
-            <form class="flex flex-wrap gap-2.5 mt-6 max-w-full text-base w-[491px]">
-              <input
-                type="email"
-                placeholder="Enter Email Address"
-                class="grow px-4 py-2 bg-white rounded border border-solid border-zinc-300 text-zinc-400 w-fit max-md:pr-5"
-              />
-              <button
-                type="submit"
-                class="overflow-hidden z-10 gap-2.5 self-stretch px-7 py-2 font-bold text-center text-white bg-pink-600 rounded min-h-[38px] max-md:px-5 max-md:mr-0"
-              >
-                subscribe now
-              </button>
-            </form>
-          </div>
-          <div class="flex flex-col justify-center pl-5 text-white border-l border-zinc-400 min-w-[240px]">
-            <h3 class="md:text-5xl text-3xl font-bold">Rated 4.5/5</h3>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/fdcfb44403345d08ecff84e4c40de732e6939d3415fd1510ba4c0d78a01535b4?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
-              alt="Rating stars"
-              class="object-contain mt-5 max-w-full aspect-[4.69] w-[361px]"
-            />
-            <p class="mt-5 text-xl">Based on 34,038 reviews from Trustpilot</p>
-          </div>
-        </div>
-      </div>
-      <div class="flex z-0 w-full bg-indigo-800 min-h-[727px] max-md:max-w-full"></div>
-      <div class="flex absolute right-24 z-0 flex-wrap gap-10 justify-between items-start max-w-full bottom-[509px] left-[95px] w-[1249px]">
-        {footerLinks.map((section, index) => (
-          <div key={index} class="text-base font-bold text-white">
-            {section.title}
-            <br />
-            {section.links.map((link, linkIndex) => (
-              <span key={linkIndex} class="text-base">
-                {link}
-                <br />
-              </span>
-            ))}
-          </div>
-        ))}
-        <div class="flex flex-col justify-between w-[204px]">
-          <div class="flex-1 text-base font-bold text-white">
-            CONTACT US
-            <br />
-            <span class="">+44 0208 839 0854</span>
-            <br />
-            <span class="">contactus@printerpix.co.uk</span>
-          </div>
-          <div class="text-base font-bold text-white">FOLLOW US:</div>
-          <div class="flex gap-2 justify-between items-start w-full">
-            {[
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/9f944fbaf6949add25cddb3441abefc206a6c342debad59603e0af6c2031b50c?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27",
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/f647bd8a4dc3fdb9706650fd5c70e46d8c51c64dccb56b1d60858fb1d2a0783f?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27",
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/db4b8d5e5557e483b0ed9c062f2e6d45a08e040eb76bc7fc891389fdffeaa933?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27",
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/df32b474cda3ee68f1f2bd30a5ac18b7fa86518fab3510691e0652c8fe56eca1?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27",
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/e8b8fe18f49dc6de978214927e65103ae0815e3767dbf0e0085b2a88f4007af9?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27",
-            ].map((icon, index) => (
+      <div class="flex z-0 flex-col items-center px-14 py-12 w-full bg-indigo-800 max-lg:px-8 max-md:px-4">
+        <h2 class="text-4xl font-bold text-white text-center max-md:text-2xl">Need help?</h2>
+        <p class="mt-4 text-xl text-white text-center max-md:text-lg">
+          We will complete your project for you:
+        </p>
+        <div class="flex flex-wrap justify-center gap-10 mt-8 max-md:gap-6">
+          {helpOptions.map((option, index) => (
+            <div key={index} class="flex flex-col items-center w-40 max-md:w-[45%]">
               <img
-                key={index}
-                loading="lazy"
-                src={icon}
-                alt={`Social media icon ${index + 1}`}
-                class="object-contain shrink-0 aspect-square w-[35px]"
+                src={option.icon}
+                alt={option.title}
+                class="w-[60px] h-[60px] max-md:w-[40px] max-md:h-[40px]"
               />
-            ))}
-          </div>
-        </div>
-      </div>
-      <div class="flex absolute left-2/4 z-0 flex-col items-center max-w-full text-base text-white -translate-x-2/4 bottom-[235px] translate-y-[0%] w-[1250px]">
-        <div class="w-full border border-solid border-zinc-400 min-h-[1px] max-md:max-w-full"></div>
-        <h3 class="self-center mt-14 font-bold text-center max-md:mt-10">
-          PRINTERPIX WORLDWIDE:
-        </h3>
-        <div class="flex flex-wrap gap-10 justify-between items-center self-center mt-14 max-w-full w-[1126px] max-md:mt-10">
-          {countries.map((country, index) => (
-            <div
-              key={index}
-              class="flex gap-4 justify-center items-center self-stretch my-auto"
-            >
-              <img
-                loading="lazy"
-                src={country.flag}
-                alt={`${country.name} flag`}
-                class="object-contain shrink-0 self-stretch my-auto aspect-square w-[33px]"
-              />
-              <div class="self-stretch my-auto">{country.name}</div>
+              <p class="mt-4 text-white text-center text-lg max-md:text-base">{option.title}</p>
             </div>
           ))}
         </div>
-        <div class="mt-14 w-full border border-solid border-zinc-400 min-h-[1px] max-md:mt-10 max-md:max-w-full"></div>
       </div>
-      <div class="absolute bottom-0 left-24 z-0 self-start h-4 text-xs text-white right-[1196px]">
-        Copyright © 2022 Printerpix
+      <div class="flex flex-wrap gap-10 justify-between px-24 py-14 bg-indigo-800 max-lg:px-8 max-md:px-4">
+        <div class="flex-1 min-w-[300px] max-md:min-w-full">
+          <h2 class="text-4xl font-bold text-white max-md:text-2xl max-md:text-center">
+            Up to 80% OFF Your First Order
+          </h2>
+          <p class="mt-4 text-xl text-white max-md:text-base max-md:text-center">
+            Sign up to our newsletter to receive early access to sales...
+          </p>
+          <form class="flex flex-wrap gap-3 mt-6 max-md:flex-col">
+            <input
+              type="email"
+              placeholder="Enter Email Address"
+              class="flex-1 px-4 py-3 rounded min-w-[200px] max-md:w-full"
+            />
+            <button class="px-8 py-3 bg-pink-600 text-white rounded font-bold max-md:w-full">
+              Subscribe Now
+            </button>
+          </form>
+        </div>
+        <div class="flex flex-col justify-center pl-8 border-l border-zinc-400 max-md:border-l-0 max-md:pl-0 max-md:mt-8 max-md:items-center">
+          <h3 class="text-5xl font-bold text-white max-md:text-3xl">Rated 4.5/5</h3>
+          <div class="flex mt-4">
+            {/* Add your star rating component here */}
+          </div>
+          <p class="mt-4 text-white">Based on 35,645 reviews</p>
+        </div>
       </div>
-      <div class="absolute bottom-0 z-0 self-start h-4 text-xs text-white left-[1204px] right-[79px]">
-        Terms of Service Privacy
+      <div class="bg-indigo-800 px-24 py-12 max-lg:px-8 max-md:px-4">
+        <div class="grid grid-cols-4 gap-8 max-lg:grid-cols-2 max-md:grid-cols-1">
+          {footerLinks.map((section, index) => (
+            <div key={index} class="text-white">
+              <h3 class="font-bold mb-4">{section.title}</h3>
+              <ul class="space-y-2">
+                {section.links.map((link, i) => (
+                  <li key={i} class="hover:underline cursor-pointer">{link}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div class="mt-12 text-white max-md:text-center">
+          <h3 class="font-bold mb-4">FOLLOW US:</h3>
+          <div class="flex gap-4 max-md:justify-center">
+            {/* Social media icons */}
+          </div>
+        </div>
       </div>
-      <div class="flex absolute z-0 flex-wrap gap-10 justify-between items-center max-w-full text-xs text-white bottom-[63px] inset-x-[95px] w-[1250px]">
-        <div class="flex flex-col items-center self-stretch my-auto min-w-[240px] w-[340px]">
-          <p>Secured Payment:</p>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/038960ca004c7d5934567b800338d2b3b8a9cfb59169814020b35a2985403de4?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
-            alt="Payment methods"
-            class="object-contain mt-6 max-w-full aspect-[6.06] w-[340px]"
-          />
+      <div class="bg-indigo-800 px-24 py-12 text-white max-lg:px-8 max-md:px-4">
+        <h3 class="text-center font-bold mb-8">PRINTERPIX WORLDWIDE:</h3>
+        <div class="flex flex-wrap justify-center gap-8 max-md:gap-4">
+          {countries.map((country, index) => (
+            <div key={index} class="flex items-center gap-2 min-w-[140px] max-md:min-w-[45%]">
+              <img src={country.flag} alt={country.name} class="w-8 h-8" />
+              <span>{country.name}</span>
+            </div>
+          ))}
         </div>
-        <div class="shrink-0 self-stretch my-auto w-0 border border-solid border-zinc-400 h-[105px]"></div>
-        <div class="flex flex-col items-center self-stretch my-auto min-w-[240px] w-[324px]">
-          <p>Certified Delivery:</p>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/3596cb6675ccc2d02d21989299b6c6017588a0cdac6e2afe4afe4ff925f5337d?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
-            alt="Delivery certifications"
-            class="object-contain mt-9 max-w-full aspect-[9.52] w-[324px]"
-          />
+      </div>
+      <div class="bg-indigo-800 px-24 py-8 text-white max-lg:px-8 max-md:px-4">
+        <div class="grid grid-cols-3 gap-8 max-lg:grid-cols-2 max-md:grid-cols-1 max-md:gap-12">
+          <div class="text-center">
+            <p class="mb-4">Secured Payment:</p>
+            <div class="flex flex-wrap justify-center gap-2">
+              {/* Payment method icons */}
+            </div>
+          </div>
+          <div class="text-center">
+            <p class="mb-4">Certified Delivery:</p>
+            <div class="flex flex-wrap justify-center gap-2">
+              {/* Delivery method icons */}
+            </div>
+          </div>
+          <div class="text-center max-lg:col-span-2 max-md:col-span-1">
+            <p class="mb-4">Secured by:</p>
+            <div class="flex justify-center">
+              {/* Security badges */}
+            </div>
+          </div>
         </div>
-        <div class="shrink-0 self-stretch my-auto w-0 border border-solid border-zinc-400 h-[105px]"></div>
-        <div class="flex flex-col items-center self-stretch my-auto w-40">
-          <p>Secured by:</p>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/fc2526ed55d682e90b2706d3613a29a741971dde9876d36b5b8a3f5f4dfb1ece?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
-            alt="Security certification"
-            class="object-contain mt-9 w-40 max-w-full aspect-[4.22]"
-          />
-        </div>
-        <div class="shrink-0 self-stretch my-auto w-0 border border-solid border-zinc-400 h-[105px]"></div>
-        <div class="flex flex-col items-center self-stretch my-auto w-40">
-          <p>Trusted by:</p>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/87b2e9e5dd5cba9bc52b8872bccabfb166c4cdd621881c3bc2283231c6af243b?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
-            alt="Trust badges"
-            class="object-contain mt-7 w-40 max-w-full aspect-[4.1]"
-          />
+      </div>
+      <div class="bg-indigo-800 px-24 py-4 text-white text-sm max-lg:px-8 max-md:px-4 max-md:text-center">
+        <div class="flex justify-between max-md:flex-col max-md:gap-2">
+          <p>Copyright © 2022 Printerpix</p>
+          <p>Terms of Service Privacy</p>
         </div>
       </div>
     </footer>

@@ -9,14 +9,19 @@ export const Header = component$(() => {
       <nav class="flex flex-col items-center w-full max-md:mt-10 max-md:max-w-full mt-20">
         <div class="flex flex-col px-24text-center text-black max-md:px-5 container">
           <div class="flex flex-wrap gap-10 justify-between items-center w-full text-base font-bold whitespace-nowrap max-md:max-w-full">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3a545d44a28e872394ab7df7a3edce5ad58416f88bc01119d7056c991f298767?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
-              alt="Company logo"
-              class="object-contain shrink-0 self-stretch my-auto aspect-[4.76] w-[162px]"
-              width="162"
-              height="81"
-            />
+            <div class="flex items-center gap-2.5">
+              <span class="md:hidden flex justify-center items-center w-10 h-10">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+              </span>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/3a545d44a28e872394ab7df7a3edce5ad58416f88bc01119d7056c991f298767?placeholderIfAbsent=true&apiKey=7f743169fed1434cba7b7dfa49538c27"
+                alt="Company logo"
+                class="object-contain shrink-0 self-stretch my-auto aspect-[4.76] w-[162px]"
+                width="162"
+                height="81"
+              />
+            </div>
             <div class="flex gap-5 justify-center items-center self-stretch my-auto">
               <div class="flex gap-2.5 items-center self-stretch my-auto w-[74px]">
                 <img
@@ -41,7 +46,7 @@ export const Header = component$(() => {
               />
             </div>
           </div>
-          <div class="flex flex-col mt-7 w-full text-sm max-md:max-w-full">
+          <div class="md:flex hidden flex-col mt-7 w-full text-sm max-md:max-w-full">
             <div class="flex flex-wrap gap-10 justify-between items-center w-full min-h-[22px] max-md:max-w-full">
               <a href="#" class="self-stretch my-auto">
                 Gift Shop
